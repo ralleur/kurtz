@@ -70,6 +70,10 @@ assert volume.resolve() == mount.resolve(), 'Unexpected mount location'
 try:
     subprocess.run(['ditto', str(app), str(volume / 'kurtz.app')], check=True)
     (volume / 'Applications').symlink_to('/Applications', target_is_directory=True)
+    # Avoid Spotlight indexing and creation of event logs on the installer.
+    (volume / '.metadata_never_index').touch()
+    (volume / '.fseventsd').mkdir(exist_ok=True)
+    (volume / '.fseventsd/no_log').touch()
     # The app already exposes its notices in Settings. Retain complete release
     # source/license records on the image without adding visible Finder clutter.
     licenses = volume / '.licenses'
@@ -105,6 +109,7 @@ manifest = {
     'architectures': archs, 'minimum_macos': info.get('LSMinimumSystemVersion'),
     'development_only': a.development_preview, 'size': dmg.stat().st_size,
     'window_points': [768, 512], 'visible_items': ['kurtz.app', 'Applications'],
+    'hidden_items_layout': 'explicit positions outside the initial viewport',
     'background_sha256': hashlib.sha256((ROOT / 'marketing/dmg/background@2x.png').read_bytes()).hexdigest(),
 }
 dmg.with_suffix('.json').write_text(json.dumps(manifest, indent=2) + '\n')

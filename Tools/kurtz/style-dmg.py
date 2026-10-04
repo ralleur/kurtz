@@ -25,7 +25,9 @@ args.work.mkdir(parents=True, exist_ok=True)
 # stays intact; sips/tiffutil only produce display-resolution representations.
 original = ROOT / 'marketing/dmg/background@2x.png'
 small = args.work / 'background.png'
-background = volume / '.background.tiff'
+background_directory = volume / '.background'
+background_directory.mkdir(exist_ok=True)
+background = background_directory / 'background.tiff'
 subprocess.run(['sips', '-z', '512', '768', str(original), '--out', str(small)], check=True)
 subprocess.run(['tiffutil', '-cathidpicheck', str(small), str(original), '-out', str(background)], check=True)
 
@@ -49,6 +51,14 @@ icons = {
     'labelOnBottom': True, 'textSize': 14.0, 'iconSize': 112.0,
     'scrollPositionX': 0.0, 'scrollPositionY': 0.0,
 }
+# Finder's Show Hidden Files setting overrides dot names and hidden flags.
+# Give support items explicit positions outside the fixed installer viewport,
+# rather than letting Finder auto-place them across the wordmark.
+hidden_names = sorted({
+    '.DS_Store', '.VolumeIcon.icns', '.background', '.licenses', '.fseventsd',
+    '.Spotlight-V100', '.Trashes', '.TemporaryItems', '.metadata_never_index',
+} | {p.name for p in volume.iterdir() if p.name.startswith('.')})
+hidden_positions = {name: (1024 + index * 160, 128) for index, name in enumerate(hidden_names)}
 with DSStore.open(str(volume / '.DS_Store'), 'w+') as store:
     store['.']['vSrn'] = ('long', 1)
     store['.']['bwsp'] = window
@@ -58,7 +68,22 @@ with DSStore.open(str(volume / '.DS_Store'), 'w+') as store:
     # Keep the installation action in the quiet left half, beside the pug.
     store['kurtz.app']['Iloc'] = (128, 254)
     store['Applications']['Iloc'] = (316, 254)
+    for name, position in hidden_positions.items():
+        store[name]['Iloc'] = position
 
 visible = sorted(p.name for p in volume.iterdir() if not p.name.startswith('.'))
 assert visible == ['Applications', 'kurtz.app'], visible
-print('kurtz installer layout: 768x512 points; two visible items; Retina background')
+for name in hidden_names:
+    item = volume / name
+    if item.exists():
+        subprocess.run(['chflags', 'hidden', str(item)], check=True)
+
+# Verify the saved layout, including the case where hidden files are visible.
+with DSStore.open(str(volume / '.DS_Store'), 'r') as store:
+    assert store['kurtz.app']['Iloc'] == (128, 254)
+    assert store['Applications']['Iloc'] == (316, 254)
+    assert store['.']['icvp']['scrollPositionX'] == 0
+    for name in hidden_names:
+        x, y = store[name]['Iloc']
+        assert x - 112 > 768, (name, x, y)
+print('kurtz installer layout: 768x512 points; support files outside viewport even when shown; Retina background')

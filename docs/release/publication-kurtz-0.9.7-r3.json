@@ -1,0 +1,71 @@
+{
+  "release": "https://github.com/ralleur/kurtz/releases/tag/kurtz-0.9.7",
+  "tag": "kurtz-0.9.7",
+  "source_commit": "e471199657b56c1fdbda721c1a2cb390e2fed29a",
+  "source_bundle": {
+    "commit": "e471199657b56c1fdbda721c1a2cb390e2fed29a",
+    "dependency_archives": 59,
+    "sha256": "83668e436b49c986210a4f50d753116a804b2e42b1c0e71c002055b5dd227b36"
+  },
+  "application_verification_record": "publication-kurtz-0.9.7.json",
+  "published_at": "2026-10-04T17:22:18.679294+00:00",
+  "dmg": {
+    "file": "kurtz-0.9.7-macOS-universal-r3.dmg",
+    "sha256": "b1213a12d3839a5987c665d5e6873cd47b5b2b6f4f3f6fb36753c336d109ee7d",
+    "version": "0.9.7",
+    "build": "9",
+    "packaging_revision": 3,
+    "architectures": [
+      "x86_64",
+      "arm64"
+    ],
+    "minimum_macos": "15.6",
+    "development_only": false,
+    "size": 140541952,
+    "window_points": [
+      768,
+      512
+    ],
+    "visible_items": [
+      "kurtz.app",
+      "Applications"
+    ],
+    "hidden_items_layout": "explicit positions outside the initial viewport",
+    "background_sha256": "36dd84c682710970293c1a031dd4d598a9ecefe670074a5c5d0f1b6c6065a682"
+  },
+  "github_assets": [
+    {
+      "name": "kurtz-0.9.7-macOS-universal-r3.dmg",
+      "size": 140541952,
+      "digest": "sha256:b1213a12d3839a5987c665d5e6873cd47b5b2b6f4f3f6fb36753c336d109ee7d",
+      "url": "https://github.com/ralleur/kurtz/releases/download/kurtz-0.9.7/kurtz-0.9.7-macOS-universal-r3.dmg"
+    },
+    {
+      "name": "kurtz-0.9.7-macOS-universal-r3.dmg.sha256",
+      "size": 101,
+      "digest": "sha256:4fa61ae1058152d0e384d468d7f9b65b204cf967362d5e9de957d6fe97e2c322",
+      "url": "https://github.com/ralleur/kurtz/releases/download/kurtz-0.9.7/kurtz-0.9.7-macOS-universal-r3.dmg.sha256"
+    },
+    {
+      "name": "kurtz-0.9.7-sources.tar.gz",
+      "size": 401096483,
+      "digest": "sha256:83668e436b49c986210a4f50d753116a804b2e42b1c0e71c002055b5dd227b36",
+      "url": "https://github.com/ralleur/kurtz/releases/download/kurtz-0.9.7/kurtz-0.9.7-sources.tar.gz"
+    },
+    {
+      "name": "kurtz-0.9.7-sources.tar.gz.sha256",
+      "size": 93,
+      "digest": "sha256:ea370dc92f9c7bf32a4abcf5c3a195fc0f538317d147b81dd40d32053641026c",
+      "url": "https://github.com/ralleur/kurtz/releases/download/kurtz-0.9.7/kurtz-0.9.7-sources.tar.gz.sha256"
+    }
+  ],
+  "verified": {
+    "strict_signing": true,
+    "notarized_stapled_gatekeeper": true,
+    "public_asset_digests_match": true,
+    "historical_asset_digests_unchanged": true,
+    "finder_visual_review": "Final read-only DMG inspected in Finder with hidden files off and on: no overlapping support icons. Original Finder preference restored."
+  },
+  "qualification": "Packaging-only revision of notarized 0.9.7 (9). Does not include local, unreleased player fixes.",
+  "historical_installer_record": "publication-kurtz-0.9.7-r2.json"
+}
