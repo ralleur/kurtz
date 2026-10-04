@@ -1,6 +1,7 @@
 // SPDX-License-Identifier: MPL-2.0
 import SwiftUI
 #if os(iOS)
+import AVFoundation
 import VisionKit
 #endif
 
@@ -10,6 +11,7 @@ struct MuttiPairingView: View {
     @State private var status = ""
     @State private var pairing: Task<Void, Never>?
     @State private var isScanning = false
+    @State private var cameraRequest: Task<Void, Never>?
     let initialInvitation: String
     let connected: (URL) -> Void
 
@@ -26,9 +28,9 @@ struct MuttiPairingView: View {
                     Text("Öffne in Mutti „Geräte“ und erstelle einen QR-Code. Scanne ihn hier oder füge den Kopplungslink ein. Bestätige anschließend dieses Gerät in Mutti.")
                         .foregroundStyle(.secondary)
                     #if os(iOS) && !targetEnvironment(macCatalyst)
-                    if DataScannerViewController.isSupported && DataScannerViewController.isAvailable {
-                        Button("QR-Code scannen", systemImage: "qrcode.viewfinder") { isScanning = true }
-                            .disabled(pairing != nil)
+                    if DataScannerViewController.isSupported {
+                        Button("QR-Code scannen", systemImage: "qrcode.viewfinder", action: requestScanner)
+                            .disabled(pairing != nil || cameraRequest != nil)
                     }
                     #endif
                     TextField("Kopplungslink", text: $invitation, axis: .vertical)
@@ -50,15 +52,46 @@ struct MuttiPairingView: View {
             .navigationTitle("Mutti")
             .toolbar { ToolbarItem(placement: .cancellationAction) { Button("Schließen") { pairing?.cancel(); dismiss() } } }
             .onAppear { invitation = initialInvitation }
-            .onDisappear { pairing?.cancel() }
+            .onDisappear { pairing?.cancel(); cameraRequest?.cancel() }
             #if os(iOS) && !targetEnvironment(macCatalyst)
             .sheet(isPresented: $isScanning) {
-                MuttiQRScanner { code in invitation = code; isScanning = false }
-                    .ignoresSafeArea()
+                NavigationStack {
+                    MuttiQRScanner { code in invitation = code; isScanning = false } failed: {
+                        status = "Die Kamera ist gerade nicht verfügbar. Versuche es erneut oder füge den Kopplungslink ein."
+                        isScanning = false
+                    }
+                    .ignoresSafeArea(edges: .bottom)
+                    .navigationTitle("QR-Code scannen")
+                    .toolbar { ToolbarItem(placement: .cancellationAction) { Button("Abbrechen") { isScanning = false } } }
+                }
             }
             #endif
         }
     }
+
+    #if os(iOS) && !targetEnvironment(macCatalyst)
+    private func requestScanner() {
+        cameraRequest = Task { @MainActor in
+            defer { cameraRequest = nil }
+            let granted: Bool
+            switch AVCaptureDevice.authorizationStatus(for: .video) {
+            case .authorized: granted = true
+            case .notDetermined: granted = await AVCaptureDevice.requestAccess(for: .video)
+            default: granted = false
+            }
+            guard !Task.isCancelled else { return }
+            guard granted else {
+                status = "Erlaube kurtz den Kamerazugriff in den Systemeinstellungen oder füge den Kopplungslink ein."
+                return
+            }
+            guard DataScannerViewController.isAvailable else {
+                status = "Die Kamera ist gerade nicht verfügbar. Du kannst stattdessen den Kopplungslink einfügen."
+                return
+            }
+            isScanning = true
+        }
+    }
+    #endif
 
     private func start() {
         status = "Direkte Verbindung zu Mutti wird aufgebaut …"
@@ -81,19 +114,30 @@ struct MuttiPairingView: View {
 #if os(iOS) && !targetEnvironment(macCatalyst)
 private struct MuttiQRScanner: UIViewControllerRepresentable {
     let scanned: (String) -> Void
-    func makeCoordinator() -> Coordinator { Coordinator(scanned: scanned) }
+    let failed: () -> Void
+    func makeCoordinator() -> Coordinator { Coordinator(scanned: scanned, failed: failed) }
     func makeUIViewController(context: Context) -> DataScannerViewController {
         let scanner = DataScannerViewController(recognizedDataTypes: [.barcode(symbologies: [.qr])], qualityLevel: .balanced, recognizesMultipleItems: false, isHighlightingEnabled: true)
         scanner.delegate = context.coordinator
-        do { try scanner.startScanning() } catch { /* Camera availability is also checked before presentation. */ }
+        do { try scanner.startScanning() } catch {
+            Task { @MainActor in context.coordinator.reportFailure() }
+        }
         return scanner
     }
     func updateUIViewController(_ view: DataScannerViewController, context: Context) {}
     static func dismantleUIViewController(_ view: DataScannerViewController, coordinator: Coordinator) { view.stopScanning() }
     final class Coordinator: NSObject, DataScannerViewControllerDelegate {
         let scanned: (String) -> Void
+        let failed: () -> Void
         private var finished = false
-        init(scanned: @escaping (String) -> Void) { self.scanned = scanned }
+        init(scanned: @escaping (String) -> Void, failed: @escaping () -> Void) { self.scanned = scanned; self.failed = failed }
+        func reportFailure() {
+            guard !finished else { return }
+            finished = true; failed()
+        }
+        func dataScanner(_ dataScanner: DataScannerViewController, becameUnavailableWithError error: DataScannerViewController.ScanningUnavailable) {
+            reportFailure()
+        }
         func dataScanner(_ dataScanner: DataScannerViewController, didAdd addedItems: [RecognizedItem], allItems: [RecognizedItem]) {
             guard !finished else { return }
             for item in addedItems {
