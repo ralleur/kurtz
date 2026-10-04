@@ -30,7 +30,7 @@ extension JellyfinClient.Configuration {
         let version = (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String) ?? "0.0.1"
 
         return .init(
-            url: url,
+            url: MuttiConnection.shared.url(for: url),
             accessToken: accessToken,
             client: client,
             deviceName: deviceName,

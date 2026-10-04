@@ -112,6 +112,19 @@ struct UserSignInView: View {
 
     @ViewBuilder
     private var signInSection: some View {
+        if viewModel.server.currentURL.scheme == "mutti" {
+            Section {
+                Text("Dieses Gerät wurde in Mutti freigegeben.")
+                Button("Mit freigegebenem Profil anmelden") { viewModel.signInQuickConnect(secret: "mutti-device-bound") }
+                    .disabled(viewModel.state == .signingIn)
+            }
+        } else {
+            standardSignInSection
+        }
+    }
+
+    @ViewBuilder
+    private var standardSignInSection: some View {
         Section {
             TextField(L10n.username, text: $username)
                 .autocorrectionDisabled()
@@ -299,7 +312,7 @@ struct UserSignInView: View {
         #if os(iOS)
         List {
             signInSection
-            publicUsersSection
+            if viewModel.server.currentURL.scheme != "mutti" { publicUsersSection }
         }
         .toolbarTitleDisplayMode(.inline)
         .navigationBarCloseButton(disabled: viewModel.state == .signingIn) {
@@ -326,7 +339,7 @@ struct UserSignInView: View {
         ) {
             signInSection
         } trailingContentView: {
-            publicUsersSection
+            if viewModel.server.currentURL.scheme != "mutti" { publicUsersSection }
         }
         #endif
     }
@@ -340,7 +353,9 @@ struct UserSignInView: View {
             .onReceive(viewModel.events, perform: handleEvent)
             .onFirstAppear {
                 focusedTextField = .username
-                viewModel.getPublicData()
+                if viewModel.server.currentURL.scheme == "mutti" {
+                    viewModel.signInQuickConnect(secret: "mutti-device-bound")
+                } else { viewModel.getPublicData() }
             }
             .alert(
                 L10n.duplicateUser,

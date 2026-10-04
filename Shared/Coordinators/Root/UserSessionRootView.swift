@@ -18,6 +18,10 @@ struct UserSessionRootView: View {
     @InjectedObject(\.userSessionManager)
     private var userSessionManager
 
+    @State private var muttiInvitation: String?
+    @State private var presentsMuttiPairing = false
+    @StateObject private var muttiConnection = ConnectToServerViewModel()
+
     var body: some View {
         ZStack {
             switch userSessionManager.state {
@@ -51,7 +55,23 @@ struct UserSessionRootView: View {
             #endif
             await userSessionManager.start()
         }
+        .sheet(isPresented: $presentsMuttiPairing) {
+            MuttiPairingView(invitation: muttiInvitation ?? "") { url in
+                muttiConnection.connect(url: url.absoluteString)
+            }
+        }
+        .onReceive(muttiConnection.events) { event in
+            if case let .connected(server) = event { Notifications[.didConnectToServer].post(server) }
+            if case let .duplicateServer(server) = event {
+                muttiConnection.addConnection(serverState: server)
+                Notifications[.didConnectToServer].post(server)
+            }
+        }
+        .errorMessage($muttiConnection.error)
         .onOpenURL { url in
+            if MuttiConnection.isInvitation(url.absoluteString) {
+                muttiInvitation = url.absoluteString; presentsMuttiPairing = true; return
+            }
             guard !url.isFileURL, let authenticationAction else { return }
 
             Task {

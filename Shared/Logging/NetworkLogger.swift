@@ -19,6 +19,8 @@ extension NetworkLogger {
 
         configuration.willHandleEvent = { event -> LoggerStore.Event? in
             if case var LoggerStore.Event.networkTaskCompleted(task) = event {
+                // Loopback capabilities and device enrollment are never diagnostics.
+                if task.originalRequest.url?.host == "127.0.0.1" { return nil }
                 guard let url = task.originalRequest.url,
                       let requestBody = task.requestBody
                 else {

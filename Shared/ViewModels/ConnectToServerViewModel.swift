@@ -117,6 +117,8 @@ final class ConnectToServerViewModel: ObservableObject {
 
         let normalizedURL = url.normalizedServerConnectionURL ?? url
 
+        if url.scheme == "mutti" { return url }
+
         guard let response else { return normalizedURL }
 
         if url.scheme != response.scheme ||
