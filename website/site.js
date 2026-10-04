@@ -9,9 +9,9 @@ if (comparison) {
     const button = event.target.closest('button[data-state]');
     if (!button) return;
     const controls = button.dataset.state === 'controls';
-    image.src = `assets/player-${controls ? 'controls' : 'clean'}-823.webp`;
-    image.alt = `The same Sintel frame in kurtz, with playback controls ${controls ? 'visible' : 'hidden'}.`;
-    caption.textContent = controls ? 'Actual kurtz window. Timeline, volume and track menus within reach.' : 'Actual kurtz window. Controls hidden. The optional logo stays discreet.';
+    image.src = `assets/desktop-${controls ? 'controls' : 'clean'}-1152.webp`;
+    image.alt = `The same Caminandes frame in kurtz on a staged desktop, with playback controls ${controls ? 'visible' : 'hidden'}.`;
+    caption.textContent = controls ? 'Real kurtz capture. Controls visible. Same frame, same staged desktop.' : 'Real kurtz capture. Controls hidden. Same frame, same staged desktop.';
     switcher.querySelectorAll('button').forEach(item => item.setAttribute('aria-pressed', String(item === button)));
   });
 }

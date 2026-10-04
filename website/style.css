@@ -18,3 +18,6 @@ details{margin-top:20px;font-size:14px;color:var(--muted)}summary{cursor:pointer
 .button,.nav-cta{background:var(--accent);color:#1f1f1f;border-color:var(--accent)}.button:hover,.nav-cta:hover{background:#faf8f1;color:#1f1f1f}.wordmark{width:142px}.hero h1{font-weight:700;letter-spacing:-.065em}.hero-frame{border-color:#45443a}.brand img:not(.wordmark){border-radius:22%}
 
 .platform-grid article{background:var(--panel);border-color:var(--line)}.availability,.availability.upcoming{color:var(--accent)}.nav nav a,.credits{color:var(--muted)}
+
+/* Preserve the full desktop composition on all screen sizes. */
+.hero-frame,.comparison figure{max-width:1152px;margin-inline:auto}.hero-frame img,.comparison img{width:100%;max-width:100%;height:auto;min-height:0;object-fit:contain;aspect-ratio:8/5}.comparison figure{overflow:visible}@media(max-width:700px){.hero-frame{width:100%;margin-left:0}.hero-frame img{border-radius:10px;border:1px solid var(--line)}.hero-frame figcaption{padding:0}.comparison img{width:100%;max-width:100%}}
