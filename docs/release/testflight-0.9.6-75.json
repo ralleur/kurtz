@@ -1,0 +1,45 @@
+{
+  "version": "0.9.6",
+  "build": "75",
+  "source_commit": "5baceb53f9baf6802ff44be1402edd21d41dc26d",
+  "archive_overrides": {
+    "CURRENT_PROJECT_VERSION": "75"
+  },
+  "xcode": "Xcode 27.0\nBuild version 27A266a",
+  "scope": "internal TestFlight candidates; not uploaded",
+  "exports": [
+    {
+      "platform": "ios",
+      "bundle_id": "com.ralleur.vela",
+      "version": "0.9.6",
+      "build": "75",
+      "internal_only": true,
+      "action": "export",
+      "xcode_exit_code": 0,
+      "apple_processing_verified": false,
+      "note": "A successful upload still requires App Store Connect processing and tester availability checks.",
+      "ipa": "kurtz.ipa",
+      "ipa_sha256": "f7babf952daf4e14b9e24be7bf4a55afada322c56d72f27945af3fce59e58369",
+      "distribution_profile_verified": true
+    },
+    {
+      "platform": "tvos",
+      "bundle_id": "com.ralleur.vela",
+      "version": "0.9.6",
+      "build": "75",
+      "internal_only": true,
+      "action": "export",
+      "xcode_exit_code": 0,
+      "apple_processing_verified": false,
+      "note": "A successful upload still requires App Store Connect processing and tester availability checks.",
+      "ipa": "kurtz.ipa",
+      "ipa_sha256": "eee20ff8326e7f29cd604c6d5d2365a87b662d5dbbfaeb05a6b43316bde6720d",
+      "distribution_profile_verified": true
+    }
+  ],
+  "pending": [
+    "Authenticated website session to create first App Store Connect record",
+    "Upload, Apple processing, encryption-status verification and internal tester availability"
+  ],
+  "external_release_gates": "Decoder licensing, native dependency privacy and device qualification remain open."
+}
