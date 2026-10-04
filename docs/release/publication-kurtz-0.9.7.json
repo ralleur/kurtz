@@ -1,0 +1,109 @@
+{
+  "release": "https://github.com/ralleur/kurtz/releases/tag/kurtz-0.9.7",
+  "tag": "kurtz-0.9.7",
+  "source_commit": "e471199657b56c1fdbda721c1a2cb390e2fed29a",
+  "published_at": "2026-10-04T07:46:02Z",
+  "dmg": {
+    "file": "kurtz-0.9.7-macOS-universal.dmg",
+    "sha256": "635f7721aa2642eaadd2b3f7dba71f9663ad533389143f5be7d06361f3a04563",
+    "version": "0.9.7",
+    "build": "9",
+    "packaging_revision": 1,
+    "architectures": [
+      "x86_64",
+      "arm64"
+    ],
+    "minimum_macos": "15.6",
+    "development_only": false,
+    "size": 139466240,
+    "window_points": [
+      768,
+      512
+    ],
+    "visible_items": [
+      "kurtz.app",
+      "Applications"
+    ],
+    "background_sha256": "a5b5f42c836711b93f0dd31776e8f638492ef875a7b0c9986c45d8ed321d5902"
+  },
+  "source_bundle": {
+    "commit": "e471199657b56c1fdbda721c1a2cb390e2fed29a",
+    "dependency_archives": 59,
+    "sha256": "83668e436b49c986210a4f50d753116a804b2e42b1c0e71c002055b5dd227b36"
+  },
+  "github_assets": [
+    {
+      "name": "kurtz-0.9.7-macOS-universal.dmg",
+      "size": 139466240,
+      "digest": "sha256:635f7721aa2642eaadd2b3f7dba71f9663ad533389143f5be7d06361f3a04563",
+      "url": "https://github.com/ralleur/kurtz/releases/download/kurtz-0.9.7/kurtz-0.9.7-macOS-universal.dmg"
+    },
+    {
+      "name": "kurtz-0.9.7-macOS-universal.dmg.sha256",
+      "size": 98,
+      "digest": "sha256:7eb7e7f4b2cc56cc4e915e1d48c4b6b7256b419f80b41caa1745fb709e59e79f",
+      "url": "https://github.com/ralleur/kurtz/releases/download/kurtz-0.9.7/kurtz-0.9.7-macOS-universal.dmg.sha256"
+    },
+    {
+      "name": "kurtz-0.9.7-sources.tar.gz",
+      "size": 401096483,
+      "digest": "sha256:83668e436b49c986210a4f50d753116a804b2e42b1c0e71c002055b5dd227b36",
+      "url": "https://github.com/ralleur/kurtz/releases/download/kurtz-0.9.7/kurtz-0.9.7-sources.tar.gz"
+    },
+    {
+      "name": "kurtz-0.9.7-sources.tar.gz.sha256",
+      "size": 93,
+      "digest": "sha256:ea370dc92f9c7bf32a4abcf5c3a195fc0f538317d147b81dd40d32053641026c",
+      "url": "https://github.com/ralleur/kurtz/releases/download/kurtz-0.9.7/kurtz-0.9.7-sources.tar.gz.sha256"
+    }
+  ],
+  "verified": {
+    "logic_tests": 46,
+    "localized_values_per_app": 33597,
+    "updated_translation_files": 32,
+    "swiftlint_violations": 0,
+    "changed_swift_format_violations": 0,
+    "mac_release": [
+      "arm64",
+      "x86_64"
+    ],
+    "ios_simulator": "0.9.7 (9)",
+    "tvos_simulator": "0.9.7 (75)",
+    "strict_signing": true,
+    "notarized_stapled_gatekeeper": true,
+    "public_asset_digests_match": true,
+    "installed_app": "/Applications/kurtz.app",
+    "installed_mac_version": "0.9.7 (9)",
+    "mac_about_and_settings_ui": true,
+    "existing_mac_sign_in_retained": true,
+    "finder_dmg_visual": true,
+    "ios_simulator_playback_checks": {
+      "iphone": 23,
+      "ipad": 23
+    },
+    "tvos_signed_device_install": {
+      "version": "0.9.7",
+      "build": "75",
+      "app_name": "kurtz",
+      "bundle_id": "com.ralleur.vela",
+      "installed": true,
+      "foreground_launch": "blocked: tvOS reports System is asleep - foreground app launch forbidden",
+      "screen_review": "pending device wake"
+    },
+    "source_branding_check": "Tools/kurtz/verify-branding.py; also checked signed tvOS and notarized Mac bundles",
+    "simulator_home_screens": "simulator captures inspected"
+  },
+  "github_ci": {
+    "run": 37186138174,
+    "url": "https://github.com/ralleur/kurtz/actions/runs/37186138174",
+    "commit": "e471199657b56c1fdbda721c1a2cb390e2fed29a",
+    "status": "in_progress"
+  },
+  "limits": [
+    "Physical Apple TV is updated, but final screen/playback inspection awaits waking the device.",
+    "No physical iPhone/iPad qualification or Store/TestFlight release.",
+    "Intel and minimum-OS runtime not qualified.",
+    "Existing Shorts unchanged in this update; their previously documented subjective listening limitation remains."
+  ],
+  "historical_release_records": "0.9.6 and all earlier releases, binaries and source records remain unchanged."
+}

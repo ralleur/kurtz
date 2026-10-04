@@ -1,29 +1,31 @@
 # Current product verification
 
-The kurtz rebrand was checked on 4 October 2026. Historical Vela findings remain
-in [the original audit](history/product-audit-vela.md) with their original names.
+The remaining kurtz branding gaps were corrected on 4 October 2026 in 0.9.7.
+The app-source commit is `e471199657b56c1fdbda721c1a2cb390e2fed29a`.
+Historical Vela findings remain in [the original audit](history/product-audit-vela.md).
 
 | Area | Evidence | Limit |
 | --- | --- | --- |
-| Mac | Universal Release build 0.9.6 (8), arm64 + x86_64; strict code-signature and sandbox inspection | Runtime exercised on Apple silicon, not Intel hardware |
-| iPhone/iPad | iOS Simulator build and unsigned device archive 0.9.6 (8); resources, bundle metadata, launch and home-screen inspection | No App Store release or real-device qualification claimed |
-| Apple TV | tvOS Simulator build and unsigned device archive 0.9.6 (74); bundle/asset checks and launch-screen inspection | No Siri Remote/hardware qualification or Store approval claimed |
-| Logic | Existing 46 playback/logic tests passed locally and in GitHub CI | Not a substitute for device playback qualification |
-| Mac playback | Native local file opening, pause/seek, subtitle menu, fullscreen, return to window and logo inspected | Demo uses licensed Sintel media |
-| Upgrade | Existing accounts and preferences visible under the retained bundle IDs | Existing persistent identifiers remain intentional |
-| Brand | Custom vector masters, local Sora, two app icons, tvOS tile/Top Shelf, app/settings/player/DMG/site | Native OS menus keep system styling |
-| Media | New Mac screenshots; six kurtz Shorts editions checked from final exports | Shorts reuse accurately documented original footage; listening limitations in validation record |
+| Mac | Universal Release 0.9.7 (9), signed, notarized and stapled; installed app, About and Sora settings UI inspected | Apple silicon runtime; no Intel/minimum-OS hardware qualification |
+| iPhone/iPad | Simulator 0.9.7 (9); home and playback inspected; 23 decoder/playback/subtitle/resume checks passed on each simulator | No physical iPhone/iPad or Store/TestFlight release |
+| Apple TV | Signed Release 0.9.7 (75) installed over Vela 0.9.4 (72) on the paired physical Apple TV; device query confirms kurtz and version | Foreground launch refused because the device is asleep; hardware screen/playback inspection awaits wake |
+| tvOS simulator | Build and home screen checked; new native launch storyboard compiled and present in built app | Hardware focus/playback qualification remains separate |
+| Product names | 32 translation files corrected; 33,597 localized values checked in source and each built app | Actual Swiftfin license/upstream attributions are intentionally preserved |
+| Typography | App-owned semantic text styles and player labels use local Sora with platform sizes and Dynamic Type | System-owned menus and monospaced diagnostics keep native styling |
+| Player mark | Shared ivory curl/yellow rays added to iOS/tvOS, hidden while controls or supplements are visible; Mac mark retained | Small, noninteractive, excluded from accessibility focus |
+| Logic and style | 46 existing logic tests pass; SwiftLint and formatting pass | CI archive check below is separate |
+| Upgrade | Existing Mac account/library remains available; stable app IDs, preferences and URL compatibility retained | No destructive account migration |
+| DMG | Notarized universal app inside verified compressed image; Finder artwork, volume, kurtz.app and Applications link inspected | Historical installers unchanged |
+| Media | Existing six kurtz Shorts and 0.9.6 Mac screenshot captures retained with accurate provenance | Existing listening limitation retained; no social uploads |
 
-Release signature/notarization, DMG hash and public publication evidence are
-recorded with the [0.9.6 release](release/0.9.6.md). See the
-[Apple release plan](release/apple-release-plan.md) for remaining Store gates.
+The [0.9.7 publication record](release/publication-kurtz-0.9.7.json) contains
+asset digests, app versions and installation evidence. The supplementary
+[CI run](https://github.com/ralleur/kurtz/actions/runs/37186138174) is in progress;
+its archive results are not yet claimed here. CI now inspects localized product
+names and packaged branding resources as well as compiling the apps.
 
-The supplementary [GitHub CI run](https://github.com/ralleur/kurtz/actions/runs/37168517078)
-passed all four jobs on 4 October 2026: Mac Catalyst, 46 logic tests, and iOS/tvOS
-archives using installed Xcode 26.6. Both downloaded unsigned IPAs contain
-`Payload/kurtz.app`; their GitHub artifact digests, ZIP integrity, version,
-retained bundle ID, fonts and URL schemes were verified. The later CI commit
-contains the same application sources and resources as the published 0.9.6
-release. The [publication record](release/publication-kurtz-0.9.6.json) records
-the artifact hashes and earlier CI configuration failures. These archives do
-not establish device playback qualification or distribution/Store approval.
+The [0.9.6 record](release/publication-kurtz-0.9.6.json) remains unchanged. Its
+successful compilation/archive checks did not catch the ten legacy text keys
+or establish an installation on the physical Apple TV; those omissions prompted
+this follow-up. See the [Apple release plan](release/apple-release-plan.md) for
+separate Store release gates.

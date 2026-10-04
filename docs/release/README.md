@@ -1,4 +1,4 @@
-# kurtz 0.9.6 — distribution source and licenses
+# kurtz 0.9.7 — distribution source and licenses
 
 The release contains kurtz/Swiftfin application code, Swift packages, static
 libVLC and the GPL-enabled libmpv framework. The combined executable distribution
@@ -7,9 +7,9 @@ kurtz/Swiftfin source files. This uses MPL-2.0 section 3.3's secondary-license
 permission for the combined work. MIT/BSD/Apache/LGPL and other component
 notices remain in force. No warranty is provided.
 
-- [kurtz 0.9.6 source](https://github.com/ralleur/kurtz/tree/kurtz-0.9.6)
-- [kurtz source archive](https://github.com/ralleur/kurtz/archive/refs/tags/kurtz-0.9.6.tar.gz)
-- [Release downloads, including the source bundle](https://github.com/ralleur/kurtz/releases/tag/kurtz-0.9.6)
+- [kurtz 0.9.7 source](https://github.com/ralleur/kurtz/tree/kurtz-0.9.7)
+- [kurtz source archive](https://github.com/ralleur/kurtz/archive/refs/tags/kurtz-0.9.7.tar.gz)
+- [Release downloads, including the source bundle](https://github.com/ralleur/kurtz/releases/tag/kurtz-0.9.7)
 - [MPL-2.0](../../LICENSE.md), [GPL-3.0](licenses/GPL-3.0.txt),
   [GPL-2.0](licenses/GPL-2.0.txt), [LGPL-3.0](licenses/LGPL-3.0.txt),
   [LGPL-2.1](licenses/LGPL-2.1.txt)
@@ -82,7 +82,7 @@ The current download uses a logo-derived kurtz wordmark, custom Finder backgroun
 a direct Applications-folder link. Only the app and destination are visible.
 The app's existing notices remain accessible in Settings; complete release
 license/source records are retained under `.licenses` in the disk image.
-The 0.9.6 installer introduces the kurtz identity and a newly signed application. See [installer artwork and reproduction](../../marketing/dmg/README.md).
+The 0.9.7 installer retains the kurtz identity and contains the newly signed branding corrections. See [installer artwork and reproduction](../../marketing/dmg/README.md).
 
-[Exact 0.9.6 publication evidence, signatures and asset digests](publication-kurtz-0.9.6.json).
-The release source tree is commit `680f2aa04823c6159c9d4a31e951efcdc036d794`. Later documentation/CI metadata commits do not change the published application.
+[Exact 0.9.7 publication evidence, signatures and asset digests](publication-kurtz-0.9.7.json).
+The release source tree is commit `e471199657b56c1fdbda721c1a2cb390e2fed29a`. Later documentation/CI metadata commits do not change the published application.

@@ -21,7 +21,7 @@ Publishing uses GitHub Pages with GitHub Actions. Commit and push changes to
 `kurtz`; matching changes trigger **Project site**, which can also be dispatched
 manually. The workflow is scoped to `ralleur/kurtz`. Publish a versioned release
 asset before updating the public download links. The current installer is
-`kurtz-0.9.6-macOS-universal.dmg` on release `kurtz-0.9.6`.
+`kurtz-0.9.7-macOS-universal.dmg` on release `kurtz-0.9.7`.
 
 Responsive image choices include a compact library crop. The comparison uses
 an intentionally scrollable full-player image on narrow screens so its controls
