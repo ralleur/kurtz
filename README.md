@@ -16,7 +16,7 @@ are there when you need them, then they get out of the way.
 
 **Free. Open source. No subscription, in-app purchases or Pro tier.**
 
-[Download kurtz 0.9.7 for Mac](https://github.com/ralleur/kurtz/releases/download/kurtz-0.9.7/kurtz-0.9.7-macOS-universal.dmg) · [Website](https://ralleur.github.io/kurtz/) · [Release notes](https://github.com/ralleur/kurtz/releases/tag/kurtz-0.9.7)
+[Download kurtz 0.9.7 for Mac](https://github.com/ralleur/kurtz/releases/download/kurtz-0.9.7/kurtz-0.9.7-macOS-universal-r2.dmg) · [Website](https://ralleur.github.io/kurtz/) · [Release notes](https://github.com/ralleur/kurtz/releases/tag/kurtz-0.9.7)
 
 > **kurtz 0.9.7 Beta is available as a universal DMG.** macOS 15.6 or later;
 > Apple silicon and Intel. The app is Developer-ID signed and notarized by Apple.

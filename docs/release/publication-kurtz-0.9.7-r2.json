@@ -1,0 +1,109 @@
+{
+  "release": "https://github.com/ralleur/kurtz/releases/tag/kurtz-0.9.7",
+  "tag": "kurtz-0.9.7",
+  "source_commit": "e471199657b56c1fdbda721c1a2cb390e2fed29a",
+  "packaging_commit": "d9acb463cb6e5ea978df369859c8e0a6371645d8",
+  "published_at": "2026-10-04T13:53:59Z",
+  "dmg": {
+    "file": "kurtz-0.9.7-macOS-universal-r2.dmg",
+    "sha256": "92171ca09f513e31967cc7528a46c69858d6df1db7d8f9c8952ac8034f85bf9b",
+    "version": "0.9.7",
+    "build": "9",
+    "packaging_revision": 2,
+    "architectures": [
+      "x86_64",
+      "arm64"
+    ],
+    "minimum_macos": "15.6",
+    "development_only": false,
+    "size": 140548096,
+    "window_points": [
+      768,
+      512
+    ],
+    "visible_items": [
+      "kurtz.app",
+      "Applications"
+    ],
+    "background_sha256": "36dd84c682710970293c1a031dd4d598a9ecefe670074a5c5d0f1b6c6065a682"
+  },
+  "source_bundle": {
+    "commit": "e471199657b56c1fdbda721c1a2cb390e2fed29a",
+    "dependency_archives": 59,
+    "sha256": "83668e436b49c986210a4f50d753116a804b2e42b1c0e71c002055b5dd227b36"
+  },
+  "github_assets": [
+    {
+      "name": "kurtz-0.9.7-macOS-universal-r2.dmg",
+      "size": 140548096,
+      "digest": "sha256:92171ca09f513e31967cc7528a46c69858d6df1db7d8f9c8952ac8034f85bf9b",
+      "url": "https://github.com/ralleur/kurtz/releases/download/kurtz-0.9.7/kurtz-0.9.7-macOS-universal-r2.dmg"
+    },
+    {
+      "name": "kurtz-0.9.7-macOS-universal-r2.dmg.sha256",
+      "size": 101,
+      "digest": "sha256:e36b23c9b7cf10d77ac54b25cd52dcf93f53fd8f713d32bc7cbdf208ade0749f",
+      "url": "https://github.com/ralleur/kurtz/releases/download/kurtz-0.9.7/kurtz-0.9.7-macOS-universal-r2.dmg.sha256"
+    },
+    {
+      "name": "kurtz-0.9.7-sources.tar.gz",
+      "size": 401096483,
+      "digest": "sha256:83668e436b49c986210a4f50d753116a804b2e42b1c0e71c002055b5dd227b36",
+      "url": "https://github.com/ralleur/kurtz/releases/download/kurtz-0.9.7/kurtz-0.9.7-sources.tar.gz"
+    },
+    {
+      "name": "kurtz-0.9.7-sources.tar.gz.sha256",
+      "size": 93,
+      "digest": "sha256:ea370dc92f9c7bf32a4abcf5c3a195fc0f538317d147b81dd40d32053641026c",
+      "url": "https://github.com/ralleur/kurtz/releases/download/kurtz-0.9.7/kurtz-0.9.7-sources.tar.gz.sha256"
+    }
+  ],
+  "verified": {
+    "strict_signing": true,
+    "notarized_stapled_gatekeeper": true,
+    "public_asset_digests_match": true,
+    "historical_asset_digests_unchanged": true,
+    "version": "0.9.7",
+    "build": "9",
+    "packaging_revision": 2,
+    "app_files_and_links_compared": 106,
+    "packaged_app_identical_to_notarized_original": true,
+    "checks": {
+      "strict_signature": "passed",
+      "stapled_ticket": "passed",
+      "gatekeeper": "passed"
+    },
+    "finder_visual_review": "Passed: readable wordmark/claim, actual app and Applications icons, filenames, yellow drag arrow, large monochrome pug and two yellow rays; no overlap.",
+    "visible_items": [
+      "Applications",
+      "kurtz.app"
+    ],
+    "file_icon_centers_points": [
+      [
+        128,
+        254
+      ],
+      [
+        316,
+        254
+      ]
+    ],
+    "retina_background_pixels": [
+      1536,
+      1024
+    ]
+  },
+  "artwork": {
+    "raster": "marketing/dmg/kurtz-pug-art.png",
+    "composition": "marketing/dmg/background.svg",
+    "retina_background": "marketing/dmg/background@2x.png",
+    "prompt": "marketing/dmg/kurtz-art-prompt.txt",
+    "generation": "built-in Imagegen",
+    "reference": "marketing/brand/reference/kurtz-branding-reference.jpg",
+    "raster_sha256": "33b5d766ab93ee99fb8aecb3fe4b6fe23a5c9bfd44e7caf47221711bd6c14291",
+    "composition_regeneration_byte_identical": true
+  },
+  "application_verification_record": "publication-kurtz-0.9.7.json",
+  "qualification": "Packaging-only artwork/layout revision. App files and symlinks are identical to the original notarized 0.9.7 (9) app; this does not claim new application or device qualification.",
+  "historical_installer_record": "publication-kurtz-0.9.7.json"
+}

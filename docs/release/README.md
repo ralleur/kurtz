@@ -86,3 +86,10 @@ The 0.9.7 installer retains the kurtz identity and contains the newly signed bra
 
 [Exact 0.9.7 publication evidence, signatures and asset digests](publication-kurtz-0.9.7.json).
 The release source tree is commit `e471199657b56c1fdbda721c1a2cb390e2fed29a`. Later documentation/CI metadata commits do not change the published application.
+
+The current installer is **packaging revision 2**, with the pug portrait from the
+owner’s branding direction. Its application is byte-identical to the original
+notarized 0.9.7 (9) export; the existing matching-source bundle remains valid.
+[Installer revision notes](0.9.7-installer-r2.md) and
+[exact revision-2 package/signature/digest evidence](publication-kurtz-0.9.7-r2.json)
+record the new artwork and layout. The original installer remains available.
