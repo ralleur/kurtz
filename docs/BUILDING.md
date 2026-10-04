@@ -1,13 +1,13 @@
 # Build and install kurtz
 
-kurtz **0.9.6 Beta** is available as a [universal Mac DMG](https://github.com/ralleur/kurtz/releases/download/kurtz-0.9.6/kurtz-0.9.6-macOS-universal.dmg).
+kurtz **0.9.7 Beta** is available as a [universal Mac DMG](https://github.com/ralleur/kurtz/releases/download/kurtz-0.9.7/kurtz-0.9.7-macOS-universal.dmg).
 The app is Developer-ID signed and notarized by Apple. It supports Apple silicon
 and Intel on macOS 15.6 or later. Open the DMG and drag kurtz into Applications.
-[Release notes and SHA-256](https://github.com/ralleur/kurtz/releases/tag/kurtz-0.9.6)
+[Release notes and SHA-256](https://github.com/ralleur/kurtz/releases/tag/kurtz-0.9.7)
 identify the exact package. kurtz is not distributed through the App Store.
 
 The older 0.9.3 ZIP predates local playback and was development-signed rather
-than notarized. Use 0.9.6 for the experience shown on the project website.
+than notarized. Use the current 0.9.7 download for the completed Apple-platform branding.
 
 ## Mac
 
@@ -55,10 +55,15 @@ is also the basis of the Mac Catalyst build; the iPhone/iPad app is now being pr
 
 ```sh
 swift test --package-path Tools/KurtzLogicTests
+python3 Tools/kurtz/verify-branding.py
+# Also check each built package before distribution or installation:
+python3 Tools/kurtz/verify-branding.py --app /path/to/kurtz.app
 Tools/LocalPlaybackFixtures/create.sh build/local-fixtures --high-bitrate
 ```
 
-46 logic tests passed for the kurtz 0.9.6 rebrand (35 product-logic tests and 11 playback tests).
+46 logic tests passed for kurtz 0.9.7 (35 product-logic tests and 11 playback tests).
+The branding check validates 33,597 localized values; its app mode also checks
+the displayed identity, compatibility URL schemes, bundled Sora fonts and tvOS launch resources.
 See [the product audit](product-audit.md) for what was independently exercised,
 and [KURTZ.md](../KURTZ.md) for architecture, previous test evidence, Debug checks,
 source adapters, sandbox behavior and the upstream update process.
@@ -82,7 +87,7 @@ Start with [KURTZ.md](../KURTZ.md) and the inherited
 [ralleur/kurtz](https://github.com/ralleur/kurtz), and discuss generally useful
 upstream fixes with Swiftfin separately. Keep upstream notices and MPL headers.
 
-The 0.9.6 binary uses the GPL-enabled mpv build. The
+The 0.9.7 binary uses the GPL-enabled mpv build. The
 [release source record](release/README.md) identifies the corresponding native
 sources, patches and build recipes. Future releases must update this record
 when dependencies change. The wrapper licenses do not replace engine licenses.
@@ -91,8 +96,9 @@ in the repository and the app. No new decoder dependency was added for marketing
 
 ## iPhone, iPad and Apple TV release preparation
 
-The working tree prepares **0.9.6 beta** (iOS/Mac build 8, tvOS build 74).
-The public Mac download is kurtz 0.9.6; no iOS/tvOS store release is announced.
+The current source is **0.9.7 beta** (iOS/Mac build 9, tvOS build 75).
+The public Mac download is kurtz 0.9.7. The signed tvOS build was installed on
+the paired Apple TV; no iOS/tvOS store release is announced.
 iPhone and iPad share the Swiftfin target (minimum iOS/iPadOS 18.6). The local
 player uses the same source-independent playback stack as Mac, with document
 picker access, recent files and mobile settings. tvOS remains Jellyfin-only.

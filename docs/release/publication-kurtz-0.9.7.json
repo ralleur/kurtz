@@ -88,16 +88,164 @@
       "bundle_id": "com.ralleur.vela",
       "installed": true,
       "foreground_launch": "blocked: tvOS reports System is asleep - foreground app launch forbidden",
-      "screen_review": "pending device wake"
+      "screen_review": "pending device wake",
+      "device_generated_icon": "Verified the actual, non-placeholder icon returned by the physical Apple TV: kurtz curl and yellow rays."
     },
     "source_branding_check": "Tools/kurtz/verify-branding.py; also checked signed tvOS and notarized Mac bundles",
-    "simulator_home_screens": "simulator captures inspected"
+    "simulator_home_screens": "simulator captures inspected",
+    "website_pages_run": 37186897950,
+    "live_website_version": "0.9.7",
+    "live_download_url": "https://github.com/ralleur/kurtz/releases/download/kurtz-0.9.7/kurtz-0.9.7-macOS-universal.dmg"
   },
   "github_ci": {
     "run": 37186138174,
     "url": "https://github.com/ralleur/kurtz/actions/runs/37186138174",
     "commit": "e471199657b56c1fdbda721c1a2cb390e2fed29a",
-    "status": "in_progress"
+    "status": "completed",
+    "conclusion": "success",
+    "completed_at": "2026-10-04T07:58:17Z",
+    "verified_at": "2026-10-04T08:01:12+00:00",
+    "jobs": [
+      {
+        "name": "Build \ud83d\udd28 (Swiftfin tvOS, tvos)",
+        "databaseId": 111388322825,
+        "url": "https://github.com/ralleur/kurtz/actions/runs/37186138174/job/111388322825",
+        "conclusion": "success"
+      },
+      {
+        "name": "Build \ud83d\udd28 (Swiftfin, ios)",
+        "databaseId": 111388322862,
+        "url": "https://github.com/ralleur/kurtz/actions/runs/37186138174/job/111388322862",
+        "conclusion": "success"
+      },
+      {
+        "name": "Mac Catalyst regression build",
+        "databaseId": 111388322884,
+        "url": "https://github.com/ralleur/kurtz/actions/runs/37186138174/job/111388322884",
+        "conclusion": "success"
+      },
+      {
+        "name": "Playback source and kurtz logic",
+        "databaseId": 111388322962,
+        "url": "https://github.com/ralleur/kurtz/actions/runs/37186138174/job/111388322962",
+        "conclusion": "success"
+      }
+    ],
+    "logic_tests": 46,
+    "artifacts": [
+      {
+        "platform": "ios",
+        "artifact_id": 11298030070,
+        "artifact_name": "kurtz-ios-unsigned",
+        "artifact_zip_sha256": "ce62772c2182cb7e8503ed0db70784e5b2786ff3f561c240abe7feea8b958c73",
+        "github_digest_matches": true,
+        "ipa": "kurtz-ios-unsigned.ipa",
+        "ipa_sha256": "664f85c78ea438061c15cb771374b205ea1bddc7cca300fd8091a76996ff6eff",
+        "zip_integrity": "passed (outer artifact and inner IPA CRC)",
+        "app": "Payload/kurtz.app",
+        "version": "0.9.7",
+        "build": "9",
+        "display_name": "kurtz",
+        "bundle_id": "com.ralleur.vela",
+        "device_families": [
+          1,
+          2
+        ],
+        "architectures": [
+          "arm64"
+        ],
+        "registered_fonts_present": true,
+        "fonts": [
+          "NotoSansCJK-Regular.ttc",
+          "Sora-Regular.ttf",
+          "Sora-SemiBold.ttf",
+          "Sora-Bold.ttf"
+        ],
+        "url_schemes": [
+          "kurtz",
+          "vela"
+        ],
+        "localized_values_checked": 33597,
+        "compiled_player_mark": true,
+        "launch_resource": "KurtzWatermark",
+        "launch_storyboard_compiled": null,
+        "icon_metadata": {
+          "CFBundleAlternateIcons": {
+            "AppIcon-kurtz-light": {
+              "CFBundleIconName": "AppIcon-kurtz-light"
+            }
+          },
+          "CFBundlePrimaryIcon": {
+            "CFBundleIconFiles": [
+              "AppIcon-kurtz60x60"
+            ],
+            "CFBundleIconName": "AppIcon-kurtz"
+          }
+        },
+        "ipad_icon_metadata": {
+          "CFBundleAlternateIcons": {
+            "AppIcon-kurtz-light": {
+              "CFBundleIconName": "AppIcon-kurtz-light"
+            }
+          },
+          "CFBundlePrimaryIcon": {
+            "CFBundleIconFiles": [
+              "AppIcon-kurtz60x60",
+              "AppIcon-kurtz76x76"
+            ],
+            "CFBundleIconName": "AppIcon-kurtz"
+          }
+        },
+        "top_shelf_metadata": null,
+        "signing": "unsigned CI archive; not a distribution-signed app"
+      },
+      {
+        "platform": "tvos",
+        "artifact_id": 11298020814,
+        "artifact_name": "kurtz-tvos-unsigned",
+        "artifact_zip_sha256": "06fb1c7f823b66e4127c6670701caddef04a28a7b645714595ddedc244833349",
+        "github_digest_matches": true,
+        "ipa": "kurtz-tvos-unsigned.ipa",
+        "ipa_sha256": "cfafd6565a18278c44e015c71a7827c7ba1b5bf804c77da614bcde5ea8b3c8d3",
+        "zip_integrity": "passed (outer artifact and inner IPA CRC)",
+        "app": "Payload/kurtz.app",
+        "version": "0.9.7",
+        "build": "75",
+        "display_name": "kurtz",
+        "bundle_id": "com.ralleur.vela",
+        "device_families": [
+          3
+        ],
+        "architectures": [
+          "arm64"
+        ],
+        "registered_fonts_present": true,
+        "fonts": [
+          "NotoSansCJK-Regular.ttc",
+          "Sora-Regular.ttf",
+          "Sora-SemiBold.ttf",
+          "Sora-Bold.ttf"
+        ],
+        "url_schemes": [
+          "kurtz",
+          "vela"
+        ],
+        "localized_values_checked": 33597,
+        "compiled_player_mark": true,
+        "launch_resource": "KurtzLaunchScreen",
+        "launch_storyboard_compiled": true,
+        "icon_metadata": {
+          "CFBundlePrimaryIcon": "App Icon"
+        },
+        "ipad_icon_metadata": null,
+        "top_shelf_metadata": {
+          "TVTopShelfPrimaryImage": "Top Shelf Image",
+          "TVTopShelfPrimaryImageWide": "Top Shelf Image Wide"
+        },
+        "signing": "unsigned CI archive; not a distribution-signed app"
+      }
+    ],
+    "qualification": "Unsigned CI archives were inspected after downloading. These checks do not constitute device, distribution-signing, TestFlight or App Store approval."
   },
   "limits": [
     "Physical Apple TV is updated, but final screen/playback inspection awaits waking the device.",

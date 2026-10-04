@@ -1,6 +1,6 @@
 # kurtz — Apple review preparation
 
-Target release: 0.9.6 beta. One iOS application supports iPhone and iPad; tvOS
+Current development source: 0.9.7 beta. One iOS application supports iPhone and iPad; tvOS
 provides the Jellyfin experience. These are development targets, not approved
 App Store listings. Do not upload until the release plan's gates are satisfied.
 

@@ -9,7 +9,7 @@ a floating mini player, language presets and metadata-based episode prompts.
 VLC is the default local engine; mpv is available as an alternative. Compatibility
 depends on the media and platform. Episode prompts require server metadata.
 
-The current Mac beta is **0.9.6 (8)**. Mobile/TV source builds remain release
+The current Mac beta is **0.9.7 (9)**. Mobile/TV source builds remain release
 preparation, without a public App Store or TestFlight release.
 
 - [Build, install and validate](docs/BUILDING.md)

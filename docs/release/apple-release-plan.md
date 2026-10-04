@@ -68,6 +68,14 @@ The subsequent kurtz rebrand rebuilt Mac Release, iOS Simulator and tvOS Simulat
 verified their new display names/resources/schemes, and inspected all three launch
 surfaces. Its evidence is in [0.9.6.md](0.9.6.md). Device/store gates above remain open.
 
+The 0.9.7 follow-up corrected remaining translation names, applied Sora to
+app-owned semantic text styles, added the shared iOS/tvOS player mark and the
+native tvOS launch storyboard. The signed 0.9.7 (75) app is installed on the
+paired Apple TV, and its device-generated icon is verified; the device was
+asleep and still needs its foreground-screen/playback inspection. Current
+build, simulator and distribution evidence is in the
+[product audit](../product-audit.md) and [publication record](publication-kurtz-0.9.7.json).
+
 CI now targets the `kurtz` branch for all three platform builds. Formatting checks
 apply to touched Swift files so that existing fork formatting does not prevent
 an otherwise valid release preparation; SwiftLint and unused-string checks still

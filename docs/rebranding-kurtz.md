@@ -40,8 +40,20 @@ site. The old product URL was followed in a browser to the live kurtz page.
 
 ## Installed upgrade
 
-The exact notarized DMG app was installed at `/Applications/kurtz.app` and its
-About panel confirms 0.9.6 (8). Existing saved server sign-ins, local recent
-files and settings remained available. The original `/Applications/Vela.app`
-was preserved locally as `build/rebrand-kurtz/previous-install/Vela-0.9.5.app`.
-No historical download, release tag or published video was replaced.
+The exact notarized 0.9.7 DMG app was installed at `/Applications/kurtz.app` and
+its About panel confirms 0.9.7 (9). Existing saved server sign-ins remained
+available; the initial 0.9.6 upgrade had also verified local recent files and
+settings. The previous kurtz app is backed up at
+`build/rebrand-completion/previous-install/kurtz-0.9.6.app`. The original
+`/Applications/Vela.app` remains preserved locally as
+`build/rebrand-kurtz/previous-install/Vela-0.9.5.app`.
+
+The paired Apple TV was still running Vela 0.9.4 (72). It now has the signed
+kurtz 0.9.7 (75) build under the same bundle ID. Device metadata and the actual
+device-generated icon confirm the new name, version and curl/yellow-ray icon.
+The device must be awake for the final foreground-screen/playback inspection;
+tvOS explicitly refused foreground launch while asleep.
+
+No historical download, release tag or published video was replaced. Current
+verification is recorded in [the product audit](product-audit.md) and the
+[0.9.7 publication record](release/publication-kurtz-0.9.7.json).

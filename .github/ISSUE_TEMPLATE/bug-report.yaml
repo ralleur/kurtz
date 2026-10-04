@@ -32,7 +32,7 @@ body:
       label: Description of the bug
       description: Please provide a detailed description of the bug you encountered, in a readable and comprehensible way.
       placeholder: |
-        After updating to version 0.9.6, the playback controls disappear when playing certain video files. The issue seems to occur specifically with files that have multiple audio tracks. I have tested this on both my iPhone and iPad with the same results.
+        After updating, the playback controls disappear when playing certain video files. The issue seems to occur specifically with files that have multiple audio tracks. I have tested this on both my iPhone and iPad with the same results.
     validations:
       required: true
 
@@ -68,7 +68,7 @@ body:
     attributes:
       label: Application version
       description: The version of the installed kurtz app.
-      placeholder: 0.9.6 (8)
+      placeholder: 0.9.7 (9)
     validations:
       required: true
 
