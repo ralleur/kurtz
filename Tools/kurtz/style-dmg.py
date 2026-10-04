@@ -55,8 +55,9 @@ with DSStore.open(str(volume / '.DS_Store'), 'w+') as store:
     store['.']['icvp'] = icons
     store['.']['pBBk'] = Bookmark.for_file(str(background))
     store['.']['icvl'] = ('type', b'icnv')
-    store['kurtz.app']['Iloc'] = (244, 216)
-    store['Applications']['Iloc'] = (524, 216)
+    # Keep the installation action in the quiet left half, beside the pug.
+    store['kurtz.app']['Iloc'] = (128, 254)
+    store['Applications']['Iloc'] = (316, 254)
 
 visible = sorted(p.name for p in volume.iterdir() if not p.name.startswith('.'))
 assert visible == ['Applications', 'kurtz.app'], visible
