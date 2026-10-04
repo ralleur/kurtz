@@ -39,7 +39,7 @@ private struct ItemActionButtonLabelStyle: LabelStyle {
     func makeBody(configuration: Configuration) -> some View {
         Label(configuration)
             .labelStyle(.iconOnly)
-            .font(UIDevice.isTV ? .system(size: 30) : .title3)
+            .font(UIDevice.isTV ? KurtzBrand.font(size: 30) : KurtzBrand.font(.title3))
             .frame(width: iconSize, height: iconSize)
             .padding(UIDevice.isTV ? 16 : 8)
             .frame(minWidth: 0, maxWidth: .infinity, maxHeight: .infinity)
@@ -202,7 +202,7 @@ struct ItemActionButtons: View {
             .environmentObject(provider)
             .buttonBorderShape(.capsule)
             .buttonStyle(BasicHoverButtonStyle())
-            .font(.title3)
+            .font(KurtzBrand.font(.title3))
             .fontWeight(.semibold)
         }
     }

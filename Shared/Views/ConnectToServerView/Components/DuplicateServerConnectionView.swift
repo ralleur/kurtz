@@ -26,7 +26,7 @@ extension ConnectToServerView {
                 Form {
                     Section {
                         Text(L10n.duplicateServerConnectionMessage(server.name))
-                            .font(.callout)
+                            .font(KurtzBrand.font(.callout))
                     }
 
                     Section {
@@ -73,11 +73,11 @@ extension ConnectToServerView {
         var tvOSView: some View {
             VStack(spacing: 8) {
                 Text(L10n.connection)
-                    .font(.title3)
+                    .font(KurtzBrand.font(.title3))
                     .edgePadding(.bottom)
 
                 Text(L10n.duplicateServerConnectionMessage(server.name))
-                    .font(.callout)
+                    .font(KurtzBrand.font(.callout))
                     .multilineTextAlignment(.center)
                     .edgePadding(.bottom)
 

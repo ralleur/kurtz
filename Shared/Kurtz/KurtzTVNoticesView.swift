@@ -9,10 +9,10 @@ struct KurtzTVNoticesView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
-                Text(verbatim: "kurtz").font(.largeTitle.bold())
+                Text(verbatim: "kurtz").font(KurtzBrand.font(.largeTitle).bold())
                 Text(KurtzStrings.text("Built on Swiftfin. An independent app by Ralleur."))
                 Text(verbatim: "github.com/ralleur/kurtz").foregroundStyle(.secondary)
-                Text(verbatim: notices).font(.caption)
+                Text(verbatim: notices).font(KurtzBrand.font(.caption))
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(60)

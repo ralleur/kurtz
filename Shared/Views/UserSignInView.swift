@@ -229,7 +229,7 @@ struct UserSignInView: View {
         if let disclaimer = viewModel.serverDisclaimer {
             Section(L10n.disclaimer) {
                 disclaimerText(disclaimer)
-                    .font(.callout)
+                    .font(KurtzBrand.font(.callout))
             }
         }
     }
@@ -241,7 +241,7 @@ struct UserSignInView: View {
         Section(L10n.publicUsers) {
             if viewModel.publicUsers.isEmpty {
                 Text(L10n.noPublicUsers)
-                    .font(.callout)
+                    .font(KurtzBrand.font(.callout))
                     .foregroundStyle(.secondary)
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
             } else {

@@ -69,7 +69,7 @@ extension EditAccessScheduleView {
                             )
                         }
                     }
-                    .font(.subheadline)
+                    .font(KurtzBrand.font(.subheadline))
                     .foregroundStyle(.secondary)
                 }
                 .foregroundStyle(

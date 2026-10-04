@@ -30,8 +30,6 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
-	<key>CFBundledisplayTitle</key>
-	<string>Jellyfin</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>youtube</string>
@@ -52,11 +50,8 @@
 		<string>Sora-SemiBold.ttf</string>
 		<string>Sora-Bold.ttf</string>
 	</array>
-	<key>UILaunchScreen</key>
-	<dict>
-		<key>UIColorName</key>
-		<string>LaunchScreenBackground</string>
-	</dict>
+	<key>UILaunchStoryboardName</key>
+	<string>KurtzLaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>arm64</string>

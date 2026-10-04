@@ -79,7 +79,7 @@ extension VideoPlayer.PlaybackControls {
                     }
                     .accessibilityLabel(KurtzStrings.text(manager.isMuted ? "Unmute" : "Mute"))
                     Slider(value: $manager.volume, in: 0 ... 1).frame(width: 80).accessibilityLabel(KurtzStrings.text("Volume"))
-                }.font(.body)
+                }.font(KurtzBrand.font(.body))
                 #endif
                 // kurtz: language presets
                 KurtzLanguagePresetButtons()
@@ -104,7 +104,7 @@ extension VideoPlayer.PlaybackControls {
                 content
                 #endif
             }
-            .font(.system(size: fontSize, weight: .semibold))
+            .font(KurtzBrand.font(size: fontSize, weight: .semibold))
             .menuStyle(OverlayMenuStyle())
             #if os(iOS)
             .background {
@@ -131,7 +131,7 @@ extension VideoPlayer.PlaybackControls.Toolbar {
         @ViewBuilder
         private func _subtitle(_ subtitle: String) -> some View {
             Text(subtitle)
-                .font(UIDevice.isTV ? .caption : .subheadline)
+                .font(UIDevice.isTV ? KurtzBrand.font(.caption) : KurtzBrand.font(.subheadline))
                 .fontWeight(.medium)
                 .foregroundStyle(.white)
                 .trackingSize($subtitleContentSize)
@@ -155,12 +155,12 @@ extension VideoPlayer.PlaybackControls.Toolbar {
             VStack(alignment: .leading) {
                 if let subtitle = _titleSubtitle.subtitle {
                     Text(subtitle)
-                        .font(.callout)
+                        .font(KurtzBrand.font(.callout))
                         .fontWeight(.medium)
                 }
 
                 Text(_titleSubtitle.title)
-                    .font(.title2)
+                    .font(KurtzBrand.font(.title2))
                     .fontWeight(.semibold)
             }
             .lineLimit(1)

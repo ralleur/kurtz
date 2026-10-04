@@ -24,7 +24,7 @@ extension ItemSubtitleSearchView {
                 HStack {
                     VStack(alignment: .leading, spacing: 4) {
                         Text(subtitle.name ?? L10n.unknown)
-                            .font(.headline)
+                            .font(KurtzBrand.font(.headline))
                             .fontWeight(.semibold)
 
                         LabeledContent(L10n.language, value: subtitle.threeLetterISOLanguageName ?? L10n.unknown)
@@ -55,7 +55,7 @@ extension ItemSubtitleSearchView {
                 }
             }
             .foregroundStyle(isSelected ? .primary : .secondary, .secondary)
-            .font(.caption)
+            .font(KurtzBrand.font(.caption))
             .isEditing(true)
         }
     }

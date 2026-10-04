@@ -44,11 +44,13 @@ for(const [mode,ink,bg] of [['dark',C.ivory,C.graphite],['light',C.graphite,C.iv
   }
 }
 // Ordinary UI adapts the symbol; video always uses the ivory mark.
-const sets='Swiftfin/Resources/Assets.xcassets';
+const sets='Shared/Resources/Assets.xcassets';
 const darkGlyph=fs.readFileSync(path.join(root,'Swiftfin/Kurtz/AppIcon-kurtz.icon/Assets/Glyph.png'));
 const lightGlyph=fs.readFileSync(path.join(root,'Swiftfin/Kurtz/AppIcon-kurtz-light.icon/Assets/Glyph.png'));
 save(`${sets}/KurtzPlayerMark.imageset/Glyph.png`,fs.readFileSync(path.join(root,'marketing/brand/kurtz-symbol-dark.png')));
 save(`${sets}/KurtzPlayerMark.imageset/Contents.json`,JSON.stringify({images:[{filename:'Glyph.png',idiom:'universal'}],info:{author:'xcode',version:1}}));
+save(`${sets}/KurtzLaunchWordmark.imageset/Wordmark.png`,fs.readFileSync(path.join(root,'marketing/brand/kurtz-wordmark-dark.png')));
+save(`${sets}/KurtzLaunchWordmark.imageset/Contents.json`,JSON.stringify({images:[{filename:'Wordmark.png',idiom:'universal'}],info:{author:'xcode',version:1}}));
 save(`Shared/Resources/Assets.xcassets/KurtzWatermark.imageset/Glyph-light.png`,lightGlyph);
 save(`Shared/Resources/Assets.xcassets/KurtzWatermark.imageset/Contents.json`,JSON.stringify({images:[{filename:'Glyph-light.png',idiom:'universal'},{filename:'Glyph.png',idiom:'universal',appearances:[{appearance:'luminosity',value:'dark'}]}],info:{author:'xcode',version:1}}));
 const base='Swiftfin tvOS/Kurtz/KurtzAssets.xcassets/kurtz App Icon & Top Shelf Image.brandassets';

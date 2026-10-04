@@ -58,7 +58,7 @@ struct EditLocalServerView: View {
                         Text(L10n.connection)
 
                         Text((viewModel.activeConnection?.url ?? viewModel.server.effectiveServerURL).absoluteString)
-                            .font(.subheadline)
+                            .font(KurtzBrand.font(.subheadline))
                             .foregroundStyle(.secondary)
                     }
                 }

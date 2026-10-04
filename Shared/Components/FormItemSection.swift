@@ -26,24 +26,24 @@ struct FormItemSection<Item: Poster>: PlatformView {
                 VStack(alignment: .leading) {
                     if let baseItem = item as? BaseItemDto, let parent = baseItem.parentTitle {
                         Text(parent)
-                            .font(.subheadline)
+                            .font(KurtzBrand.font(.subheadline))
                             .foregroundStyle(.secondary)
                             .lineLimit(2)
                     }
 
                     Text(item.displayTitle)
-                        .font(.title2)
+                        .font(KurtzBrand.font(.title2))
                         .fontWeight(.semibold)
                         .foregroundStyle(.primary)
                         .lineLimit(2)
 
                     if let subtitle = item.subtitle {
                         Text(subtitle)
-                            .font(.subheadline)
+                            .font(KurtzBrand.font(.subheadline))
                             .foregroundStyle(.secondary)
                     } else if let baseItem = item as? BaseItemDto, let year = baseItem.productionYear {
                         Text(year.description)
-                            .font(.subheadline)
+                            .font(KurtzBrand.font(.subheadline))
                             .foregroundStyle(.secondary)
                     }
                 }

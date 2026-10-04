@@ -20,11 +20,11 @@ struct LearnMoreLabeledContentStyle: LabeledContentStyle {
     func makeBody(configuration: Configuration) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             configuration.label
-                .font(.headline)
+                .font(KurtzBrand.font(.headline))
                 .foregroundStyle(.primary)
 
             configuration.content
-                .font(.subheadline)
+                .font(KurtzBrand.font(.subheadline))
                 .foregroundStyle(.secondary)
         }
     }
@@ -49,7 +49,7 @@ struct DeviceProfileLabeledContentStyle: LabeledContentStyle {
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.leading)
         }
-        .font(.subheadline)
+        .font(KurtzBrand.font(.subheadline))
     }
 }
 
@@ -80,7 +80,7 @@ struct PlaybackInfoLabeledContentStyle: LabeledContentStyle {
             configuration.content
                 .foregroundStyle(.primary)
         }
-        .font(.subheadline)
+        .font(KurtzBrand.font(.subheadline))
         .if(UIDevice.isTV) { label in
             label
                 .padding(.horizontal, 8)

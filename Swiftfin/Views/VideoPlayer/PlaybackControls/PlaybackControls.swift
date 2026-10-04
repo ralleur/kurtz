@@ -93,10 +93,18 @@ extension VideoPlayer {
                 KurtzPlaybackPromptOverlay()
                 KurtzMacPlayerSupport()
             }
+            #if !targetEnvironment(macCatalyst)
+            .overlay(alignment: .topLeading) {
+                    KurtzPlayerBrand()
+                        .padding(.leading, safeAreaInsets.leading + 14)
+                        .padding(.top, safeAreaInsets.top + 24)
+                        .isVisible(!isPresentingOverlay && !isScrubbing && !isPresentingSupplement)
+                }
+            #endif
             #if targetEnvironment(macCatalyst)
-            .modifier(KurtzMacKeyCommands())
+                .modifier(KurtzMacKeyCommands())
             #else
-                .modifier(VideoPlayer.KeyCommandsModifier())
+            .modifier(VideoPlayer.KeyCommandsModifier())
             #endif
             .animation(.linear(duration: 0.1), value: isScrubbing)
             .animation(reduceMotion ? nil : .bouncy(duration: 0.4), value: containerState.isPresentingSupplement)

@@ -67,7 +67,7 @@ extension ItemView {
                 .failure {
                     Text(provider.item.displayTitle)
                         .fixedSize(horizontal: false, vertical: true)
-                        .font(.largeTitle)
+                        .font(KurtzBrand.font(.largeTitle))
                         .fontWeight(.semibold)
                         .lineLimit(2)
                         .multilineTextAlignment(.leading)

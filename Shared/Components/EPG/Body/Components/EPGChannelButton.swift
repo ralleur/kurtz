@@ -58,14 +58,14 @@ struct EPGChannelButton: View {
                 VStack(spacing: 2) {
                     if let channelNumber = channel.channelNumber, channelNumber.isNotEmpty {
                         Text(channelNumber)
-                            .font(.headline)
+                            .font(KurtzBrand.font(.headline))
                             .fontWeight(.semibold)
                             .lineLimit(1)
                             .minimumScaleFactor(0.7)
                     }
 
                     Text(channel.displayTitle)
-                        .font(.caption2)
+                        .font(KurtzBrand.font(.caption2))
                         .fontWeight(.medium)
                         .lineLimit(2)
                         .multilineTextAlignment(.center)

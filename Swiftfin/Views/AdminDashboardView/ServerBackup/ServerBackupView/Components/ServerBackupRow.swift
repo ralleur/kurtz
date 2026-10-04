@@ -35,7 +35,7 @@ extension ServerBackupView {
                     }
                     .monospacedDigit()
                 }
-                .font(.subheadline)
+                .font(KurtzBrand.font(.subheadline))
                 .foregroundStyle(.secondary)
                 .multilineTextAlignment(.leading)
             }

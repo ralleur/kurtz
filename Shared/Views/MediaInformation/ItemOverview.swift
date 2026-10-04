@@ -21,14 +21,14 @@ struct ItemOverviewView: View {
             VStack(alignment: UIDevice.isTV ? .center : .leading, spacing: 10) {
                 if let firstTagline = item.taglines?.first {
                     Text(firstTagline)
-                        .font(.title3)
+                        .font(KurtzBrand.font(.title3))
                         .fontWeight(.semibold)
                         .multilineTextAlignment(.leading)
                 }
 
                 if let itemOverview = item.overview {
                     Text(itemOverview)
-                        .font(.body)
+                        .font(KurtzBrand.font(.body))
                         .multilineTextAlignment(.leading)
                 }
             }

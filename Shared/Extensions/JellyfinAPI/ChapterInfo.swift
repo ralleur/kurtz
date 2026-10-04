@@ -94,13 +94,13 @@ private struct ChapterPosterLabel: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
             Text(chapter.chapterInfo.displayTitle)
-                .font(.subheadline)
+                .font(KurtzBrand.font(.subheadline))
                 .fontWeight(.semibold)
                 .foregroundStyle(.primary)
                 .lineLimit(1)
 
             Text(chapter.chapterInfo.startSeconds ?? .zero, format: .runtime)
-                .font(UIDevice.isTV ? .caption : .subheadline.weight(.semibold))
+                .font(UIDevice.isTV ? KurtzBrand.font(.caption) : KurtzBrand.font(.subheadline).weight(.semibold))
                 .foregroundStyle(Color(UIColor.systemBlue))
                 .padding(.horizontal, 4)
                 .background {

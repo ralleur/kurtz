@@ -35,7 +35,7 @@ struct QuickConnectView: View {
 
             Text(code)
                 .tracking(10)
-                .font(.largeTitle)
+                .font(KurtzBrand.font(.largeTitle))
                 .monospacedDigit()
         }
         .frame(

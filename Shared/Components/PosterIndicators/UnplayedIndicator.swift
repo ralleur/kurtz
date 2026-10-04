@@ -21,7 +21,7 @@ struct UnplayedIndicator: View {
             Quadrant(.topTrailing) {
                 QuadrantItem(color: accentColor) {
                     Text(count.description)
-                        .font(.body)
+                        .font(KurtzBrand.font(.body))
                         .fontWeight(.semibold)
                 }
             }

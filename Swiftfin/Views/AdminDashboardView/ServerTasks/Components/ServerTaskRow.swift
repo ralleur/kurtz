@@ -69,7 +69,7 @@ extension ServerTasksView {
                             .foregroundStyle(.secondary)
                     }
                 }
-                .font(.subheadline)
+                .font(KurtzBrand.font(.subheadline))
                 .frame(maxWidth: .infinity, alignment: .leading)
 
                 if isRunning {

@@ -48,7 +48,7 @@ extension ItemView {
                     }
 
                     Text(provider.item.displayTitle)
-                        .font(.title2)
+                        .font(KurtzBrand.font(.title2))
                         .fontWeight(.semibold)
                         .multilineTextAlignment(.center)
                         .lineLimit(2)
@@ -69,7 +69,7 @@ extension ItemView {
                     .subtleShadow()
 
                     Text(provider.item.displayTitle)
-                        .font(.title2)
+                        .font(KurtzBrand.font(.title2))
                         .lineLimit(4)
                         .fontWeight(.semibold)
                         .padding(.bottom, 4)

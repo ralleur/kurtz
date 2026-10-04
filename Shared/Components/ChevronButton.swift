@@ -30,7 +30,7 @@ struct ChevronButton<Label: View>: View {
                     ListRowCheckbox()
                 } else {
                     Image(systemName: isExternal ? "arrow.up.forward" : "chevron.right")
-                        .font(.body)
+                        .font(KurtzBrand.font(.body))
                         .fontWeight(.regular)
                         .foregroundStyle(.secondary)
                 }

@@ -131,7 +131,7 @@ extension VideoPlayer.PlaybackControls {
                 }
                 .foregroundStyle(.primary, .secondary)
             }
-            .font(.caption2)
+            .font(KurtzBrand.font(.caption2))
             .monospacedDigit()
             .lineLimit(1)
             .foregroundStyle(isScrubbing ? .primary : .secondary, .secondary)
@@ -155,7 +155,7 @@ extension VideoPlayer.PlaybackControls {
                     .trackingSize($leadingTimestampSize)
                     .offset(x: previewXOffset)
             }
-            .font(.caption)
+            .font(KurtzBrand.font(.caption))
             .fontWeight(UIDevice.isTV ? .medium : nil)
             .monospacedDigit()
             .trackingSize($contentSize)

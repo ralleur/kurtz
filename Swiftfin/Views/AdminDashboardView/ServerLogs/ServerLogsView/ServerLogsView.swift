@@ -43,7 +43,7 @@ struct ServerLogsView: View {
                                 .multilineTextAlignment(.leading)
 
                             Text(log.dateModified, format: .dateTime)
-                                .font(.caption)
+                                .font(KurtzBrand.font(.caption))
                                 .foregroundStyle(.secondary)
                         }
                     }

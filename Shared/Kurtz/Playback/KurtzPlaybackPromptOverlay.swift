@@ -117,17 +117,17 @@ extension KurtzPlaybackPromptOverlay {
 
                     VStack(alignment: .leading, spacing: 2) {
                         Text(title)
-                            .font(.system(size: UIDevice.isTV ? 28 : 17, weight: .semibold))
+                            .font(KurtzBrand.font(size: UIDevice.isTV ? 28 : 17, weight: .semibold))
 
                         if let subtitle, subtitle.isNotEmpty {
                             Text(subtitle)
-                                .font(.system(size: UIDevice.isTV ? 20 : 13, weight: .medium))
+                                .font(KurtzBrand.font(size: UIDevice.isTV ? 20 : 13, weight: .medium))
                                 .lineLimit(1)
                                 .opacity(0.8)
                         }
                     }
                 }
-                .font(.system(size: UIDevice.isTV ? 26 : 16, weight: .semibold))
+                .font(KurtzBrand.font(size: UIDevice.isTV ? 26 : 16, weight: .semibold))
                 .padding(.horizontal, UIDevice.isTV ? 30 : 18)
                 .padding(.vertical, UIDevice.isTV ? 16 : 10)
                 .contentShape(.capsule)
@@ -174,11 +174,11 @@ extension KurtzPlaybackPromptOverlay {
         var body: some View {
             VStack(alignment: .leading, spacing: UIDevice.isTV ? 8 : 4) {
                 Text(KurtzSeriesOutlook.title)
-                    .font(.system(size: UIDevice.isTV ? 22 : 13, weight: .semibold))
+                    .font(KurtzBrand.font(size: UIDevice.isTV ? 22 : 13, weight: .semibold))
                     .opacity(0.8)
 
                 Text(message)
-                    .font(.system(size: UIDevice.isTV ? 28 : 17, weight: .semibold))
+                    .font(KurtzBrand.font(size: UIDevice.isTV ? 28 : 17, weight: .semibold))
                     .fixedSize(horizontal: false, vertical: true)
             }
             .foregroundStyle(.white)

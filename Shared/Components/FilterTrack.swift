@@ -143,7 +143,7 @@ struct FilterTrack: View {
             button(for: target)
                 .fixedSize()
         }
-        .font(UIDevice.isTV ? .callout : .footnote)
+        .font(UIDevice.isTV ? KurtzBrand.font(.callout) : KurtzBrand.font(.footnote))
         .controlSize(UIDevice.isTV ? .large : .small)
         .buttonStyle(.capsule(selectionTint: accentColor, focusTint: UIDevice.isTV ? .white : nil))
         #if os(tvOS)

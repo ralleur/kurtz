@@ -212,7 +212,7 @@ private struct UserViewLibraryGridElement: View {
     @ViewBuilder
     private var titleLabel: some View {
         Text(element.displayTitle)
-            .font(.title2)
+            .font(KurtzBrand.font(.title2))
             .fontWeight(.semibold)
             .lineLimit(1)
             .multilineTextAlignment(.center)
@@ -259,7 +259,7 @@ private struct UserViewLibraryListElement: View {
             imageView
         } content: {
             Text(element.displayTitle)
-                .font(.callout)
+                .font(KurtzBrand.font(.callout))
                 .fontWeight(.semibold)
                 .foregroundStyle(.primary)
                 .lineLimit(2)

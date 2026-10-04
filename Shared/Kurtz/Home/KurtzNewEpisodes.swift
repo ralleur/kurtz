@@ -43,7 +43,7 @@ struct KurtzNewEpisodeBadge: View {
     var body: some View {
         if newEpisodes.contains(item) {
             Text(KurtzStrings.newEpisode)
-                .font(.system(size: UIDevice.isTV ? 22 : 12, weight: .bold))
+                .font(KurtzBrand.font(size: UIDevice.isTV ? 22 : 12, weight: .bold))
                 .foregroundStyle(.white)
                 .padding(.horizontal, UIDevice.isTV ? 14 : 8)
                 .padding(.vertical, UIDevice.isTV ? 6 : 3)

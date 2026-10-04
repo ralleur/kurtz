@@ -72,7 +72,7 @@ extension DevicesView {
             HStack {
                 VStack(alignment: .leading) {
                     Text(device.customName ?? device.name ?? L10n.unknown)
-                        .font(.headline)
+                        .font(KurtzBrand.font(.headline))
                         .lineLimit(2)
                         .multilineTextAlignment(.leading)
 
@@ -93,7 +93,7 @@ extension DevicesView {
                         .lineLimit(1)
                         .monospacedDigit()
                 }
-                .font(.subheadline)
+                .font(KurtzBrand.font(.subheadline))
                 .foregroundStyle(labelForegroundStyle, .secondary)
                 .frame(maxWidth: .infinity, alignment: .leading)
 

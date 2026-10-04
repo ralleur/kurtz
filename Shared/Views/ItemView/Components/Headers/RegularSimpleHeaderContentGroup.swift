@@ -40,7 +40,7 @@ extension ItemView {
                     }
 
                     Text(provider.item.displayTitle)
-                        .font(.largeTitle)
+                        .font(KurtzBrand.font(.largeTitle))
                         .fontWeight(.semibold)
                         .multilineTextAlignment(.leading)
                         .lineLimit(2)

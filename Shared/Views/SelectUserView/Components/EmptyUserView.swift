@@ -33,7 +33,7 @@ extension SelectUserView {
                     .hoverEffect(.highlight)
 
                 Text(L10n.addUser)
-                    .font(.headline)
+                    .font(KurtzBrand.font(.headline))
                     .fontWeight(.semibold)
                     .lineLimit(1)
                 #else
@@ -41,7 +41,7 @@ extension SelectUserView {
                     imageView
 
                     Text(L10n.addUser)
-                        .font(.headline)
+                        .font(KurtzBrand.font(.headline))
                         .fontWeight(.semibold)
                         .lineLimit(1)
                 }

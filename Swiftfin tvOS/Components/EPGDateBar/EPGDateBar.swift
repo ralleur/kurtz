@@ -36,7 +36,7 @@ struct EPGDateBar: View {
 
                 Image(systemName: "paintpalette")
             }
-            .font(.footnote)
+            .font(KurtzBrand.font(.footnote))
             .fontWeight(.semibold)
             .padding(.vertical, 8)
             .padding(.horizontal, 16)

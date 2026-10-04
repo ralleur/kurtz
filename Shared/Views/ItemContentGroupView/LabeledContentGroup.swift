@@ -26,11 +26,11 @@ struct LabeledContentGroup: ContentGroup {
     func body(with viewModel: Empty) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             Text(displayTitle)
-                .font(.headline)
+                .font(KurtzBrand.font(.headline))
                 .foregroundStyle(.primary)
 
             Text(value)
-                .font(.footnote)
+                .font(KurtzBrand.font(.footnote))
                 .foregroundStyle(.secondary)
         }
         .edgePadding(.horizontal)

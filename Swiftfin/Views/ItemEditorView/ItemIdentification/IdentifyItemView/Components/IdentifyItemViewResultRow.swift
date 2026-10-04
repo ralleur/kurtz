@@ -30,13 +30,13 @@ extension IdentifyItemView {
 
                     VStack(alignment: .leading) {
                         Text(resultTitle)
-                            .font(.headline)
+                            .font(KurtzBrand.font(.headline))
                             .foregroundStyle(Color.primary)
 
                         if let overview = result.overview {
                             Text(overview)
                                 .lineLimit(3)
-                                .font(.subheadline)
+                                .font(KurtzBrand.font(.subheadline))
                                 .foregroundStyle(Color.secondary)
                         }
                     }

@@ -85,7 +85,7 @@ extension ServerUsersView {
                 VStack(alignment: .leading) {
 
                     Text(user.name ?? L10n.unknown)
-                        .font(.headline)
+                        .font(KurtzBrand.font(.headline))
                         .lineLimit(2)
                         .multilineTextAlignment(.leading)
 
@@ -107,7 +107,7 @@ extension ServerUsersView {
                     .id(currentDate)
                     .monospacedDigit()
                 }
-                .font(.subheadline)
+                .font(KurtzBrand.font(.subheadline))
                 .foregroundStyle(labelForegroundStyle, .secondary)
                 .frame(maxWidth: .infinity, alignment: .leading)
 

@@ -59,10 +59,10 @@ extension ServerActivityView {
                             Text(L10n.system)
                         }
                     }
-                    .font(.headline)
+                    .font(KurtzBrand.font(.headline))
 
                     Text(viewModel.log.name ?? .emptyDash)
-                        .font(.subheadline)
+                        .font(KurtzBrand.font(.subheadline))
                         .foregroundStyle(.secondary)
                         .lineLimit(2)
                         .multilineTextAlignment(.leading)
@@ -74,7 +74,7 @@ extension ServerActivityView {
                             Text(String.emptyRuntime)
                         }
                     }
-                    .font(.caption)
+                    .font(KurtzBrand.font(.caption))
                     .foregroundStyle(.secondary)
                     .lineLimit(1)
                 }
@@ -82,7 +82,7 @@ extension ServerActivityView {
 
                 Image(systemName: "chevron.right")
                     .padding()
-                    .font(.body)
+                    .font(KurtzBrand.font(.body))
                     .fontWeight(.regular)
                     .foregroundStyle(.secondary)
             }

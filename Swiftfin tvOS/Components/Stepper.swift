@@ -67,7 +67,7 @@ struct Stepper<
         .sheet(isPresented: $isPresented) {
             VStack(spacing: 8) {
                 Text(title.localizedCapitalized)
-                    .font(.title3)
+                    .font(KurtzBrand.font(.title3))
                     .edgePadding(.bottom)
 
                 HStack(spacing: 24) {
@@ -78,7 +78,7 @@ struct Stepper<
                     .enabled(canDecrement)
 
                     Text(value, format: format)
-                        .font(.headline)
+                        .font(KurtzBrand.font(.headline))
                         .fontDesign(.rounded)
                         .monospacedDigit()
                         .foregroundStyle(.white)

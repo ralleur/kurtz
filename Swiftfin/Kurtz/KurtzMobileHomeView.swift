@@ -37,7 +37,7 @@ struct KurtzMobileHomeView: View {
                     .foregroundStyle(KurtzBrand.graphite)
                     .accessibilityIdentifier("kurtz.open-video")
                     Text(KurtzStrings.text("No account needed for local videos."))
-                        .font(.footnote).foregroundStyle(.secondary)
+                        .font(KurtzBrand.font(.footnote)).foregroundStyle(.secondary)
                 }
                 .padding(.vertical, 8)
             }
@@ -55,7 +55,7 @@ struct KurtzMobileHomeView: View {
                                 Text(entry.url.lastPathComponent).lineLimit(2)
                                 if entry.position > 5 {
                                     Text(Duration.seconds(entry.position), format: .minuteSecondsNarrow)
-                                        .font(.caption.monospacedDigit()).foregroundStyle(.secondary)
+                                        .font(KurtzBrand.font(.caption).monospacedDigit()).foregroundStyle(.secondary)
                                 }
                             }
                             Spacer(minLength: 0)
@@ -134,7 +134,7 @@ struct KurtzMobileSettingsView: View {
                     Toggle(KurtzStrings.text("Remember Recent Videos and Positions"), isOn: $history)
                     Text(KurtzStrings
                         .text("History stays on this device. Turning this off clears saved files, positions and track choices."))
-                        .font(.footnote).foregroundStyle(.secondary)
+                        .font(KurtzBrand.font(.footnote)).foregroundStyle(.secondary)
                     Button(KurtzStrings.text("Clear History"), role: .destructive) { confirmClear = true }
                 }
                 Section(KurtzStrings.text("Playback")) {
@@ -153,7 +153,7 @@ struct KurtzMobileSettingsView: View {
                         Text(KurtzStrings.text("Alternative — mpv")).tag("mpv")
                     }
                     Text(KurtzStrings.text("The default uses VLC. If a video fails, Try Compatible Playback offers the alternative once."))
-                        .font(.footnote).foregroundStyle(.secondary)
+                        .font(KurtzBrand.font(.footnote)).foregroundStyle(.secondary)
                     Picker(KurtzStrings.text("Subtitle Text Encoding"), selection: $encoding) {
                         Text(KurtzStrings.text("Automatic")).tag("")
                         Text(verbatim: "UTF-8").tag("UTF-8")
@@ -162,7 +162,7 @@ struct KurtzMobileSettingsView: View {
                         Text(verbatim: "Shift_JIS").tag("Shift_JIS")
                     }
                     Text(KurtzStrings.text("Change only if subtitle characters look wrong. Reopen the video after changing this."))
-                        .font(.footnote).foregroundStyle(.secondary)
+                        .font(KurtzBrand.font(.footnote)).foregroundStyle(.secondary)
                 }
                 Section(KurtzStrings.text("Privacy")) {
                     Text(KurtzStrings.text("Local playback needs no account. No ads, subscriptions or analytics."))
@@ -170,7 +170,7 @@ struct KurtzMobileSettingsView: View {
                     Link(KurtzStrings.text("Source Code"), destination: URL(string: "https://github.com/ralleur/kurtz")!)
                     Link(KurtzStrings.text("Privacy"), destination: URL(string: "https://ralleur.github.io/kurtz/privacy.html")!)
                     Text(KurtzStrings.text("Built on Swiftfin. An independent app by Ralleur."))
-                        .font(.footnote).foregroundStyle(.secondary)
+                        .font(KurtzBrand.font(.footnote)).foregroundStyle(.secondary)
                 }
             }
             .navigationTitle(KurtzStrings.text("Settings"))

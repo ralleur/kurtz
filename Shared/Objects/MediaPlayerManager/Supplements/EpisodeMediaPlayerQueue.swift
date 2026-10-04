@@ -401,7 +401,7 @@ extension EpisodeMediaPlayerQueue {
         private var retryButton: some View {
             AlternateLayoutView {
                 Label(L10n.retry, systemImage: "arrow.clockwise")
-                    .font(.subheadline)
+                    .font(KurtzBrand.font(.subheadline))
                     .fontWeight(.semibold)
                     .padding()
                     .edgePadding(.horizontal)
@@ -411,7 +411,7 @@ extension EpisodeMediaPlayerQueue {
                     viewModel.refresh()
                 } label: {
                     Label(L10n.retry, systemImage: "arrow.clockwise")
-                        .font(.subheadline)
+                        .font(KurtzBrand.font(.subheadline))
                         .fontWeight(.semibold)
                         .padding()
                         .edgePadding(.horizontal)
@@ -425,7 +425,7 @@ extension EpisodeMediaPlayerQueue {
         var body: some View {
             VStack(alignment: .leading, spacing: EdgeInsets.edgePadding / 2) {
                 Text(L10n.unknownError)
-                    .font(.callout)
+                    .font(KurtzBrand.font(.callout))
                     .fontWeight(.semibold)
                     .foregroundStyle(.primary)
                     .multilineTextAlignment(.center)
@@ -495,7 +495,7 @@ extension EpisodeMediaPlayerQueue {
                     Text(runtime)
                 }
             }
-            .font(.caption)
+            .font(KurtzBrand.font(.caption))
             .foregroundStyle(.secondary)
         }
     }
@@ -520,7 +520,7 @@ extension EpisodeMediaPlayerQueue {
             } content: {
                 VStack(alignment: .leading, spacing: 5) {
                     Text(episode.displayTitle)
-                        .font(.subheadline)
+                        .font(KurtzBrand.font(.subheadline))
                         .fontWeight(.semibold)
                         .foregroundStyle(.primary)
                         .lineLimit(2)

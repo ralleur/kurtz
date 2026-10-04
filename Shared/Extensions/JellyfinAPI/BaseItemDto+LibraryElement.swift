@@ -108,7 +108,7 @@ private struct BaseItemDtoLibraryListElement: View {
         } content: {
             VStack(alignment: .leading, spacing: 5) {
                 Text(item.displayTitle)
-                    .font(.callout)
+                    .font(KurtzBrand.font(.callout))
                     .fontWeight(.semibold)
                     .foregroundStyle(.primary)
                     .lineLimit(2)
@@ -120,7 +120,7 @@ private struct BaseItemDtoLibraryListElement: View {
                     currentProgramView(item)
                 } else {
                     accessoryView
-                        .font(.caption)
+                        .font(KurtzBrand.font(.caption))
                         .foregroundStyle(.secondary)
                 }
             }
@@ -139,7 +139,7 @@ private struct BaseItemDtoLibraryListElement: View {
         VStack(alignment: .leading, spacing: 4) {
             if program.id != item.id {
                 Text(program.displayTitle)
-                    .font(.subheadline)
+                    .font(KurtzBrand.font(.subheadline))
                     .foregroundStyle(.primary)
                     .lineLimit(1)
             }
@@ -165,7 +165,7 @@ private struct BaseItemDtoLibraryListElement: View {
                             .foregroundStyle(.red)
                     }
                 }
-                .font(.caption)
+                .font(KurtzBrand.font(.caption))
                 .foregroundStyle(.secondary)
             }
         }

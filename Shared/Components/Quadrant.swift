@@ -58,7 +58,7 @@ struct Quadrant: View {
             cornerRadius: cornerRadius,
             isFloating: isFloating
         ))
-        .font(.system(size: size * 0.52, weight: .semibold))
+        .font(KurtzBrand.font(size: size * 0.52, weight: .semibold))
         .fixedSize()
         .allowsHitTesting(false)
     }

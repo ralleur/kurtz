@@ -61,7 +61,7 @@ extension ActiveSessionsView {
             VStack(alignment: .leading, spacing: 4) {
                 Text(session.userName ?? L10n.unknown)
                     .multilineTextAlignment(.leading)
-                    .font(.headline)
+                    .font(KurtzBrand.font(.headline))
 
                 Text(nowPlayingItem.name ?? L10n.unknown)
                     .multilineTextAlignment(.leading)
@@ -74,7 +74,7 @@ extension ActiveSessionsView {
                     showTranscodeReason: true
                 )
             }
-            .font(.subheadline)
+            .font(KurtzBrand.font(.subheadline))
         }
 
         @ViewBuilder
@@ -82,7 +82,7 @@ extension ActiveSessionsView {
             VStack(alignment: .leading, spacing: 4) {
 
                 Text(session.userName ?? L10n.unknown)
-                    .font(.headline)
+                    .font(KurtzBrand.font(.headline))
 
                 if let client = session.client {
                     LabeledContent(
@@ -108,7 +108,7 @@ extension ActiveSessionsView {
                     .monospacedDigit()
                 }
             }
-            .font(.subheadline)
+            .font(KurtzBrand.font(.subheadline))
         }
 
         var body: some View {

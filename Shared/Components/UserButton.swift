@@ -95,7 +95,7 @@ struct UserButton: View {
     @ViewBuilder
     private var titleView: some View {
         Text(title)
-            .font(.headline)
+            .font(KurtzBrand.font(.headline))
             .fontWeight(.semibold)
             .foregroundStyle(labelForegroundStyle)
             .lineLimit(1)
@@ -111,7 +111,7 @@ struct UserButton: View {
                     .foregroundStyle(.secondary)
             }
         }
-        .font(.footnote)
+        .font(KurtzBrand.font(.footnote))
     }
 }
 

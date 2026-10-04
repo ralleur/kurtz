@@ -120,7 +120,7 @@ struct ItemImagesView: View {
                     .edgePadding(.horizontal)
 
                 Text(selectedType.description)
-                    .font(.body)
+                    .font(KurtzBrand.font(.body))
                     .foregroundStyle(.secondary)
                     .edgePadding(.horizontal)
             }
@@ -239,9 +239,9 @@ struct ItemImagesView: View {
 
                 VStack {
                     Image(systemName: "photo.badge.plus")
-                        .font(.title)
+                        .font(KurtzBrand.font(.title))
                     Text(L10n.add)
-                        .font(.body)
+                        .font(KurtzBrand.font(.body))
                 }
             }
             .posterStyle(posterType)

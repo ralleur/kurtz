@@ -479,19 +479,21 @@ struct KurtzWelcomeView: View {
             }
             if !files.recent.isEmpty {
                 VStack(alignment: .leading, spacing: 12) {
-                    Text(KurtzStrings.text("Recently Opened")).font(.headline)
+                    Text(KurtzStrings.text("Recently Opened")).font(KurtzBrand.font(.headline))
                     ForEach(files.recent.prefix(5)) { entry in
                         Button { files.reopen(entry) } label: {
                             HStack(spacing: 12) {
-                                Image(systemName: "play.rectangle").font(.title2).foregroundStyle(.secondary)
+                                Image(systemName: "play.rectangle").font(KurtzBrand.font(.title2)).foregroundStyle(.secondary)
                                 VStack(alignment: .leading, spacing: 3) {
                                     Text(entry.url.lastPathComponent).lineLimit(1)
-                                    Text(entry.url.deletingLastPathComponent().lastPathComponent).font(.caption).foregroundStyle(.secondary)
+                                    Text(entry.url.deletingLastPathComponent().lastPathComponent).font(KurtzBrand.font(.caption))
+                                        .foregroundStyle(.secondary)
                                         .lineLimit(1)
                                 }
                                 Spacer()
                                 if entry.position > 5 {
-                                    Text(Duration.seconds(entry.position), format: .minuteSecondsNarrow).font(.caption.monospacedDigit())
+                                    Text(Duration.seconds(entry.position), format: .minuteSecondsNarrow)
+                                        .font(KurtzBrand.font(.caption).monospacedDigit())
                                         .foregroundStyle(.secondary)
                                 }
                             }.padding(.vertical, 6).contentShape(Rectangle())
@@ -506,7 +508,7 @@ struct KurtzWelcomeView: View {
                     }
                 }.frame(maxWidth: 480, alignment: .leading).padding(.top)
             }
-            Text(KurtzStrings.text("No account needed for local videos.")).font(.caption).foregroundStyle(.secondary)
+            Text(KurtzStrings.text("No account needed for local videos.")).font(KurtzBrand.font(.caption)).foregroundStyle(.secondary)
         }.frame(maxWidth: .infinity, maxHeight: .infinity).padding(40)
             .sheet(isPresented: $showServers) {
                 NavigationInjectionView(coordinator: .init()) { SelectUserView() }

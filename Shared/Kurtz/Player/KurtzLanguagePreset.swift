@@ -203,7 +203,10 @@ struct KurtzLanguagePresetButtons: View {
                             Text(preset.compactTitle)
                                 .lineLimit(1)
                         }
-                        .font(.system(size: UIDevice.isTV ? 24 : (ProcessInfo.processInfo.isMacCatalystApp ? 20 : 15), weight: .semibold))
+                        .font(KurtzBrand.font(
+                            size: UIDevice.isTV ? 24 : (ProcessInfo.processInfo.isMacCatalystApp ? 20 : 15),
+                            weight: .semibold
+                        ))
                         .padding(.horizontal, UIDevice.isTV ? 8 : 12)
                         #if os(iOS) && !targetEnvironment(macCatalyst)
                         .frame(height: 28)

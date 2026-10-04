@@ -32,7 +32,7 @@ struct PlaybackRateMediaPlayerSupplement: MediaPlayerSupplement {
             VStack {
 
                 Text(manager.rate, format: .playbackRate)
-                    .font(.largeTitle)
+                    .font(KurtzBrand.font(.largeTitle))
 
                 HStack {
                     Button {

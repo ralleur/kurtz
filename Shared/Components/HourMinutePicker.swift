@@ -42,7 +42,7 @@ struct HourMinutePicker: View {
         .sheet(isPresented: $isPresented) {
                 VStack(spacing: 8) {
                     Text(title.localizedCapitalized)
-                        .font(.title3)
+                        .font(KurtzBrand.font(.title3))
                         .edgePadding(.bottom)
 
                     _HourMinutePickerView(interval: interval, maximumHours: maximumHours)

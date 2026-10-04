@@ -71,7 +71,7 @@ extension PlaybackInformationSupplement {
         @ViewBuilder
         private var playbackInfoSection: some View {
             Text(L10n.mediaPlayback)
-                .font(.subheadline)
+                .font(KurtzBrand.font(.subheadline))
                 .fontWeight(.semibold)
                 .padding(.vertical, 4)
 
@@ -94,7 +94,7 @@ extension PlaybackInformationSupplement {
         private var videoInfoSection: some View {
             if videoStream != nil || (manager.proxy as? any VideoMediaPlayerProxy) != nil {
                 Text(L10n.video)
-                    .font(.subheadline)
+                    .font(KurtzBrand.font(.subheadline))
                     .fontWeight(.semibold)
                     .padding(.vertical, 4)
 
@@ -113,7 +113,7 @@ extension PlaybackInformationSupplement {
         private var streamingInfoSection: some View {
             if let transcodingInfo = viewModel.currentSession?.transcodingInfo {
                 Text(viewModel.currentSession?.playMethodDisplayTitle.map { L10n.streamInfoWithMethod($0) } ?? L10n.streamInfo)
-                    .font(.subheadline)
+                    .font(KurtzBrand.font(.subheadline))
                     .fontWeight(.semibold)
                     .padding(.vertical, 4)
 
@@ -149,7 +149,7 @@ extension PlaybackInformationSupplement {
         private var originalMediaInfoSection: some View {
             if mediaSource != nil || videoStream != nil || audioStream != nil {
                 Text(L10n.originalMediaInfo)
-                    .font(.subheadline)
+                    .font(KurtzBrand.font(.subheadline))
                     .fontWeight(.semibold)
                     .padding(.vertical, 4)
 
@@ -200,13 +200,13 @@ extension PlaybackInformationSupplement {
         private var transcodeReasonsSection: some View {
             if let transcodeReasons = viewModel.currentSession?.transcodingInfo?.transcodeReasons, transcodeReasons.isNotEmpty {
                 Text(L10n.transcodeReasons)
-                    .font(.subheadline)
+                    .font(KurtzBrand.font(.subheadline))
                     .fontWeight(.semibold)
                     .padding(.vertical, 4)
 
                 ForEach(transcodeReasons, id: \.self) { reason in
                     Text(reason.displayTitle)
-                        .font(.subheadline)
+                        .font(KurtzBrand.font(.subheadline))
                         .foregroundStyle(.secondary)
                 }
             }

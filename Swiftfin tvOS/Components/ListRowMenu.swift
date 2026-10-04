@@ -41,7 +41,7 @@ struct ListRowMenu<Content: View, Subtitle: View>: View {
             }
 
             Image(systemName: "chevron.up.chevron.down")
-                .font(.body)
+                .font(KurtzBrand.font(.body))
                 .fontWeight(.regular)
                 .foregroundStyle(isFocused ? .black : .secondary)
                 .brightness(isFocused ? 0.4 : 0)

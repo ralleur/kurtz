@@ -105,7 +105,7 @@ extension VideoPlayer.PlaybackControls {
         @ViewBuilder
         private var liveIndicator: some View {
             Text(L10n.live)
-                .font(.subheadline)
+                .font(KurtzBrand.font(.subheadline))
                 .fontWeight(.semibold)
                 .foregroundStyle(.white)
                 .padding(.horizontal, 8)
@@ -123,7 +123,7 @@ extension VideoPlayer.PlaybackControls {
                 Text(L10n.slowScrubbing.localizedCapitalized)
                 Image(systemName: "forward.fill")
             }
-            .font(.caption)
+            .font(KurtzBrand.font(.caption))
         }
 
         @ViewBuilder

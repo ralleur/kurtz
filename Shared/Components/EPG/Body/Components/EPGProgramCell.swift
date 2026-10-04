@@ -77,11 +77,11 @@ struct EPGProgramCell: View {
             ) {
                 VStack(alignment: .leading, spacing: 2) {
                     Text(presentation.title)
-                        .font(.footnote.weight(isCurrent ? .semibold : .regular))
+                        .font(KurtzBrand.font(.footnote).weight(isCurrent ? .semibold : .regular))
                         .foregroundStyle(primaryColor)
 
                     Text(presentation.time)
-                        .font(.caption2)
+                        .font(KurtzBrand.font(.caption2))
                         .foregroundStyle(secondaryColor)
                 }
                 .lineLimit(1)

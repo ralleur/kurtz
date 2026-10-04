@@ -79,7 +79,7 @@ extension ServerTaskDetailsView {
                             Text(L10n.noRuntimeLimit)
                         }
                     }
-                    .font(.subheadline)
+                    .font(KurtzBrand.font(.subheadline))
                     .foregroundStyle(.secondary)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)

@@ -43,7 +43,7 @@ struct AppPermissionsView: View {
                                         .labelStyle(.iconOnly)
                                 default:
                                     Text(L10n.allow.localizedUppercase)
-                                        .font(.subheadline)
+                                        .font(KurtzBrand.font(.subheadline))
                                         .fontWeight(.bold)
                                         .minimumScaleFactor(0.2)
                                         .lineLimit(1)
@@ -71,7 +71,7 @@ struct AppPermissionsView: View {
                 } footer: {
                     if permission.privacyDescription.isNotEmpty {
                         Text(permission.privacyDescription)
-                            .font(.footnote)
+                            .font(KurtzBrand.font(.footnote))
                             .foregroundStyle(.secondary)
                     }
                 }

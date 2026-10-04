@@ -110,7 +110,7 @@ extension VideoPlayer.PlaybackControls {
         @ViewBuilder
         private var liveIndicator: some View {
             Text(L10n.live)
-                .font(UIDevice.isTV ? .caption : .subheadline)
+                .font(UIDevice.isTV ? KurtzBrand.font(.caption) : KurtzBrand.font(.subheadline))
                 .fontWeight(.semibold)
                 .foregroundStyle(.white)
                 .padding(.horizontal, 16)

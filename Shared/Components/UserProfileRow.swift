@@ -50,7 +50,7 @@ extension SettingsView {
 
                     if action != nil {
                         Image(systemName: "chevron.right")
-                            .font(.body)
+                            .font(KurtzBrand.font(.body))
                             .fontWeight(.regular)
                             .foregroundStyle(.secondary)
                     }

@@ -44,12 +44,12 @@ extension VideoPlayer.PlaybackControls {
         func body(content: Content) -> some View {
             #if os(tvOS)
             content
-                .font(.system(size: 30, weight: .semibold))
+                .font(KurtzBrand.font(size: 30, weight: .semibold))
                 .labelStyle(.iconOnly)
                 .modifier(OverlayButtonStyleModifier())
             #else
             content
-                .font(.system(size: 20, weight: .semibold))
+                .font(KurtzBrand.font(size: 20, weight: .semibold))
                 .buttonStyle(OverlayButtonStyle())
                 .if(UIDevice.supportsLiquidGlass) { view in
                     view

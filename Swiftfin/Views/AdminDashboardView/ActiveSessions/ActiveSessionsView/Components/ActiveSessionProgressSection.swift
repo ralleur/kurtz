@@ -79,7 +79,7 @@ extension ActiveSessionsView {
                 .monospacedDigit()
                 .fixedSize(horizontal: true, vertical: true)
             }
-            .font(.subheadline)
+            .font(KurtzBrand.font(.subheadline))
         }
 
         var body: some View {

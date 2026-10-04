@@ -62,13 +62,13 @@ extension SelectUserView {
 
                             VStack(alignment: .leading) {
                                 Text(item.user.username)
-                                    .font(.title3)
+                                    .font(KurtzBrand.font(.title3))
                                     .fontWeight(.semibold)
                                     .lineLimit(1)
 
                                 if serverSelection == .all {
                                     Text(item.server.name)
-                                        .font(UIDevice.isTV ? .body : .footnote)
+                                        .font(UIDevice.isTV ? KurtzBrand.font(.body) : KurtzBrand.font(.footnote))
                                         .foregroundStyle(.secondary)
                                         .lineLimit(1)
                                 }

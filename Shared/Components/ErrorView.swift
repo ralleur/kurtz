@@ -40,12 +40,12 @@ struct ErrorView<ErrorType: Error>: View {
     var body: some View {
         VStack {
             Image(systemName: systemImage)
-                .font(.system(size: iconSize, weight: .regular))
+                .font(KurtzBrand.font(size: iconSize, weight: .regular))
                 .foregroundStyle(Color.red)
                 .symbolRenderingMode(.monochrome)
 
             Text(error.localizedDescription)
-                .font(.headline)
+                .font(KurtzBrand.font(.headline))
                 .fontWeight(.semibold)
                 .foregroundStyle(.primary)
                 .lineLimit(2)
@@ -75,7 +75,7 @@ struct ErrorView<ErrorType: Error>: View {
                let recoverySuggestion = localizedError.recoverySuggestion
             {
                 Text(recoverySuggestion)
-                    .font(.caption)
+                    .font(KurtzBrand.font(.caption))
                     .foregroundStyle(.secondary)
                     .lineLimit(3)
                     .multilineTextAlignment(.center)

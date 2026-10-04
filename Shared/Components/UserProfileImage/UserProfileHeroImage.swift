@@ -54,7 +54,7 @@ struct UserProfileHeroImage: View {
 
                 Text(user.name ?? L10n.unknown)
                     .fontWeight(.semibold)
-                    .font(.title2)
+                    .font(KurtzBrand.font(.title2))
             }
             .frame(maxWidth: .infinity)
             .listRowBackground(Color.clear)

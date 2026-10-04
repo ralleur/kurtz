@@ -50,7 +50,7 @@ struct AboutItemGroup: ContentGroup {
                     VStack(alignment: .leading) {
                         VStack(alignment: .leading, spacing: 5) {
                             Text(title)
-                                .font(.title3)
+                                .font(KurtzBrand.font(.title3))
                                 .fontWeight(.semibold)
                                 .lineLimit(2)
                                 .multilineTextAlignment(.leading)
@@ -58,7 +58,7 @@ struct AboutItemGroup: ContentGroup {
 
                             if let subtitle, subtitle.isNotEmpty {
                                 Text(subtitle)
-                                    .font(.subheadline)
+                                    .font(KurtzBrand.font(.subheadline))
                                     .foregroundStyle(.secondary)
                                     .lineLimit(2)
                                     .multilineTextAlignment(.leading)
@@ -99,7 +99,7 @@ struct AboutItemGroup: ContentGroup {
             } content: {
                 if let overview = item.overview, overview.isNotEmpty {
                     SeeMoreText(overview)
-                        .font(.footnote)
+                        .font(KurtzBrand.font(.footnote))
                         .lineLimit(4)
                         .multilineTextAlignment(.leading)
                 }
@@ -122,7 +122,7 @@ struct AboutItemGroup: ContentGroup {
                         .joined(separator: ", ")
 
                     Text(text)
-                        .font(.footnote)
+                        .font(KurtzBrand.font(.footnote))
                         .lineLimit(4)
                         .multilineTextAlignment(.leading)
                 }
@@ -149,7 +149,7 @@ struct AboutItemGroup: ContentGroup {
                                     .foregroundStyle(.green)
                             }
                         }
-                        .font(.largeTitle)
+                        .font(KurtzBrand.font(.largeTitle))
 
                         // swiftlint:disable:next hard_coded_display_string
                         Text("\(criticRating, specifier: "%.0f")")
@@ -162,7 +162,7 @@ struct AboutItemGroup: ContentGroup {
                         Image(systemName: "star.fill")
                             .symbolRenderingMode(.multicolor)
                             .foregroundStyle(.yellow)
-                            .font(.largeTitle)
+                            .font(KurtzBrand.font(.largeTitle))
 
                         // swiftlint:disable:next hard_coded_display_string
                         Text("\(communityRating, specifier: "%.1f")")
@@ -213,7 +213,7 @@ struct AboutItemGroup: ContentGroup {
                 .frame(maxWidth: .infinity)
             } header: {
                 Text(L10n.about)
-                    .font(.title2)
+                    .font(KurtzBrand.font(.title2))
                     .fontWeight(.semibold)
                     .accessibilityAddTraits(.isHeader)
                     .edgePadding(.horizontal)

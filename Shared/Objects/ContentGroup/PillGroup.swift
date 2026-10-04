@@ -76,7 +76,7 @@ struct PillGroup<Element: Displayable>: ContentGroup {
             } header: {
                 if displayTitle.isNotEmpty {
                     Text(displayTitle)
-                        .font(.title2)
+                        .font(KurtzBrand.font(.title2))
                         .fontWeight(.semibold)
                         .accessibility(addTraits: [.isHeader])
                         .edgePadding(.horizontal)

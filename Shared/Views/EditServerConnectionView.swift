@@ -254,7 +254,7 @@ struct EditServerConnectionView: View {
                             ProgressView()
                         case .success:
                             Image(systemName: "circle.fill")
-                                .font(.caption)
+                                .font(KurtzBrand.font(.caption))
                                 .foregroundStyle(.green)
                         }
                     } label: {

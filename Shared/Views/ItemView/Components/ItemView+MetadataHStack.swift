@@ -33,7 +33,7 @@ extension ItemView {
                     Text(seasonEpisodeLabel)
                 }
             }
-            .font(.caption)
+            .font(KurtzBrand.font(.caption))
             .fontWeight(.semibold)
             .foregroundStyle(.secondary)
         }

@@ -39,7 +39,7 @@ struct KurtzTimeline: View {
                                 .clipShape(RoundedRectangle(cornerRadius: 8))
                         }
                         Text(previewSeconds.value, format: .minuteSecondsNarrow)
-                            .font(.caption.monospacedDigit().weight(.semibold))
+                            .font(KurtzBrand.font(.caption).monospacedDigit().weight(.semibold))
                     }
                     .padding(8)
                     .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 12))

@@ -91,7 +91,7 @@ extension MediaInfoSupplement {
                             Label(L10n.record, systemImage: "record.circle")
                         }
                     }
-                    .font(.subheadline)
+                    .font(KurtzBrand.font(.subheadline))
                     .fontWeight(.semibold)
                 }
                 .buttonStyle(.supplementAction)
@@ -108,7 +108,7 @@ extension MediaInfoSupplement {
                                 Label(L10n.recordSeries, systemImage: "smallcircle.filled.circle")
                             }
                         }
-                        .font(.subheadline)
+                        .font(KurtzBrand.font(.subheadline))
                         .fontWeight(.semibold)
                     }
                     .buttonStyle(.supplementAction)
@@ -136,7 +136,7 @@ extension MediaInfoSupplement {
                 containerState.select(supplement: nil)
             } label: {
                 Label(L10n.fromBeginning, systemImage: "play.fill")
-                    .font(.subheadline)
+                    .font(KurtzBrand.font(.subheadline))
                     .fontWeight(.semibold)
             }
             .buttonStyle(.supplementAction)
@@ -179,12 +179,12 @@ extension MediaInfoSupplement {
 
                 if let overview = item.overview ?? item.currentProgram?.overview {
                     Text(overview)
-                        .font(.subheadline)
+                        .font(KurtzBrand.font(.subheadline))
                         .fontWeight(.regular)
                 }
 
                 accessoryView
-                    .font(.caption)
+                    .font(KurtzBrand.font(.caption))
                     .foregroundStyle(.secondary)
 
                 if !item.isLiveStream {
@@ -217,14 +217,14 @@ extension MediaInfoSupplement {
 
                 VStack(alignment: .leading, spacing: 5) {
                     Text(item.displayTitle)
-                        .font(.callout)
+                        .font(KurtzBrand.font(.callout))
                         .fontWeight(.semibold)
                         .lineLimit(2)
                         .multilineTextAlignment(.leading)
 
                     if let currentProgram = item.currentProgram {
                         Text(currentProgram.displayTitle)
-                            .font(.callout)
+                            .font(KurtzBrand.font(.callout))
                             .fontWeight(.semibold)
                             .lineLimit(2)
                             .multilineTextAlignment(.leading)
@@ -233,13 +233,13 @@ extension MediaInfoSupplement {
 
                     if let overview = item.overview ?? item.currentProgram?.overview {
                         Text(overview)
-                            .font(.subheadline)
+                            .font(KurtzBrand.font(.subheadline))
                             .fontWeight(.regular)
                             .lineLimit(4)
                     }
 
                     accessoryView
-                        .font(.caption)
+                        .font(KurtzBrand.font(.caption))
                         .foregroundStyle(.secondary)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -247,7 +247,7 @@ extension MediaInfoSupplement {
                 if !item.isLiveStream {
                     AlternateLayoutView {
                         Label(L10n.fromBeginning, systemImage: "play.fill")
-                            .font(.subheadline)
+                            .font(KurtzBrand.font(.subheadline))
                             .fontWeight(.semibold)
                             .padding()
                             .edgePadding(.horizontal)

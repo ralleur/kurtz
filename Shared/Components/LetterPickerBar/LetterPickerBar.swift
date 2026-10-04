@@ -121,7 +121,7 @@ struct LetterPickerBar: PlatformView {
             .fixedSize()
             .trackingSize($letterSize)
         }
-        .font(UIDevice.isTV ? .system(size: 22, weight: .semibold) : .footnote)
+        .font(UIDevice.isTV ? KurtzBrand.font(size: 22, weight: .semibold) : KurtzBrand.font(.footnote))
     }
 
     var iOSView: some View {

@@ -444,10 +444,10 @@ internal enum L10n {
   internal static let customConnectionsDescription = L10n.tr("Localizable", "customConnectionsDescription", fallback: "Manually set the maximum number of connections a user can have to the server.")
   /// Allows advanced customization of device profiles for native playback. Incorrect settings may affect playback.
   internal static let customDescription = L10n.tr("Localizable", "customDescription", fallback: "Allows advanced customization of device profiles for native playback. Incorrect settings may affect playback.")
-  /// The custom device profiles will be added to the default Swiftfin device profiles.
-  internal static let customDeviceProfileAdd = L10n.tr("Localizable", "customDeviceProfileAdd", fallback: "The custom device profiles will be added to the default Swiftfin device profiles.")
-  /// The custom device profiles will replace the default Swiftfin device profiles.
-  internal static let customDeviceProfileReplace = L10n.tr("Localizable", "customDeviceProfileReplace", fallback: "The custom device profiles will replace the default Swiftfin device profiles.")
+  /// The custom device profiles will be added to the default kurtz device profiles.
+  internal static let customDeviceProfileAdd = L10n.tr("Localizable", "customDeviceProfileAdd", fallback: "The custom device profiles will be added to the default kurtz device profiles.")
+  /// The custom device profiles will replace the default kurtz device profiles.
+  internal static let customDeviceProfileReplace = L10n.tr("Localizable", "customDeviceProfileReplace", fallback: "The custom device profiles will replace the default kurtz device profiles.")
   /// Manually set the number of failed login attempts allowed before locking the user.
   internal static let customFailedLoginDescription = L10n.tr("Localizable", "customFailedLoginDescription", fallback: "Manually set the number of failed login attempts allowed before locking the user.")
   /// Custom failed logins
@@ -1192,8 +1192,8 @@ internal enum L10n {
   internal static let password = L10n.tr("Localizable", "password", fallback: "Password")
   /// User password has been changed.
   internal static let passwordChangedMessage = L10n.tr("Localizable", "passwordChangedMessage", fallback: "User password has been changed.")
-  /// Changes the Jellyfin server user password. This does not change any Swiftfin settings.
-  internal static let passwordChangeWarning = L10n.tr("Localizable", "passwordChangeWarning", fallback: "Changes the Jellyfin server user password. This does not change any Swiftfin settings.")
+  /// Changes the Jellyfin server user password. This does not change any kurtz settings.
+  internal static let passwordChangeWarning = L10n.tr("Localizable", "passwordChangeWarning", fallback: "Changes the Jellyfin server user password. This does not change any kurtz settings.")
   /// New passwords do not match.
   internal static let passwordsDoNotMatch = L10n.tr("Localizable", "passwordsDoNotMatch", fallback: "New passwords do not match.")
   /// Path
@@ -1214,8 +1214,8 @@ internal enum L10n {
   }
   /// Permissions
   internal static let permissions = L10n.tr("Localizable", "permissions", fallback: "Permissions")
-  /// Manage additional Swiftfin settings in the Settings app.
-  internal static let permissionsSettingsAppFooter = L10n.tr("Localizable", "permissionsSettingsAppFooter", fallback: "Manage additional Swiftfin settings in the Settings app.")
+  /// Manage additional kurtz settings in the Settings app.
+  internal static let permissionsSettingsAppFooter = L10n.tr("Localizable", "permissionsSettingsAppFooter", fallback: "Manage additional kurtz settings in the Settings app.")
   /// Person
   internal static let person = L10n.tr("Localizable", "person", fallback: "Person")
   /// Photo
@@ -1484,8 +1484,8 @@ internal enum L10n {
   internal static let resetFilterFooter = L10n.tr("Localizable", "resetFilterFooter", fallback: "Reset the filter values to none.")
   /// Reset settings
   internal static let resetSettings = L10n.tr("Localizable", "resetSettings", fallback: "Reset settings")
-  /// Reset Swiftfin user settings.
-  internal static let resetSettingsDescription = L10n.tr("Localizable", "resetSettingsDescription", fallback: "Reset Swiftfin user settings.")
+  /// Reset kurtz user settings.
+  internal static let resetSettingsDescription = L10n.tr("Localizable", "resetSettingsDescription", fallback: "Reset kurtz user settings.")
   /// Are you sure you want to reset all user settings?
   internal static let resetSettingsMessage = L10n.tr("Localizable", "resetSettingsMessage", fallback: "Are you sure you want to reset all user settings?")
   /// Resolution
@@ -1602,9 +1602,9 @@ internal enum L10n {
   internal static let serverLogs = L10n.tr("Localizable", "serverLogs", fallback: "Server logs")
   /// Servers
   internal static let servers = L10n.tr("Localizable", "servers", fallback: "Servers")
-  /// Swiftfin requires Jellyfin version %@ or higher.
+  /// kurtz requires Jellyfin version %@ or higher.
   internal static func serverVersionWarning(_ p1: Any) -> String {
-    return L10n.tr("Localizable", "serverVersionWarning", String(describing: p1), fallback: "Swiftfin requires Jellyfin version %@ or higher.")
+    return L10n.tr("Localizable", "serverVersionWarning", String(describing: p1), fallback: "kurtz requires Jellyfin version %@ or higher.")
   }
   /// Session
   internal static let session = L10n.tr("Localizable", "session", fallback: "Session")
@@ -1646,12 +1646,12 @@ internal enum L10n {
   }
   /// Sign out on background
   internal static let signoutBackground = L10n.tr("Localizable", "signoutBackground", fallback: "Sign out on background")
-  /// Signs out the last user when Swiftfin has been in the background without media playback after some time.
-  internal static let signoutBackgroundFooter = L10n.tr("Localizable", "signoutBackgroundFooter", fallback: "Signs out the last user when Swiftfin has been in the background without media playback after some time.")
+  /// Signs out the last user when kurtz has been in the background without media playback after some time.
+  internal static let signoutBackgroundFooter = L10n.tr("Localizable", "signoutBackgroundFooter", fallback: "Signs out the last user when kurtz has been in the background without media playback after some time.")
   /// Sign out on close
   internal static let signoutClose = L10n.tr("Localizable", "signoutClose", fallback: "Sign out on close")
-  /// Signs out the last user when Swiftfin has been force closed.
-  internal static let signoutCloseFooter = L10n.tr("Localizable", "signoutCloseFooter", fallback: "Signs out the last user when Swiftfin has been force closed.")
+  /// Signs out the last user when kurtz has been force closed.
+  internal static let signoutCloseFooter = L10n.tr("Localizable", "signoutCloseFooter", fallback: "Signs out the last user when kurtz has been force closed.")
   /// Simple
   internal static let simple = L10n.tr("Localizable", "simple", fallback: "Simple")
   /// Size

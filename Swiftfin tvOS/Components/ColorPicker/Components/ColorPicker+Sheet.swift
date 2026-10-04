@@ -43,7 +43,7 @@ extension ColorPicker {
         var body: some View {
             EqualWidthVStack(spacing: 8) {
                 Text(title.localizedCapitalized)
-                    .font(.title3)
+                    .font(KurtzBrand.font(.title3))
                     .edgePadding(.bottom)
 
                 HStack {

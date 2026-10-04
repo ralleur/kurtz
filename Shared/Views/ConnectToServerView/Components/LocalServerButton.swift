@@ -22,17 +22,17 @@ extension ConnectToServerView {
                 HStack {
                     VStack(alignment: .leading) {
                         Text(server.name)
-                            .font(.headline)
+                            .font(KurtzBrand.font(.headline))
                             .fontWeight(.semibold)
 
                         Text(server.currentURL.absoluteString)
-                            .font(.subheadline)
+                            .font(KurtzBrand.font(.subheadline))
                             .foregroundStyle(.secondary)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
 
                     Image(systemName: "chevron.right")
-                        .font(.body)
+                        .font(KurtzBrand.font(.body))
                         .fontWeight(.regular)
                         .foregroundStyle(.secondary)
                 }

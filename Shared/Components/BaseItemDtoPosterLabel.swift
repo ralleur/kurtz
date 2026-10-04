@@ -109,20 +109,20 @@ struct BaseItemDtoPosterLabel: View {
                 Text(String.space)
                 Text(String.space)
             }
-            .font(.footnote)
+            .font(KurtzBrand.font(.footnote))
             .frame(maxWidth: .infinity)
         } content: {
             if isTitlePresented || hasSubtitle {
                 VStack(alignment: .leading, spacing: 2) {
                     if isTitlePresented {
                         Text(item.displayTitle)
-                            .font(.footnote)
+                            .font(KurtzBrand.font(.footnote))
                             .multilineTextAlignment(.leading)
                             .lineLimit(hasSubtitle ? 1 : 2, reservesSpace: true)
                     }
 
                     subtitleView
-                        .font(.caption)
+                        .font(KurtzBrand.font(.caption))
                         .fontWeight(.medium)
                         .foregroundStyle(.secondary)
                         .lineLimit(1)

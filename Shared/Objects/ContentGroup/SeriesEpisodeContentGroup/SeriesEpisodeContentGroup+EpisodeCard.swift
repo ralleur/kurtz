@@ -251,17 +251,17 @@ extension SeriesEpisodeContentGroup {
         var body: some View {
             VStack(alignment: .leading, spacing: 4) {
                 Text(subHeader)
-                    .font(.caption)
+                    .font(KurtzBrand.font(.caption))
                     .foregroundStyle(.secondary)
                     .lineLimit(1)
 
                 Text(header)
-                    .font(.headline)
+                    .font(KurtzBrand.font(.headline))
                     .foregroundStyle(.primary)
                     .lineLimit(1)
 
                 SeeMoreText(content)
-                    .font(.caption)
+                    .font(KurtzBrand.font(.caption))
                     .foregroundStyle(.secondary)
                     .multilineTextAlignment(.leading)
                     .lineLimit(3, reservesSpace: true)

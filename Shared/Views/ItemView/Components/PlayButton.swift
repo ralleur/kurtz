@@ -64,12 +64,12 @@ struct PlayButton: View {
 
                     if let mediaSource {
                         Marquee(mediaSource, speed: 40, delay: 3, fade: 5)
-                            .font(.caption)
+                            .font(KurtzBrand.font(.caption))
                             .fontWeight(.medium)
                     }
                 }
             }
-            .font(.callout)
+            .font(KurtzBrand.font(.callout))
             .fontWeight(.semibold)
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .backport

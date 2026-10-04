@@ -50,7 +50,7 @@ struct EPGTimeRuler: View {
                 ? date.formatted(.dateTime.weekday(.abbreviated).month(.abbreviated).day())
                 : date.formatted(date: .omitted, time: .shortened)
         )
-        .font(.caption2)
+        .font(KurtzBrand.font(.caption2))
         .fontWeight(.semibold)
         .foregroundStyle(isDayStart ? Color.primary : Color.secondary)
         .lineLimit(1)

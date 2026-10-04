@@ -38,7 +38,7 @@ struct EPGChannelColumn: View {
                         )
                     } label: {
                         Text(L10n.onNow)
-                            .font(.caption2)
+                            .font(KurtzBrand.font(.caption2))
                             .fontWeight(.semibold)
                             .lineLimit(1)
                             .padding(.horizontal, 8)

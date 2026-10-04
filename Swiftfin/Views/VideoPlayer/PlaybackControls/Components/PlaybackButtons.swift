@@ -51,7 +51,7 @@ extension VideoPlayer.PlaybackControls {
                     }
                 }
                 .transition(.opacity.combined(with: .scale).animation(.bouncy(duration: 0.7, extraBounce: 0.2)))
-                .font(.system(size: 36, weight: .bold, design: .default))
+                .font(KurtzBrand.font(size: 36, weight: .bold))
                 .contentShape(Rectangle())
                 .labelStyle(.iconOnly)
                 .padding(20)
@@ -69,7 +69,7 @@ extension VideoPlayer.PlaybackControls {
                     systemImage: jumpForwardInterval.systemImage
                 )
                 .labelStyle(.iconOnly)
-                .font(.system(size: 32, weight: .regular, design: .default))
+                .font(KurtzBrand.font(size: 32, weight: .regular))
                 .padding(10)
             }
             .foregroundStyle(.primary)
@@ -86,7 +86,7 @@ extension VideoPlayer.PlaybackControls {
                     systemImage: jumpBackwardInterval.secondarySystemImage
                 )
                 .labelStyle(.iconOnly)
-                .font(.system(size: 32, weight: .regular, design: .default))
+                .font(KurtzBrand.font(size: 32, weight: .regular))
                 .padding(10)
             }
             .foregroundStyle(.primary)

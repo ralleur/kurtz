@@ -20,6 +20,8 @@ jobs:
         uses: actions/checkout@v7
       - name: Run source-independent playback and kurtz tests
         run: swift test --package-path Tools/KurtzLogicTests
+      - name: Check current-product names in every translation
+        run: python3 Tools/kurtz/verify-branding.py
 
   build:
     name: "Build 🔨"
@@ -82,6 +84,7 @@ jobs:
           set -euo pipefail
           mkdir -p fastlane/build/Payload
           cp -R fastlane/build/*.xcarchive/Products/Applications/*.app fastlane/build/Payload/
+          python3 Tools/kurtz/verify-branding.py --app fastlane/build/Payload/kurtz.app
           cd fastlane/build
           zip -r -y "$PACKAGE_NAME-unsigned.ipa" Payload
 

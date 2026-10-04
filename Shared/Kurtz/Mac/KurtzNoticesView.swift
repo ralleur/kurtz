@@ -19,7 +19,7 @@ struct KurtzNoticesView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             HStack {
-                Text(KurtzStrings.text("Open Source Notices")).font(.title2.bold())
+                Text(KurtzStrings.text("Open Source Notices")).font(KurtzBrand.font(.title2).bold())
                 Spacer()
                 Button(KurtzStrings.text("Done")) {
                     if let close {

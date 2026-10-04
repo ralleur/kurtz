@@ -23,7 +23,7 @@ struct ListTitleSection: View {
             VStack(alignment: .center, spacing: 10) {
 
                 title
-                    .font(.title3)
+                    .font(KurtzBrand.font(.title3))
                     .fontWeight(.semibold)
                     .multilineTextAlignment(.center)
 
@@ -39,7 +39,7 @@ struct ListTitleSection: View {
                     )
                 }
             }
-            .font(.subheadline)
+            .font(KurtzBrand.font(.subheadline))
             .frame(maxWidth: .infinity)
         }
     }
@@ -92,7 +92,7 @@ struct InsetGroupedListHeader<Content: View>: View {
 
                 if let title {
                     title
-                        .font(.title3)
+                        .font(KurtzBrand.font(.title3))
                         .fontWeight(.semibold)
                 }
 
@@ -106,7 +106,7 @@ struct InsetGroupedListHeader<Content: View>: View {
                         .foregroundStyle(accentColor)
                 }
             }
-            .font(.subheadline)
+            .font(KurtzBrand.font(.subheadline))
             .frame(maxWidth: .infinity)
             .padding(16)
         }

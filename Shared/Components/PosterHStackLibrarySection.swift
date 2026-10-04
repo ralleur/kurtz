@@ -50,7 +50,7 @@ struct PosterHStackLibrarySection<Library: PagingLibrary>: View
 
     private var headerTitle: some View {
         Text(viewModel.library.parent.displayTitle)
-            .font(.title3)
+            .font(KurtzBrand.font(.title3))
             .fontWeight(.semibold)
             .lineLimit(1)
     }
@@ -65,7 +65,7 @@ struct PosterHStackLibrarySection<Library: PagingLibrary>: View
 
                     if isHeaderFocused {
                         Image(systemName: "chevron.forward")
-                            .font(.title3)
+                            .font(KurtzBrand.font(.title3))
                             .foregroundStyle(.secondary)
                             .transition(.opacity)
                     }
@@ -84,7 +84,7 @@ struct PosterHStackLibrarySection<Library: PagingLibrary>: View
                     headerTitle
 
                     Image(systemName: "chevron.forward")
-                        .font(.title3)
+                        .font(KurtzBrand.font(.title3))
                         .foregroundStyle(.secondary)
                 }
                 #endif

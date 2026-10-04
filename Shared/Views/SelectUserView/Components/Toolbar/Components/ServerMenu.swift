@@ -72,7 +72,7 @@ extension SelectUserView {
 
                     Image(systemName: "chevron.up.chevron.down")
                         .foregroundStyle(.secondary)
-                        .font(.subheadline)
+                        .font(KurtzBrand.font(.subheadline))
                 }
                 .fontWeight(.semibold)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)

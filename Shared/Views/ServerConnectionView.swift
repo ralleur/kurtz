@@ -38,12 +38,12 @@ struct ServerConnectionView: View {
                     Text(connection.displayTitle)
 
                     Text(connection.url.absoluteString)
-                        .font(.subheadline)
+                        .font(KurtzBrand.font(.subheadline))
                         .foregroundStyle(.secondary)
 
                     if connection.interface == .wifi {
                         Text(connection.wifiSSIDs.first ?? L10n.anyWifiNetwork)
-                            .font(.caption)
+                            .font(KurtzBrand.font(.caption))
                             .foregroundStyle(.secondary)
                     }
                 }
@@ -51,13 +51,13 @@ struct ServerConnectionView: View {
 
                 if viewModel.activeConnection?.id == connection.id {
                     Image(systemName: "circle.fill")
-                        .font(.caption)
+                        .font(KurtzBrand.font(.caption))
                         .foregroundStyle(.green)
                 }
 
                 if !isEditing {
                     Image(systemName: "chevron.right")
-                        .font(.body)
+                        .font(KurtzBrand.font(.body))
                         .fontWeight(.regular)
                         .foregroundStyle(.secondary)
                 }

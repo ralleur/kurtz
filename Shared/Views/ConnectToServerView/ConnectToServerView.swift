@@ -105,7 +105,7 @@ struct ConnectToServerView: View {
         Section(L10n.localServers) {
             if viewModel.localServers.isEmpty {
                 Text(L10n.noLocalServersFound)
-                    .font(.callout)
+                    .font(KurtzBrand.font(.callout))
                     .foregroundStyle(.secondary)
                     .frame(maxWidth: .infinity)
             } else {

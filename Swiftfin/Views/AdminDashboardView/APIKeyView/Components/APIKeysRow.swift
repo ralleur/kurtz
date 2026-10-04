@@ -41,7 +41,7 @@ extension APIKeysView {
                 }
                 .monospacedDigit()
             }
-            .font(.subheadline)
+            .font(KurtzBrand.font(.subheadline))
             .multilineTextAlignment(.leading)
         }
 

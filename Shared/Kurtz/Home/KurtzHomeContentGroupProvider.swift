@@ -166,7 +166,7 @@ struct KurtzContinueContentGroup: ContentGroup {
                     }
                     .failure {
                         Text(item.displayTitle)
-                            .font(.largeTitle)
+                            .font(KurtzBrand.font(.largeTitle))
                             .fontWeight(.semibold)
                     }
                     .edgePadding(.leading)

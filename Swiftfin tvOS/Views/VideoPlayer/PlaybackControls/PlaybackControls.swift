@@ -61,6 +61,16 @@ extension VideoPlayer {
             .overlay {
                 KurtzPlaybackPromptOverlay()
             }
+            .overlay(alignment: .topLeading) {
+                KurtzPlayerBrand()
+                    .padding(.top, 24)
+                    .edgePadding(.leading)
+                    .isVisible(
+                        !containerState.isPresentingOverlay &&
+                            !containerState.isScrubbing &&
+                            !containerState.isPresentingSupplement
+                    )
+            }
             .focusSection()
             .animation(.easeInOut(duration: 0.25), value: containerState.isPresentingSupplement)
             .animation(.easeInOut(duration: 0.25), value: containerState.isPresentingOverlay)

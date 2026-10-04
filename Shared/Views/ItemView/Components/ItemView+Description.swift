@@ -39,13 +39,13 @@ extension ItemView {
                                 router.route(to: .itemOverview(item: item))
                             } label: {
                                 SeeMoreText(itemOverview)
-                                    .font(.footnote)
+                                    .font(KurtzBrand.font(.footnote))
                                     .lineLimit(3)
                             }
                             .buttonStyle(.plain)
                         } tvOSView: {
                             Text(itemOverview)
-                                .font(.footnote)
+                                .font(KurtzBrand.font(.footnote))
                                 .lineLimit(3)
                         }
                     }

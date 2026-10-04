@@ -57,7 +57,7 @@ struct ActiveSessionDetailsView: View {
                     HStack(spacing: 4) {
                         Text(source.uppercased())
                         Image(systemName: "arrow.right")
-                            .font(.footnote)
+                            .font(KurtzBrand.font(.footnote))
                         Text(destination.uppercased())
                     }
                 } else {

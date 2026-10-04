@@ -119,14 +119,14 @@ extension MediaPeopleSupplement {
         var body: some View {
             VStack(alignment: .leading, spacing: 5) {
                 Text(person.displayTitle)
-                    .font(.subheadline)
+                    .font(KurtzBrand.font(.subheadline))
                     .fontWeight(.semibold)
                     .lineLimit(1)
                     .foregroundStyle(.primary)
 
                 if let role = person.displayRole {
                     Text(role)
-                        .font(.caption)
+                        .font(KurtzBrand.font(.caption))
                         .foregroundStyle(.secondary)
                         .lineLimit(1)
                 }
