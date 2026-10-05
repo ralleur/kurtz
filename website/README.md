@@ -10,7 +10,7 @@ python3 -m http.server 4173 --directory build
 
 Open `/site/` for a preview. The same output also works under `/kurtz/`: every
 internal URL is relative. Canonical and OpenGraph URLs use the repository's
-case-sensitive address, `https://ralleur.github.io/kurtz/`.
+case-sensitive address, `https://kurtz.app/`.
 
 The GitHub Pages workflow validates and uploads **only `build/site`**. Raw film
 masters, screen recordings, server data and credentials live under ignored
@@ -36,3 +36,10 @@ Mac captures must stay labeled as Mac; never imply they show the mobile app.
 ## Desktop motifs (2026-10-04)
 
 Hero, comparison and Open panel now use new kurtz 0.9.7 (9) captures on an explicitly staged desktop, with subdued pug wallpaper and Finder/Notes context. Three responsive WebP sizes retain the full composition. The existing r3 DMG download is unchanged.
+
+## Custom domain
+
+The production address is https://kurtz.app/. GitHub Pages remains the host;
+Cloudflare supplies DNS only. The apex has the four GitHub Pages IPv4 records,
+and www is a CNAME to ralleur.github.io. The GitHub domain-verification TXT
+record must remain in DNS. GitHub manages the certificate and www redirect.
