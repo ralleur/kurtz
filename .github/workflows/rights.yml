@@ -1,0 +1,24 @@
+name: Rights
+
+on:
+  push:
+    branches: [kurtz, main]
+  pull_request:
+  merge_group:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  rights:
+    name: Rights and dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - name: Test fail-closed dependency checks
+        run: python3 -m unittest discover -s Tools/licensing/tests -v
+      - name: Check rights and exact dependency inputs
+        run: python3 Tools/licensing/verify-rights.py

@@ -82,6 +82,7 @@ jobs:
           PACKAGE_NAME: kurtz-${{ matrix.platform }}
         run: |
           set -euo pipefail
+          python3 Tools/licensing/verify-rights.py --release
           mkdir -p fastlane/build/Payload
           cp -R fastlane/build/*.xcarchive/Products/Applications/*.app fastlane/build/Payload/
           python3 Tools/kurtz/verify-branding.py --app fastlane/build/Payload/kurtz.app

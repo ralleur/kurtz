@@ -1,0 +1,44 @@
+name: CLA Assistant
+
+on:
+  issue_comment:
+    types: [created]
+  pull_request_target:
+    types: [opened, reopened, synchronize, closed]
+
+permissions: {}
+
+concurrency:
+  group: cla-signatures
+  cancel-in-progress: false
+
+jobs:
+  cla-v1:
+    name: license/cla
+    if: >-
+      (github.event_name == 'pull_request_target' &&
+       (github.event.action != 'closed' || github.event.pull_request.merged == true)) ||
+      (github.event_name == 'issue_comment' && github.event.issue.pull_request &&
+       (github.event.comment.body == 'recheck' ||
+        github.event.comment.body == 'I have read the kurtz Contributor License Agreement v1 and I hereby sign it'))
+    runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: write
+      pull-requests: write
+      statuses: write
+    steps:
+      # Trusted pinned action only. Never check out or execute PR code here.
+      - name: Check CLA v1
+        uses: contributor-assistant/github-action@ca4a40a7d1004f18d9960b404b97e5f30a505a08 # v2.6.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          path-to-document: https://github.com/ralleur/kurtz/blob/kurtz/CLA.md
+          path-to-signatures: .github/cla-signatures-v1.json
+          branch: cla-signatures
+          allowlist: 'ralleur'
+          lock-pullrequest-aftermerge: false
+          custom-pr-sign-comment: I have read the kurtz Contributor License Agreement v1 and I hereby sign it
+          custom-notsigned-prcomment: Please read $pathToCLADocument and sign for your own original contribution only. Identify upstream imports and third-party material separately.
+          custom-allsigned-prcomment: The original contributors have accepted kurtz CLA v1. Third-party licenses still apply.

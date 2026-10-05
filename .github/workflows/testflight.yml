@@ -110,6 +110,9 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
 
+      - name: Verify distribution rights before signing and upload
+        run: python3 Tools/licensing/verify-rights.py --release
+
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:

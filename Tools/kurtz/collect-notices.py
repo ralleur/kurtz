@@ -17,6 +17,7 @@ parts = ['kurtz - Open Source Notices\n\nkurtz is based on Swiftfin (MPL-2.0). T
 parts += ['kurtz / Swiftfin\n' + (root / 'LICENSE.md').read_text()]
 packages = sorted(checkouts.iterdir()) + [root / 'build/mac-packages/MPVUI', root / 'build/mac-packages/BlurHashKit']
 seen = set()
+missing = []
 for package in packages:
     identity = package.name.lower()
     if identity in seen or not package.is_dir():
@@ -25,8 +26,14 @@ for package in packages:
     pin = pins.get(identity, {})
     info = pin.get('location', '') + '\n' + json.dumps(pin.get('state', {}), sort_keys=True)
     notices = [p for p in package.iterdir() if p.is_file() and p.name.split('.')[0].upper() in {'LICENSE', 'COPYING', 'NOTICE'}]
+    if identity in pins and not notices:
+        missing.append(identity + ': no root license/notice text; obtain and record actual permission')
     for notice in sorted(notices):
         parts.append(package.name + '\n' + info + '\n' + notice.name + '\n\n' + notice.read_text(errors='replace'))
+for identity in sorted(pins.keys() - seen):
+    missing.append(identity + ': pinned package checkout missing')
+if missing:
+    raise SystemExit('Refusing incomplete notice regeneration:\n' + '\n'.join(missing))
 for name in ['Shared/Resources/Fonts/Sora-OFL.txt', 'Shared/Resources/Fonts/NotoSansCJK-OFL.txt', 'build/mac-packages/MPVUI/Libmpv.xcframework/RECIPE_LICENSE']:
     p = root / name
     if p.exists():

@@ -3,9 +3,10 @@
 This is a packaging workaround for duplicate host/Catalyst SwiftPM products in
 Xcode 27's archive action. The input must first pass a normal Release build.
 """
-import argparse,datetime,plistlib,re,subprocess
+import argparse,datetime,plistlib,re,subprocess,sys
 from pathlib import Path
 p=argparse.ArgumentParser(description=__doc__);p.add_argument('app',type=Path);p.add_argument('archive',type=Path);a=p.parse_args()
+subprocess.run([sys.executable,str(Path(__file__).resolve().parents[2]/'Tools/licensing/verify-rights.py'),'--release'],check=True)
 app=a.app.resolve();archive=a.archive.resolve()
 if archive.exists():raise SystemExit('Refusing to overwrite existing archive')
 subprocess.run(['codesign','--verify','--deep','--strict',str(app)],check=True)

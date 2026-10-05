@@ -5,6 +5,7 @@ import hashlib
 import json
 from pathlib import Path
 import subprocess
+import sys
 import tarfile
 import tempfile
 
@@ -15,6 +16,7 @@ p.add_argument('--version', required=True)
 p.add_argument('--output', type=Path, default=ROOT / 'build/release')
 a = p.parse_args()
 commit = subprocess.check_output(['git', 'rev-parse', a.ref + '^{commit}'], cwd=ROOT, text=True).strip()
+subprocess.run([sys.executable, str(ROOT / 'Tools/licensing/verify-rights.py'), '--ref', commit, '--release'], check=True)
 index_bytes = subprocess.check_output(['git', 'show', f'{commit}:docs/release/source-index.json'], cwd=ROOT)
 index = json.loads(index_bytes)
 inputs = ROOT / 'build/release/source-inputs'

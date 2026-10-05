@@ -2,6 +2,7 @@
 # Prepare a local release archive; never exports or uploads it.
 set -euo pipefail
 cd "$(dirname "$0")/../.."
+python3 Tools/licensing/verify-rights.py --release
 case "${1:-}" in
   ios) SCHEME=Swiftfin; DESTINATION='generic/platform=iOS' ;;
   tvos) SCHEME='Swiftfin tvOS'; DESTINATION='generic/platform=tvOS' ;;

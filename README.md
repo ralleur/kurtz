@@ -110,6 +110,12 @@ session; an already connected server may continue its normal browsing activity.
 
 ## License and acknowledgements
 
+Project ownership, transferable contribution rights and dependency reviews are
+documented in [RIGHTS.md](RIGHTS.md). New original external contributions require
+[CLA v1](CLA.md); third-party and historical contributions retain their own
+rights. A project transfer preserves existing open-source grants and dependency
+obligations. The [brand policy](TRADEMARKS.md) covers product identity.
+
 kurtz source is under the [Mozilla Public License 2.0](LICENSE.md), retaining
 Swiftfin's license and source notices. Thank you to Swiftfin, Jellyfin, VideoLAN,
 mpv and the other projects in the [third-party notices](Shared/Resources/KurtzThirdPartyNotices.txt),
