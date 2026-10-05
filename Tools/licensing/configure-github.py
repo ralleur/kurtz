@@ -148,6 +148,9 @@ def main():
         if len(existing) > 1:
             raise APIError('Multiple matching rulesets; refusing an ambiguous update')
         checks = api('commits/' + quote(repo['default_branch'], safe='') + '/check-runs?per_page=100')
+        if args.apply and not any(check['name'] == 'Rights and dependencies' and check['conclusion'] == 'success'
+                                  for check in checks['check_runs']):
+            raise APIError('The deployed default-branch Rights and dependencies check must pass before protection is activated')
         action_ids = {check['app']['id'] for check in checks['check_runs'] if check['app']['slug'] == 'github-actions'}
         if len(action_ids) != 1:
             raise APIError('Cannot identify the GitHub Actions app from actual checks; refusing an unbound required check')
