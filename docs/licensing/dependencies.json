@@ -248,7 +248,7 @@
       "review": "baseline-2026-10-05"
     },
     ".github/workflows/rights.yml": {
-      "sha256": "32ccd87095bc3ff579a773c723b3cee24b5e987a3f485495f83dd8cbc7d3dc30",
+      "sha256": "2a1c6552d4b9adb484f5bea0ac67072e1ef3f1be41dd73656d2086a96fb31dac",
       "review": "baseline-2026-10-05"
     },
     ".github/workflows/testflight.yml": {
