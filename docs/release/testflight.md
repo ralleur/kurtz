@@ -34,7 +34,12 @@ python3 Tools/kurtz/export-testflight.py tvos build/apple-release/kurtz-tvos.xca
 
 The exporter validates bundle identity, resources, device families and signature;
 rejects the debug playback harness; and exports for internal testing only.
-It preserves the archive's version/build numbers. For existing API-key signing,
+It preserves the archive's version/build numbers. Embedded frameworks must
+contain the app's arm64 architecture. If a vendor framework contains additional
+architectures, the exporter creates `prepared.xcarchive` in a fresh output
+directory, removes only the extra slices, and re-signs the framework and app
+using the supplied local certificate. It leaves the source archive unchanged
+and records before/after binary hashes. For existing API-key signing,
 provide `--key /private/path/AuthKey_ID.p8 --key-id ID --issuer-file /private/path/issuer.txt`.
 If cloud signing is unavailable but an authorized local distribution identity
 exists, provide `--profile /private/path/profile.mobileprovision` and
@@ -73,5 +78,12 @@ Simulator evidence is recorded separately and does not replace these tests.
 On 4 October 2026, both Release archives and local distribution exports passed.
 The exported IPAs retain 0.9.6 (75) and use valid TestFlight distribution profiles.
 [The candidate record](testflight-0.9.6-75.json) includes source identity and IPA hashes.
-No upload has occurred: the initial App Store Connect app record still requires
-an authenticated website session.
+On 5 October 2026, the app record was created (`6819176198`) for iOS and tvOS.
+The `kurtz Internal` group contains the existing account holder only; builds are
+assigned manually. Upload and Apple processing status are recorded in the
+candidate record.
+
+The initial tvOS upload was rejected because the vendor Libmpv framework also
+contained arm64e. The corrected arm64-only export passed local architecture,
+signature and provisioning checks and was uploaded successfully. Libmpv lacks
+a matching vendor dSYM, limiting native-library crash symbolication.

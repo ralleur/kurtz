@@ -6,7 +6,7 @@
     "CURRENT_PROJECT_VERSION": "75"
   },
   "xcode": "Xcode 27.0\nBuild version 27A266a",
-  "scope": "internal TestFlight candidates; not uploaded",
+  "scope": "uploaded for internal TestFlight; iOS assigned, tvOS processing",
   "exports": [
     {
       "platform": "ios",
@@ -28,18 +28,84 @@
       "version": "0.9.6",
       "build": "75",
       "internal_only": true,
+      "architecture_adjustments": [
+        {
+          "framework": "Libmpv.framework",
+          "removed_architectures": [
+            "arm64e"
+          ],
+          "original_sha256": "4f5315f73ec63234f8e7d6164aebd62ca84ae512fdbbbef5b49d77231ca6ea81",
+          "prepared_sha256": "11ccbc7d804d3c4d00517789f259dbdff606c8848501c32c42a57472cf1d4deb"
+        }
+      ],
+      "action": "export",
+      "xcode_exit_code": 0,
+      "apple_processing_verified": false,
+      "note": "A successful upload still requires App Store Connect processing and tester availability checks.",
+      "ipa": "kurtz.ipa",
+      "ipa_sha256": "d0a61ef52dfbb0a919bb97ebf44dd52bc33dd3bf363e897f088c61eec0a70a32",
+      "distribution_profile_verified": true
+    }
+  ],
+  "pending": [
+    "tvOS Apple processing, encryption-status verification and internal build assignment"
+  ],
+  "external_release_gates": "Decoder licensing, native dependency privacy and device qualification remain open.",
+  "app_store_connect": {
+    "app_id": "6819176198",
+    "name": "kurtz",
+    "platforms": [
+      "IOS",
+      "TV_OS"
+    ],
+    "beta_group_id": "7f5325a8-bad2-4a71-ad88-37ba73db65c0",
+    "beta_group_name": "kurtz Internal",
+    "internal_testers": 1,
+    "automatic_distribution": false
+  },
+  "superseded_exports": [
+    {
+      "platform": "tvos",
+      "bundle_id": "com.ralleur.vela",
+      "version": "0.9.6",
+      "build": "75",
+      "internal_only": true,
       "action": "export",
       "xcode_exit_code": 0,
       "apple_processing_verified": false,
       "note": "A successful upload still requires App Store Connect processing and tester availability checks.",
       "ipa": "kurtz.ipa",
       "ipa_sha256": "eee20ff8326e7f29cd604c6d5d2365a87b662d5dbbfaeb05a6b43316bde6720d",
-      "distribution_profile_verified": true
+      "distribution_profile_verified": true,
+      "reason": "Apple upload rejected the extra arm64e slice in tvOS Libmpv.framework."
     }
   ],
-  "pending": [
-    "Authenticated website session to create first App Store Connect record",
-    "Upload, Apple processing, encryption-status verification and internal tester availability"
+  "uploads": [
+    {
+      "platform": "ios",
+      "bundle_id": "com.ralleur.vela",
+      "version": "0.9.6",
+      "build": "75",
+      "internal_only": true,
+      "action": "upload",
+      "xcode_exit_code": 0,
+      "apple_processing_verified": false,
+      "note": "A successful upload still requires App Store Connect processing and tester availability checks."
+    },
+    {
+      "platform": "tvos",
+      "bundle_id": "com.ralleur.vela",
+      "version": "0.9.6",
+      "build": "75",
+      "internal_only": true,
+      "architecture_adjustments": [],
+      "action": "upload",
+      "xcode_exit_code": 0,
+      "apple_processing_verified": false,
+      "note": "A successful upload still requires App Store Connect processing and tester availability checks."
+    }
   ],
-  "external_release_gates": "Decoder licensing, native dependency privacy and device qualification remain open."
+  "upload_warnings": [
+    "Libmpv vendor framework has no matching dSYM; native-library crash symbolication is limited."
+  ]
 }

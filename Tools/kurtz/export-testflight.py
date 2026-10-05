@@ -11,6 +11,59 @@ import tempfile
 import zipfile
 
 
+def prepare_framework_architectures(archive, output, certificate):
+    """Thin a copied archive to the main executable's architectures, then re-sign."""
+    archive_info = plistlib.loads((archive / "Info.plist").read_bytes())
+    relative_app = Path("Products") / archive_info["ApplicationProperties"]["ApplicationPath"]
+    app = archive / relative_app
+    info = plistlib.loads((app / "Info.plist").read_bytes())
+    def architectures(binary):
+        return set(subprocess.check_output(["lipo", "-archs", str(binary)], text=True).split())
+    app_archs = architectures(app / info["CFBundleExecutable"])
+    if app_archs != {"arm64"}:
+        raise SystemExit(f"Expected an arm64 device archive; found {sorted(app_archs)}")
+    changes = []
+    for framework in sorted((app / "Frameworks").glob("*.framework")):
+        framework_info = plistlib.loads((framework / "Info.plist").read_bytes())
+        binary = framework / framework_info["CFBundleExecutable"]
+        archs = architectures(binary)
+        if not app_archs <= archs:
+            raise SystemExit(f"{framework.name} is missing the app's device architecture")
+        extra = archs - app_archs
+        if extra:
+            changes.append((framework.relative_to(archive), binary.relative_to(archive), sorted(extra)))
+    if not changes:
+        return archive, []
+    if not certificate:
+        raise SystemExit("Embedded frameworks need thinning; provide the existing local --certificate-sha1")
+    prepared = output / "prepared.xcarchive"
+    if prepared.exists():
+        raise SystemExit("Use a fresh output directory; prepared.xcarchive already exists")
+    subprocess.run(["ditto", str(archive), str(prepared)], check=True)
+    records = []
+    for relative_framework, relative_binary, extras in changes:
+        binary = prepared / relative_binary
+        before = hashlib.sha256(binary.read_bytes()).hexdigest()
+        temporary = binary.with_name(binary.name + ".thinned")
+        command = ["lipo", str(binary)]
+        for arch in extras:
+            command += ["-remove", arch]
+        subprocess.run(command + ["-output", str(temporary)], check=True)
+        temporary.replace(binary)
+        if architectures(binary) != app_archs:
+            raise SystemExit("Framework thinning did not preserve the required architectures")
+        subprocess.run(["codesign", "--force", "--sign", certificate,
+                        "--preserve-metadata=identifier,entitlements,requirements,flags,runtime",
+                        str(prepared / relative_framework)], check=True)
+        records.append({"framework": relative_framework.name, "removed_architectures": extras,
+                        "original_sha256": before, "prepared_sha256": hashlib.sha256(binary.read_bytes()).hexdigest()})
+    subprocess.run(["codesign", "--force", "--sign", certificate,
+                    "--preserve-metadata=identifier,entitlements,requirements,flags,runtime",
+                    str(prepared / relative_app)], check=True)
+    subprocess.run(["codesign", "--verify", "--deep", "--strict", str(prepared / relative_app)], check=True)
+    return prepared, records
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("platform", choices=["ios", "tvos"])
@@ -27,6 +80,7 @@ def main():
     archive = args.archive.resolve(strict=True)
     output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=True)
+    archive, architecture_adjustments = prepare_framework_architectures(archive, output, args.certificate_sha1)
     with (archive / "Info.plist").open("rb") as stream:
         archive_info = plistlib.load(stream)
     app = archive / "Products" / archive_info["ApplicationProperties"]["ApplicationPath"]
@@ -84,6 +138,7 @@ def main():
         "version": info["CFBundleShortVersionString"],
         "build": info["CFBundleVersion"],
         "internal_only": True,
+        "architecture_adjustments": architecture_adjustments,
         "action": "upload" if args.upload else "export",
         "xcode_exit_code": result.returncode,
         "apple_processing_verified": False,
