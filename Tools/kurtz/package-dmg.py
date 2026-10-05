@@ -21,6 +21,7 @@ parser.add_argument('--output', type=Path, default=Path('build/release'))
 parser.add_argument('--revision', type=int, default=1)
 parser.add_argument('--development-preview', action='store_true')
 a = parser.parse_args()
+subprocess.run([sys.executable, str(ROOT / 'Tools/licensing/verify-rights.py'), '--release'], check=True)
 assert a.revision > 0, 'Packaging revision must be positive'
 # Fail before creating a volume if the build-only dependencies are missing.
 import ds_store  # noqa: E402,F401
@@ -80,6 +81,9 @@ try:
     licenses.mkdir()
     shutil.copy2(ROOT / 'Shared/Resources/KurtzThirdPartyNotices.txt', licenses / 'Open Source Notices.txt')
     shutil.copy2(ROOT / 'LICENSE.md', licenses / 'kurtz Source License.txt')
+    for document in ['RIGHTS.md', 'CLA.md', 'TRADEMARKS.md']:
+        shutil.copy2(ROOT / document, licenses / document)
+    shutil.copytree(ROOT / 'docs/licensing', licenses / 'licensing')
     shutil.copytree(ROOT / 'docs/release', licenses / 'release')
     (licenses / 'README.txt').write_text(
         f'kurtz {version}, build {info["CFBundleVersion"]}; packaging revision {a.revision}.\n'

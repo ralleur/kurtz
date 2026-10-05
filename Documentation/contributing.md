@@ -1,4 +1,32 @@
-# Contributing to Swiftfin
+# Contributing to kurtz
+
+kurtz is an independent Swiftfin fork. For this repository,
+[RIGHTS.md](../RIGHTS.md), [CLA v1](../CLA.md) and the
+[dependency review guide](../docs/licensing/README.md) govern contributions.
+External contributors retain their copyright and grant additional transferable
+rights in their own original contributions through the CLA. Acceptance must be
+recorded before merge; upstream imports remain under their original licenses.
+Never remove upstream authors or imply that an import is your own work.
+
+Every PR requires maintainer provenance review and passing `license/cla` and
+`Rights and dependencies` checks once GitHub activation is complete. Describe
+copied material, dependency changes and material AI assistance in the PR. Keep
+third-party licenses, source records and asset credits current. Run:
+
+```sh
+python3 -m unittest discover -s Tools/licensing/tests -v
+python3 Tools/licensing/verify-rights.py
+# Before creating a distribution:
+python3 Tools/licensing/verify-rights.py --release
+```
+
+The technical conventions below are inherited from Swiftfin. References to
+Jellyfin contribution policies apply when submitting to upstream, rather than
+automatically determining kurtz's own contribution or brand rules. For kurtz
+icons use [our brand guidance](../marketing/brand/README.md) and
+[TRADEMARKS.md](../TRADEMARKS.md); do not use the Jellyfin logo as our identity.
+
+## Inherited Swiftfin engineering guide
 
 > Thank you for your interest in contributing to the Jellyfin (Swiftfin) project! This page and its children describe the ways you can contribute, as well as some of our policies. This should help guide you through your first Issue or PR.
 

@@ -1,5 +1,11 @@
 # kurtz 0.9.7 — distribution source and licenses
 
+For subsequent distributions, run
+`python3 Tools/licensing/verify-rights.py --release` before packaging or upload.
+The [rights maintenance guide](../licensing/README.md) and
+[current dependency register](../licensing/dependencies.json) record unresolved
+obligations. These checks do not retrospectively clear or change this release.
+
 The release contains kurtz/Swiftfin application code, Swift packages, static
 libVLC and the GPL-enabled libmpv framework. The combined executable distribution
 is provided under **GPL-3.0-or-later**; MPL-2.0 notices continue to apply to the

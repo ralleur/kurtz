@@ -1,0 +1,510 @@
+{
+  "schema_version": 1,
+  "reviews": {
+    "baseline-2026-10-05": {
+      "date": "2026-10-05",
+      "reviewed_by": "Codex — repository evidence review requested by Ralf; no fabricated owner signature",
+      "components": [
+        {
+          "name": "blurhashkit",
+          "source": "https://github.com/LePips/BlurHashKit",
+          "revision": "19847aa26cdea6859694f6583ab41d3c4412afb6"
+        },
+        {
+          "name": "cocoalumberjack",
+          "source": "https://github.com/CocoaLumberjack/CocoaLumberjack.git",
+          "revision": "c5f2ed4d219866117e135cf648180dc7b66739d3"
+        },
+        {
+          "name": "collectionhstack",
+          "source": "https://github.com/LePips/CollectionHStack",
+          "revision": "5824801d31b67f89a125013d642cce7d284143c2"
+        },
+        {
+          "name": "collectionvgrid",
+          "source": "https://github.com/LePips/CollectionVGrid",
+          "revision": "7e4c4d8f20c8534cc5736e46f06265cd3686c944"
+        },
+        {
+          "name": "corestore",
+          "source": "https://github.com/JohnEstropia/CoreStore.git",
+          "revision": "4b6d9a54e75d2c9fd2c3c768f7d4aa3175c09133"
+        },
+        {
+          "name": "defaults",
+          "source": "https://github.com/sindresorhus/Defaults",
+          "revision": "00a7465a0668a87fa159e779b9d80f1f9652357e"
+        },
+        {
+          "name": "differencekit",
+          "source": "https://github.com/ra1028/DifferenceKit",
+          "revision": "073b9671ce2b9b5b96398611427a1f929927e428"
+        },
+        {
+          "name": "engine",
+          "source": "https://github.com/nathantannar4/Engine",
+          "revision": "fabe1490fd986a66cc344f337ced2010f4adc943"
+        },
+        {
+          "name": "factory",
+          "source": "https://github.com/hmlongco/Factory",
+          "revision": "27717e148c0c1ed2998f687a8e98d9395d684abf"
+        },
+        {
+          "name": "files",
+          "source": "https://github.com/JohnSundell/Files",
+          "revision": "e85f2b4a8dfa0f242889f45236f3867d16e40480"
+        },
+        {
+          "name": "get",
+          "source": "https://github.com/kean/Get",
+          "revision": "31249885da1052872e0ac91a2943f62567c0d96d"
+        },
+        {
+          "name": "jellyfin-sdk-swift",
+          "source": "https://github.com/jellyfin/jellyfin-sdk-swift.git",
+          "revision": "bf2f30b9a17c03da82f47d8faa50a666043f2196"
+        },
+        {
+          "name": "keychain-swift",
+          "source": "https://github.com/evgenyneu/keychain-swift",
+          "revision": "5e1b02b6a9dac2a759a1d5dbc175c86bd192a608"
+        },
+        {
+          "name": "lnpopupcontroller",
+          "source": "https://github.com/LeoNatan/LNPopupController.git",
+          "revision": "e14712b8077f9d25c2b70d23241e922537673338"
+        },
+        {
+          "name": "lnpopupui",
+          "source": "https://github.com/LeoNatan/LNPopupUI/",
+          "revision": "aa9c813f2b47d055b648628b738e1b115c5e9fad"
+        },
+        {
+          "name": "lnswiftuiutils",
+          "source": "https://github.com/LeoNatan/LNSwiftUIUtils.git",
+          "revision": "181a95b992f84d99a14c562c86e8ebef3cbcdca9"
+        },
+        {
+          "name": "mantis",
+          "source": "https://github.com/guoyingtao/Mantis",
+          "revision": "b3c237aff54b8307440157a2f5956bdea2e76791"
+        },
+        {
+          "name": "mediaaccessibilitykit",
+          "source": "https://github.com/LePips/MediaAccessibilityKit",
+          "revision": "178a06258c39bd964fb11f1031891a9bd231ebb8"
+        },
+        {
+          "name": "mpvui",
+          "source": "https://github.com/LePips/MPVUI",
+          "revision": "794ef73e5fb0fa356a4b488ab98d3cd43903b521"
+        },
+        {
+          "name": "nuke",
+          "source": "https://github.com/kean/Nuke",
+          "revision": "63a8fcbd6621340a2410bc3e9575ac97058615f4"
+        },
+        {
+          "name": "pulse",
+          "source": "https://github.com/kean/Pulse",
+          "revision": "94b92731d370c129bb771e9c18f69b0a44ccca5c"
+        },
+        {
+          "name": "pulseloghandler",
+          "source": "https://github.com/kean/PulseLogHandler",
+          "revision": "477e9ef76615f0b76b43bb502af432fe6750b704"
+        },
+        {
+          "name": "statefulmacro",
+          "source": "https://github.com/LePips/StatefulMacro",
+          "revision": "12d7ee449891457e8cc73074ac7aeba4b50f48ca"
+        },
+        {
+          "name": "svgkit",
+          "source": "https://github.com/SVGKit/SVGKit",
+          "revision": "58152b9f7c85eab239160b36ffdfd364aa43d666"
+        },
+        {
+          "name": "swift-algorithms",
+          "source": "https://github.com/apple/swift-algorithms.git",
+          "revision": "87e50f483c54e6efd60e885f7f5aa946cee68023"
+        },
+        {
+          "name": "swift-argument-parser",
+          "source": "https://github.com/apple/swift-argument-parser",
+          "revision": "6a52f3251125d74daf04fcbd5e6f08a75d074382"
+        },
+        {
+          "name": "swift-atomics",
+          "source": "https://github.com/apple/swift-atomics.git",
+          "revision": "0442cb5a3f98ab802acb777929fdb446bda11a34"
+        },
+        {
+          "name": "swift-case-paths",
+          "source": "https://github.com/pointfreeco/swift-case-paths.git",
+          "revision": "5ce3b8e89d6b05e5a369c356152303a10a7608a3"
+        },
+        {
+          "name": "swift-collections",
+          "source": "https://github.com/apple/swift-collections.git",
+          "revision": "a0cb0954ecb21e4e31b0070e6ed5674e8556685a"
+        },
+        {
+          "name": "swift-identified-collections",
+          "source": "https://github.com/pointfreeco/swift-identified-collections",
+          "revision": "322d9ffeeba85c9f7c4984b39422ec7cc3c56597"
+        },
+        {
+          "name": "swift-log",
+          "source": "https://github.com/apple/swift-log.git",
+          "revision": "a878e7f8f46cfc0e1125e565b5c08e7d5272dc9a"
+        },
+        {
+          "name": "swift-nio",
+          "source": "https://github.com/apple/swift-nio.git",
+          "revision": "0b18836bd8b0162e7e17a995a3fbee20ed8f3b2b"
+        },
+        {
+          "name": "swift-nio-transport-services",
+          "source": "https://github.com/apple/swift-nio-transport-services.git",
+          "revision": "67787bb645a5e67d2edcdfbe48a216cc549222d5"
+        },
+        {
+          "name": "swift-numerics",
+          "source": "https://github.com/apple/swift-numerics.git",
+          "revision": "0c0290ff6b24942dadb83a929ffaaa1481df04a2"
+        },
+        {
+          "name": "swift-syntax",
+          "source": "https://github.com/swiftlang/swift-syntax",
+          "revision": "0687f71944021d616d34d922343dcef086855920"
+        },
+        {
+          "name": "swift-system",
+          "source": "https://github.com/apple/swift-system.git",
+          "revision": "704705c5c51156ede21172a38654d522ce487074"
+        },
+        {
+          "name": "swiftui-introspect",
+          "source": "https://github.com/siteline/SwiftUI-Introspect",
+          "revision": "a37eca1db7bebc9437ee89508e7b4433ff34adb4"
+        },
+        {
+          "name": "swiftvlc",
+          "source": "https://github.com/harflabs/SwiftVLC",
+          "revision": "192393a45cdcd7ebb6befac26586360b8b1676b3"
+        },
+        {
+          "name": "transmission",
+          "source": "https://github.com/nathantannar4/Transmission",
+          "revision": "f5a531fcece5d65c75397d01cf2910b31347e0b9"
+        },
+        {
+          "name": "tvospicker",
+          "source": "https://github.com/ViacomInc/TVOSPicker",
+          "revision": "90806460f3b3e7564344647241c157aeb0b27a71"
+        },
+        {
+          "name": "xctest-dynamic-overlay",
+          "source": "https://github.com/pointfreeco/xctest-dynamic-overlay",
+          "revision": "8f6abcf4c8950e2679d5b2fee4ca284fd7c34886"
+        },
+        "native engines and recipes in docs/release/source-index.json",
+        "build tools, workflows, proof-of-concept modules, fonts and provenance files covered by the exact input list"
+      ],
+      "origin": "Swiftfin foundation plus upstream URLs and exact revisions in application locks and release source index; build and asset origins in the evidence documents",
+      "license_evidence": "Retained MPL-2.0 source license; bundled full third-party texts, native GPL/LGPL release record and font/media evidence. StatefulMacro is explicitly unresolved, not assigned a guessed license.",
+      "use": "Existing open-source application and development inputs; native linkage, tooling and media use documented in baseline-2026-10-05.md. No full proprietary-relicensing clearance.",
+      "obligations": "Preserve attribution and full notices; provide matching modified source/build recipes for the actual distribution; satisfy MPL/GPL/LGPL and CC/OFL terms; resolve the listed release blockers. Tool-only status does not authorize bundling tools.",
+      "transfer_effect": "Only original rights and valid additional grants may be transferred. Dependencies and upstream portions remain with their respective rightsholders and retain their licenses; existing public grants survive.",
+      "decision": "development-only",
+      "evidence_files": {
+        "docs/licensing/baseline-2026-10-05.md": "2fe33730f289174276af14ecab47e0a8dbc99bc9db7549bb45fead3be2755be0",
+        "LICENSE.md": "3e8120e21316858a3bf798748c5e7514353c8e4667e9cf1f0f3bec4a9c3489d0",
+        "CLA.md": "6da09a3d97adce62240126ae53d7992b144f09ab71951bf6e20b7012344570d7",
+        "docs/release/README.md": "8e42f4a688ec105de31d71be8dc04ed6de026b1fd901eba775324fd7883e7976",
+        "docs/release/source-index.json": "00e843a55957c6694cb1f5bf175e0a54d304f45447dea5f15c762a7e9c560906",
+        "Shared/Resources/KurtzThirdPartyNotices.txt": "02a5807d965918ff490c6a86d84ca0d2fa13b30290ff91282cc7fa0d024f6cec",
+        "marketing/sources-and-licenses.md": "fb3a72311574d3e8ca67a720ccf981175515121225b6613d023acf7ac3747f2f",
+        "marketing/brand/README.md": "fb0d2631c25189570fc0b12d3b5a39c18c1f14222c29bf5af473c7bc31fc3617"
+      },
+      "release_blockers": [
+        "StatefulMacro 12d7ee449891457e8cc73074ac7aeba4b50f48ca: applicable redistribution license/grant is not documented. See baseline-2026-10-05.md."
+      ]
+    }
+  },
+  "inputs": {
+    ".github/workflows/ci.yml": {
+      "sha256": "c16680aa3e68b2468ac8cbf78db5ec7cb9bc9fe1139ad31e85cc200e5e06478f",
+      "review": "baseline-2026-10-05"
+    },
+    ".github/workflows/cla.yml": {
+      "sha256": "f8119e74a2a89073efb2a316eab8ab0f2e827f7c496341bad3932b41cc533e59",
+      "review": "baseline-2026-10-05"
+    },
+    ".github/workflows/pages.yml": {
+      "sha256": "499a21cd9d8c1a8e07624b85a9b0cd489f0698a4078e745b1b1cd45d2c7fa3cd",
+      "review": "baseline-2026-10-05"
+    },
+    ".github/workflows/rights.yml": {
+      "sha256": "2a1c6552d4b9adb484f5bea0ac67072e1ef3f1be41dd73656d2086a96fb31dac",
+      "review": "baseline-2026-10-05"
+    },
+    ".github/workflows/testflight.yml": {
+      "sha256": "0d5082334fd6075c746befa641a4c1c75f78f123fe9228fc7c050bcc3f1e048c",
+      "review": "baseline-2026-10-05"
+    },
+    ".github/workflows/validate-pr.yaml": {
+      "sha256": "a993c4aa106c727732ac5b9f82f420aac53e95b5b6f5507049ad6fe3f4631347",
+      "review": "baseline-2026-10-05"
+    },
+    "Brewfile": {
+      "sha256": "e630473ae89e19ee6496a5161b30706d748bea965b8b5d1798f0ef2c1bb4816b",
+      "review": "baseline-2026-10-05"
+    },
+    "ChromeCastFramework.json": {
+      "sha256": "1017623e55d7868ce6ea87df0a8c1c90de02fb909fa985d90c080e6d7b43f8b1",
+      "review": "baseline-2026-10-05"
+    },
+    "Gemfile": {
+      "sha256": "9482ca679d34a3a6eddc7bddbb833960c1837b60f15ed739b1000d0ec96c907e",
+      "review": "baseline-2026-10-05"
+    },
+    "LICENSE.md": {
+      "sha256": "3e8120e21316858a3bf798748c5e7514353c8e4667e9cf1f0f3bec4a9c3489d0",
+      "review": "baseline-2026-10-05"
+    },
+    "PreferencesView/Package.resolved": {
+      "sha256": "428e950613fff4d86ba7fd29e9a8c3ded615672f89b50b72a928b2de5ac2b1c3",
+      "review": "baseline-2026-10-05"
+    },
+    "PreferencesView/Package.swift": {
+      "sha256": "60fbcfdaac0b4a00868aebbf5469fed451dd2cb457e0f1acc21956ac7c5c7962",
+      "review": "baseline-2026-10-05"
+    },
+    "Shared/Resources/Fonts/NotoSansCJK-OFL.txt": {
+      "sha256": "6a73f9541c2de74158c0e7cf6b0a58ef774f5a780bf191f2d7ec9cc53efe2bf2",
+      "review": "baseline-2026-10-05"
+    },
+    "Shared/Resources/Fonts/Sora-Bold.ttf": {
+      "sha256": "2ee62953668346b0aff83994a7864f75ee6b8443f99894e88f47559454291155",
+      "review": "baseline-2026-10-05"
+    },
+    "Shared/Resources/Fonts/Sora-OFL.txt": {
+      "sha256": "ba0b9729c9428ba79a0459ab8ec575791b51509dbec213e383d0316d37fec299",
+      "review": "baseline-2026-10-05"
+    },
+    "Shared/Resources/Fonts/Sora-Regular.ttf": {
+      "sha256": "517e945dedbeeb8d700ccae77d189a6ef2a01f6dcc95ba5d032ef9a30f7f0de9",
+      "review": "baseline-2026-10-05"
+    },
+    "Shared/Resources/Fonts/Sora-SemiBold.ttf": {
+      "sha256": "b02621d4009da9a18eb8a5cbe277f084eb9c3f065ba08a6e77769e81863becf2",
+      "review": "baseline-2026-10-05"
+    },
+    "Shared/Resources/KurtzThirdPartyNotices.txt": {
+      "sha256": "02a5807d965918ff490c6a86d84ca0d2fa13b30290ff91282cc7fa0d024f6cec",
+      "review": "baseline-2026-10-05"
+    },
+    "Swiftfin.xcodeproj/project.pbxproj": {
+      "sha256": "9f7c34fce659fb547cb81c9483a3ab3ef48851c3cb8554de550b60995bfa332f",
+      "review": "baseline-2026-10-05"
+    },
+    "Swiftfin.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved": {
+      "sha256": "f997c4e3d32eaaa2ed0111e6cfe6ccdcc66f5d77ff6688c132e4fac0dac3e18a",
+      "review": "baseline-2026-10-05"
+    },
+    "SwiftfinMacros/Package.resolved": {
+      "sha256": "9f8ff01db9ae3d7258debcf9b93adf59a55e63b6c3da1148995653c3531e8492",
+      "review": "baseline-2026-10-05"
+    },
+    "SwiftfinMacros/Package.swift": {
+      "sha256": "aae3e6ac85da802fc3aee283f7a259a8d1a1b5dd94a339125ef0e98a2f38f654",
+      "review": "baseline-2026-10-05"
+    },
+    "Tools/KurtzConnectPoC/evidence/license-hashes.json": {
+      "sha256": "fb7dfac99878d3d61c8ded6bc70fc99de7e2219aca8ff52c969859edae78a542",
+      "review": "baseline-2026-10-05"
+    },
+    "Tools/KurtzConnectPoC/go.mod": {
+      "sha256": "42867751c808662891bee3be69b5c9ecfd66fb41d1d7b1675c0cd042d9683079",
+      "review": "baseline-2026-10-05"
+    },
+    "Tools/KurtzConnectPoC/go.sum": {
+      "sha256": "3ecf831a14e313f72373824f565b7130053067d7223e32d7fa0314662766e910",
+      "review": "baseline-2026-10-05"
+    },
+    "Tools/KurtzConnectPoC/run-lab.py": {
+      "sha256": "1e5f76e6c086c9c6190fd456d6012b5e02c09e469c2f4949d7e5edf1490539a1",
+      "review": "baseline-2026-10-05"
+    },
+    "Tools/KurtzLogicTests/Package.resolved": {
+      "sha256": "7d306416971c59969c52b425a06737b3f87ad8334ac900aae6c1a5a62c1f592a",
+      "review": "baseline-2026-10-05"
+    },
+    "Tools/KurtzLogicTests/Package.swift": {
+      "sha256": "868df7ad403d0d11410fc3af3ddac37afa93882dec9802ac0715aec95d40bbca",
+      "review": "baseline-2026-10-05"
+    },
+    "Tools/kurtz/archive-apple.sh": {
+      "sha256": "f811ad835836fceda4b288e4c6b5ed86e958b6062696b7a278d64c660969fa54",
+      "review": "baseline-2026-10-05"
+    },
+    "Tools/kurtz/archive-built-mac.py": {
+      "sha256": "b8e9585eff4228b9a1abf96747046c4eb80902d5ee602d0fdbb33972530936fd",
+      "review": "baseline-2026-10-05"
+    },
+    "Tools/kurtz/collect-notices.py": {
+      "sha256": "fa2f9ea7dc2a786522f3ee2af0e99947b4527ab2ce8d8b59af37b7a53c6fa296",
+      "review": "baseline-2026-10-05"
+    },
+    "Tools/kurtz/collect-release-sources.py": {
+      "sha256": "993a5e8c8931ad91bb6abda9061bcb864380a89bc0ed2a0ab328ed5401c05c1a",
+      "review": "baseline-2026-10-05"
+    },
+    "Tools/kurtz/dmg-requirements.txt": {
+      "sha256": "be47412412252f90961135d52422499066f72d45e83e6e241e25850e22608999",
+      "review": "baseline-2026-10-05"
+    },
+    "Tools/kurtz/install-device.sh": {
+      "sha256": "eb207c2d32322577cd75f8de62e3bc5e8f723d16f91851d274d7b55ee8e8a530",
+      "review": "baseline-2026-10-05"
+    },
+    "Tools/kurtz/install-mac.sh": {
+      "sha256": "56611e7801419b5a0a0eacf1549fdc9ed037650710b6fdbd3d09000cbb4047c1",
+      "review": "baseline-2026-10-05"
+    },
+    "Tools/kurtz/package-dmg.py": {
+      "sha256": "8f3b5358f2bd788c105302e5b4f752c35f08cbb81480c79fcd941d7f85b6b649",
+      "review": "baseline-2026-10-05"
+    },
+    "Tools/kurtz/package-sources.py": {
+      "sha256": "3593c131ad72cbfc401ca81d5bf7ae3cd2cfa1b879995608786c0e9dc9dbbeb7",
+      "review": "baseline-2026-10-05"
+    },
+    "Tools/kurtz/prepare-mac-packages.sh": {
+      "sha256": "1b56be35e10e26bf697cdc3966f79c183752e8a353bc0d4031d7bd188a45f3f4",
+      "review": "baseline-2026-10-05"
+    },
+    "Tools/kurtz/style-dmg.py": {
+      "sha256": "b28e76f3579cb3b43465b02fc706e8e4004450a73470b0e297748e98d2980618",
+      "review": "baseline-2026-10-05"
+    },
+    "Tools/kurtz/update-upstream.sh": {
+      "sha256": "40333acfc82308d6598a550d31a36a684e6adea1f331446efdbc08737e07f24f",
+      "review": "baseline-2026-10-05"
+    },
+    "Tools/kurtz/validate-apple.sh": {
+      "sha256": "75b33336f619b3c86c5be657ed5f2be3f711990bdf18383bad6adac3e9f5daea",
+      "review": "baseline-2026-10-05"
+    },
+    "Tools/kurtz/verify-apple-build.py": {
+      "sha256": "6f4f0d98ddaf01f1bd7022eaa3dd53baaed3a512f6bfc85a2daba02a358312c1",
+      "review": "baseline-2026-10-05"
+    },
+    "Tools/kurtz/verify-branding.py": {
+      "sha256": "32c2942bddd53ef014c18721fd8e3b8d00dbe7dc439465948a8e8fac1e724eda",
+      "review": "baseline-2026-10-05"
+    },
+    "Tools/kurtz/verify-mac-build.py": {
+      "sha256": "33fc3219bbdb91271ee883a24dc37e63901cf6c22fd2623750bc8cd55287f9b4",
+      "review": "baseline-2026-10-05"
+    },
+    "Tools/marketing/build-kurtz-brand.cjs": {
+      "sha256": "8ac8394745573b64299f092378fa965c2d5f27c76029187ec1bff0c1857deb84",
+      "review": "baseline-2026-10-05"
+    },
+    "docs/release/MPVUI-Artifacts.lock.json": {
+      "sha256": "f045037e33802ae5060fa52933b59763239ca74af107f8e2efa1a317d0705757",
+      "review": "baseline-2026-10-05"
+    },
+    "docs/release/MPVUI-Inputs.lock.json": {
+      "sha256": "ab7b6b6ceee27b4f9d0a0ace480a49dcefc1edae9b340e9126431ab96cc72b99",
+      "review": "baseline-2026-10-05"
+    },
+    "docs/release/installer-r2.json": {
+      "sha256": "1e6f808ed2c9890ea8e65f481be7308de1331152786c669b810db4bb59e9a1a2",
+      "review": "baseline-2026-10-05"
+    },
+    "docs/release/installer-r3.json": {
+      "sha256": "e1b7d5fc7008af31a3e12350edaaceed9f78bef1349a765c1fde46cc465c9d0a",
+      "review": "baseline-2026-10-05"
+    },
+    "docs/release/publication-0.9.4.json": {
+      "sha256": "812ab33d116da0e022441e54d4a69c912ad040c5614c833ea73c6ca7a819bd77",
+      "review": "baseline-2026-10-05"
+    },
+    "docs/release/publication-kurtz-0.9.6.json": {
+      "sha256": "d3975d4366b80f4af8638175da44c4e1e43b247bb6567dc8aea5efe51b6d40f4",
+      "review": "baseline-2026-10-05"
+    },
+    "docs/release/publication-kurtz-0.9.7-r2.json": {
+      "sha256": "1976d83e919c9afa148dc4595b2fa4ade9e0024e50e9f6becfac5a2ab5a4f5bf",
+      "review": "baseline-2026-10-05"
+    },
+    "docs/release/publication-kurtz-0.9.7-r3.json": {
+      "sha256": "4c340d07a276e6a5f5fa237788f59cec31fbb00af85036cb14ef47b615f49ba3",
+      "review": "baseline-2026-10-05"
+    },
+    "docs/release/publication-kurtz-0.9.7.json": {
+      "sha256": "81fbd472591da29c685b41a3d8175f975457f424aa9f8b4c268a880351c01306",
+      "review": "baseline-2026-10-05"
+    },
+    "docs/release/publication.json": {
+      "sha256": "e660e74093b9105d2d6be19c17c354000eeb615e9e8bfa64e76c50a1672071b4",
+      "review": "baseline-2026-10-05"
+    },
+    "docs/release/source-index.json": {
+      "sha256": "00e843a55957c6694cb1f5bf175e0a54d304f45447dea5f15c762a7e9c560906",
+      "review": "baseline-2026-10-05"
+    },
+    "fastlane/swift/Fastlane.swift": {
+      "sha256": "325de35cdf8263acdbafc65fbee67d9dfecbd72b271ddc1d4679bd97e8c11ecc",
+      "review": "baseline-2026-10-05"
+    },
+    "fastlane/swift/FastlaneSwiftRunner/FastlaneSwiftRunner.xcodeproj/project.pbxproj": {
+      "sha256": "b4db1c49dca579a0427cd9f1c5217d0c9a555a77609875e18e2f8ed0bd8e84b0",
+      "review": "baseline-2026-10-05"
+    },
+    "fastlane/swift/formatting/Brewfile": {
+      "sha256": "32bcff89679b94ab4eca2ce6b7fd9c89f8a37b995a3a6b6fd50b70729d2e688c",
+      "review": "baseline-2026-10-05"
+    },
+    "fastlane/swift/formatting/Brewfile.lock.json": {
+      "sha256": "080bd4de28ec3daa12832b929995e7de48f476fde9896f34376cd37d1dd50e1b",
+      "review": "baseline-2026-10-05"
+    },
+    "marketing/brand/README.md": {
+      "sha256": "fb0d2631c25189570fc0b12d3b5a39c18c1f14222c29bf5af473c7bc31fc3617",
+      "review": "baseline-2026-10-05"
+    },
+    "marketing/sources-and-licenses.md": {
+      "sha256": "fb3a72311574d3e8ca67a720ccf981175515121225b6613d023acf7ac3747f2f",
+      "review": "baseline-2026-10-05"
+    },
+    "website/assets/fonts/Sora-Bold.woff2": {
+      "sha256": "cd24a779a2c983ee792c1a8c7e37f947aeff9cba10294fc84e90ff33242954c0",
+      "review": "baseline-2026-10-05"
+    },
+    "website/assets/fonts/Sora-OFL.txt": {
+      "sha256": "ba0b9729c9428ba79a0459ab8ec575791b51509dbec213e383d0316d37fec299",
+      "review": "baseline-2026-10-05"
+    },
+    "website/assets/fonts/Sora-Regular.woff2": {
+      "sha256": "4d848854da33f6274c3b5b181d6c3c104e60352c3f55b10d0f0a8ae93a9922c0",
+      "review": "baseline-2026-10-05"
+    },
+    "website/assets/fonts/Sora-SemiBold.woff2": {
+      "sha256": "c8ef09866c1ce0e389507b89c9123b02f9766b17ab6abc6707cb2cecabf953dd",
+      "review": "baseline-2026-10-05"
+    }
+  },
+  "notice_exceptions": {
+    "statefulmacro": {
+      "revision": "12d7ee449891457e8cc73074ac7aeba4b50f48ca",
+      "review": "baseline-2026-10-05",
+      "reason": "No applicable license grant recorded; the owning review explicitly blocks release."
+    }
+  }
+}
