@@ -87,3 +87,19 @@ The initial tvOS upload was rejected because the vendor Libmpv framework also
 contained arm64e. The corrected arm64-only export passed local architecture,
 signature and provisioning checks and was uploaded successfully. Libmpv lacks
 a matching vendor dSYM, limiting native-library crash symbolication.
+
+## Apple processing and remaining handoff (5 October 2026)
+
+Apple processed both builds as `VALID` and `INTERNAL_ONLY`. iOS/iPadOS build 75 is
+assigned to the internal group and reports `IN_BETA_TESTING`. Test instructions
+are saved for both platforms. The tvOS build reports `MISSING_EXPORT_COMPLIANCE`;
+the encryption declaration and subsequent group assignment remain outstanding.
+The proposed declaration is standard encryption outside Apple's OS because the
+native decoder dependencies include OpenSSL/GnuTLS. Account-holder confirmation
+and intended beta test territories are pending; no declaration was submitted.
+The existing iOS `ITSAppUsesNonExemptEncryption=false` value was inherited in the
+archive and should be reassessed with this dependency inventory before expanding
+distribution. A successful technical upload does not settle export obligations.
+
+Apple also reported informational notice 90471 (missing tvOS Top Shelf Image Wide
+2x). Record this alongside the vendor dSYM limitation for the next release pass.
