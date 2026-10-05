@@ -111,6 +111,7 @@ jobs:
           fetch-depth: 0
 
       - name: Verify distribution rights before signing and upload
+        id: distribution-rights
         run: python3 Tools/licensing/verify-rights.py --release
 
       - name: Setup Ruby
@@ -278,7 +279,7 @@ jobs:
 
       # Preserve the IPA even if uploading it to TestFlight fails.
       - name: Upload TestFlight IPA
-        if: ${{ !cancelled() && hashFiles('fastlane/build/**/*.ipa') != '' }}
+        if: ${{ !cancelled() && steps.distribution-rights.outcome == 'success' && hashFiles('fastlane/build/**/*.ipa') != '' }}
         uses: actions/upload-artifact@v7
         with:
           name: kurtz-${{ matrix.platform }}-testflight

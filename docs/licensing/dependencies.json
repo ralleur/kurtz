@@ -236,7 +236,7 @@
   },
   "inputs": {
     ".github/workflows/ci.yml": {
-      "sha256": "3bfa09adc7b738bcda6afe951df76856521b02c191fd71c5747b2ce8148083aa",
+      "sha256": "c16680aa3e68b2468ac8cbf78db5ec7cb9bc9fe1139ad31e85cc200e5e06478f",
       "review": "baseline-2026-10-05"
     },
     ".github/workflows/cla.yml": {
@@ -252,7 +252,7 @@
       "review": "baseline-2026-10-05"
     },
     ".github/workflows/testflight.yml": {
-      "sha256": "101f701e7b50f44f4e010e87cb00402759b6fd8d5d1b8d373a7e605e037daf6f",
+      "sha256": "0d5082334fd6075c746befa641a4c1c75f78f123fe9228fc7c050bcc3f1e048c",
       "review": "baseline-2026-10-05"
     },
     ".github/workflows/validate-pr.yaml": {

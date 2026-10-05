@@ -77,12 +77,19 @@ jobs:
             scheme:"\"${{ matrix.scheme }}\"" \
             xcodeVersion:${{ env.XCODE_VERSION }}
 
+      # Compile/tests remain useful while distribution evidence is incomplete.
+      # Never upload a public artifact when the separate release gate fails.
+      - name: Check artifact distribution rights
+        id: distribution-rights
+        continue-on-error: true
+        run: python3 Tools/licensing/verify-rights.py --release
+
       - name: Package unsigned IPA
+        if: steps.distribution-rights.outcome == 'success'
         env:
           PACKAGE_NAME: kurtz-${{ matrix.platform }}
         run: |
           set -euo pipefail
-          python3 Tools/licensing/verify-rights.py --release
           mkdir -p fastlane/build/Payload
           cp -R fastlane/build/*.xcarchive/Products/Applications/*.app fastlane/build/Payload/
           python3 Tools/kurtz/verify-branding.py --app fastlane/build/Payload/kurtz.app
@@ -90,6 +97,7 @@ jobs:
           zip -r -y "$PACKAGE_NAME-unsigned.ipa" Payload
 
       - name: Upload unsigned IPA
+        if: steps.distribution-rights.outcome == 'success'
         uses: actions/upload-artifact@v7
         with:
           name: kurtz-${{ matrix.platform }}-unsigned
