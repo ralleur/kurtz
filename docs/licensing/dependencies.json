@@ -222,7 +222,7 @@
       "evidence_files": {
         "docs/licensing/baseline-2026-10-05.md": "2fe33730f289174276af14ecab47e0a8dbc99bc9db7549bb45fead3be2755be0",
         "LICENSE.md": "3e8120e21316858a3bf798748c5e7514353c8e4667e9cf1f0f3bec4a9c3489d0",
-        "CLA.md": "6da09a3d97adce62240126ae53d7992b144f09ab71951bf6e20b7012344570d7",
+        "CLA.md": "1812a58a504ff35766823307247b8a4f89857df454c0406a3d96ae49860f5ff4",
         "docs/release/README.md": "8e42f4a688ec105de31d71be8dc04ed6de026b1fd901eba775324fd7883e7976",
         "docs/release/source-index.json": "00e843a55957c6694cb1f5bf175e0a54d304f45447dea5f15c762a7e9c560906",
         "Shared/Resources/KurtzThirdPartyNotices.txt": "02a5807d965918ff490c6a86d84ca0d2fa13b30290ff91282cc7fa0d024f6cec",

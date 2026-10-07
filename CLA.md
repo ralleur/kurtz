@@ -5,8 +5,8 @@ accepted after this policy is adopted. Existing contributions are not deemed
 accepted retroactively. A contribution alone is not a signature.
 
 You keep your copyright. You give the Maintainer additional rights to your
-original contribution, including the ability to sublicense and transfer those
-rights in a project sale. This agreement does not replace the public MPL-2.0
+original contribution, including the ability to sublicense those rights and to
+transfer them together with the Project. This agreement does not replace the public MPL-2.0
 source license or the licenses of Swiftfin and other third parties.
 
 ## 1. Definitions and scope
@@ -41,7 +41,7 @@ Maintainer's choosing, including proprietary or commercial terms.
 The Maintainer may transfer these granted rights, in whole or in part, to
 successors and assigns, including in connection with a transfer of the Project
 or its related rights and assets. The grant survives that transfer on the same
-terms. This does not permit the Maintainer or a buyer to disregard third-party
+terms. This does not permit the Maintainer or a successor to disregard third-party
 licenses, withdraw existing open-source grants or relicense an entire combined
 work without the rights required for every relevant component.
 
