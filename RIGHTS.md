@@ -9,7 +9,7 @@ Ralf Hauser maintains kurtz. He may transfer his own economic rights and the
 rights validly granted to him, together with project assets he controls. This
 does not make him the owner of Swiftfin, Jellyfin, third-party libraries, all
 historical contributions, or purely AI-generated material. Existing recipients
-retain their open-source permissions. A buyer inherits applicable license
+retain their open-source permissions. Any successor inherits applicable license
 obligations; this repository is not a promise of unrestricted proprietary use.
 
 ## What belongs to whom

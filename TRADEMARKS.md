@@ -23,7 +23,7 @@ The identity includes the kurtz name, curled-z wordmark, symbol and official app
 icons documented in [marketing/brand](marketing/brand/README.md), including
 their copies in Apple asset catalogs and `website/assets`. The ralleur identity
 under `marketing/brand/ralleur` belongs to the broader Ralleur project identity;
-its transfer must be expressly agreed and is not implied by a sale of kurtz.
+its transfer must be expressly agreed and is not implied by a transfer of kurtz.
 
 This is a policy about product identity, not a retroactive withdrawal of
 copyright permissions. Previously licensed code or artwork retains its grants.
