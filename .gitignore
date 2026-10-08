@@ -105,3 +105,7 @@ XcodeConfig/DevelopmentTeam.xcconfig
 
 # Other
 .idea
+
+# Mutti Connect compiled transport and local link configuration
+Tools/MuttiConnect/build/
+XcodeConfig/MuttiConnect.local.xcconfig

@@ -1,0 +1,4 @@
+module MuttiConnectCore {
+    header "bridge.h"
+    export *
+}

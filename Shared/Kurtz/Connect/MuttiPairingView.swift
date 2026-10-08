@@ -1,0 +1,151 @@
+// SPDX-License-Identifier: MPL-2.0
+import SwiftUI
+#if os(iOS)
+import AVFoundation
+import VisionKit
+#endif
+
+struct MuttiPairingView: View {
+    @Environment(\.dismiss) private var dismiss
+    @State private var invitation = ""
+    @State private var status = ""
+    @State private var pairing: Task<Void, Never>?
+    @State private var isScanning = false
+    @State private var cameraRequest: Task<Void, Never>?
+    let initialInvitation: String
+    let connected: (URL) -> Void
+
+    init(invitation: String = "", connected: @escaping (URL) -> Void) {
+        initialInvitation = invitation
+        self.connected = connected
+    }
+
+    var body: some View {
+        NavigationStack {
+            Form {
+                Section {
+                    Text("Mit Mutti koppeln").font(KurtzBrand.font(size: 24, weight: .semibold, relativeTo: .title2))
+                    Text("Öffne in Mutti „Geräte“ und erstelle einen QR-Code. Scanne ihn hier oder füge den Kopplungslink ein. Bestätige anschließend dieses Gerät in Mutti.")
+                        .foregroundStyle(.secondary)
+                    #if os(iOS) && !targetEnvironment(macCatalyst)
+                    if DataScannerViewController.isSupported {
+                        Button("QR-Code scannen", systemImage: "qrcode.viewfinder", action: requestScanner)
+                            .disabled(pairing != nil || cameraRequest != nil)
+                    }
+                    #endif
+                    TextField("Kopplungslink", text: $invitation, axis: .vertical)
+                        .autocorrectionDisabled()
+                        .textInputAutocapitalization(.never)
+                        .disabled(pairing != nil)
+                    if pairing == nil {
+                        Button("Sicher verbinden", action: start).disabled(!MuttiConnection.isInvitation(invitation.trimmingCharacters(in: .whitespacesAndNewlines)))
+                    } else {
+                        ProgressView("Kopplung läuft …")
+                        Button("Abbrechen", role: .cancel) { pairing?.cancel(); pairing = nil }
+                    }
+                }
+                if !status.isEmpty {
+                    Section { Text(status).font(.callout).accessibilityLabel(status) }
+                }
+                Section { Text("Die Verbindung ist direkt und verschlüsselt. In Netzen, die direkte Verbindungen blockieren, steht in dieser Version kein Relay zur Verfügung.").font(.footnote).foregroundStyle(.secondary) }
+            }
+            .navigationTitle("Mutti")
+            .toolbar { ToolbarItem(placement: .cancellationAction) { Button("Schließen") { pairing?.cancel(); dismiss() } } }
+            .onAppear { invitation = initialInvitation }
+            .onDisappear { pairing?.cancel(); cameraRequest?.cancel() }
+            #if os(iOS) && !targetEnvironment(macCatalyst)
+            .sheet(isPresented: $isScanning) {
+                NavigationStack {
+                    MuttiQRScanner { code in invitation = code; isScanning = false } failed: {
+                        status = "Die Kamera ist gerade nicht verfügbar. Versuche es erneut oder füge den Kopplungslink ein."
+                        isScanning = false
+                    }
+                    .ignoresSafeArea(edges: .bottom)
+                    .navigationTitle("QR-Code scannen")
+                    .toolbar { ToolbarItem(placement: .cancellationAction) { Button("Abbrechen") { isScanning = false } } }
+                }
+            }
+            #endif
+        }
+    }
+
+    #if os(iOS) && !targetEnvironment(macCatalyst)
+    private func requestScanner() {
+        cameraRequest = Task { @MainActor in
+            defer { cameraRequest = nil }
+            let granted: Bool
+            switch AVCaptureDevice.authorizationStatus(for: .video) {
+            case .authorized: granted = true
+            case .notDetermined: granted = await AVCaptureDevice.requestAccess(for: .video)
+            default: granted = false
+            }
+            guard !Task.isCancelled else { return }
+            guard granted else {
+                status = "Erlaube kurtz den Kamerazugriff in den Systemeinstellungen oder füge den Kopplungslink ein."
+                return
+            }
+            guard DataScannerViewController.isAvailable else {
+                status = "Die Kamera ist gerade nicht verfügbar. Du kannst stattdessen den Kopplungslink einfügen."
+                return
+            }
+            isScanning = true
+        }
+    }
+    #endif
+
+    private func start() {
+        status = "Direkte Verbindung zu Mutti wird aufgebaut …"
+        pairing = Task { @MainActor in
+            do {
+                let stored = try await MuttiConnection.shared.pair(
+                    invitation.trimmingCharacters(in: .whitespacesAndNewlines),
+                    name: ProcessInfo.processInfo.isMacCatalystApp ? "kurtz auf Mac" : UIDevice.current.name
+                ) { status = $0 }
+                try Task.checkCancellation()
+                pairing = nil
+                connected(stored)
+                dismiss()
+            } catch is CancellationError { status = "Kopplung abgebrochen."; pairing = nil }
+            catch { status = error.localizedDescription; pairing = nil }
+        }
+    }
+}
+
+#if os(iOS) && !targetEnvironment(macCatalyst)
+private struct MuttiQRScanner: UIViewControllerRepresentable {
+    let scanned: (String) -> Void
+    let failed: () -> Void
+    func makeCoordinator() -> Coordinator { Coordinator(scanned: scanned, failed: failed) }
+    func makeUIViewController(context: Context) -> DataScannerViewController {
+        let scanner = DataScannerViewController(recognizedDataTypes: [.barcode(symbologies: [.qr])], qualityLevel: .balanced, recognizesMultipleItems: false, isHighlightingEnabled: true)
+        scanner.delegate = context.coordinator
+        do { try scanner.startScanning() } catch {
+            Task { @MainActor in context.coordinator.reportFailure() }
+        }
+        return scanner
+    }
+    func updateUIViewController(_ view: DataScannerViewController, context: Context) {}
+    static func dismantleUIViewController(_ view: DataScannerViewController, coordinator: Coordinator) { view.stopScanning() }
+    final class Coordinator: NSObject, DataScannerViewControllerDelegate {
+        let scanned: (String) -> Void
+        let failed: () -> Void
+        private var finished = false
+        init(scanned: @escaping (String) -> Void, failed: @escaping () -> Void) { self.scanned = scanned; self.failed = failed }
+        func reportFailure() {
+            guard !finished else { return }
+            finished = true; failed()
+        }
+        func dataScanner(_ dataScanner: DataScannerViewController, becameUnavailableWithError error: DataScannerViewController.ScanningUnavailable) {
+            reportFailure()
+        }
+        func dataScanner(_ dataScanner: DataScannerViewController, didAdd addedItems: [RecognizedItem], allItems: [RecognizedItem]) {
+            guard !finished else { return }
+            for item in addedItems {
+                if case let .barcode(code) = item, let payload = code.payloadStringValue, MuttiConnection.isInvitation(payload) {
+                    finished = true; dataScanner.stopScanning(); scanned(payload); return
+                }
+            }
+        }
+    }
+}
+#endif

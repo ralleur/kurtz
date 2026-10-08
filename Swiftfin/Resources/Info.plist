@@ -54,6 +54,8 @@
 		<string>_googlecast._tcp</string>
 		<string>_F007D354._googlecast._tcp</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>kurtz scans your Mutti pairing QR code to securely connect this device.</string>
 	<key>NSFaceIDUsageDescription</key>
 	<string>${PRODUCT_NAME} uses Face ID to lock and access local users.</string>
 	<key>NSLocalNetworkUsageDescription</key>

@@ -72,8 +72,8 @@ final class ServerConnectionManager: ObservableObject {
         matchingServerID serverID: String
     ) async throws -> PublicSystemInfo {
         let sessionConfiguration = URLSessionConfiguration.swiftfin.copy() as! URLSessionConfiguration
-        sessionConfiguration.timeoutIntervalForRequest = 8
-        sessionConfiguration.timeoutIntervalForResource = 12
+        sessionConfiguration.timeoutIntervalForRequest = connection.url.scheme == "mutti" ? 45 : 8
+        sessionConfiguration.timeoutIntervalForResource = connection.url.scheme == "mutti" ? 50 : 12
         sessionConfiguration.waitsForConnectivity = false
 
         let client = JellyfinClient(
@@ -138,7 +138,7 @@ final class ServerConnectionManager: ObservableObject {
                 logger.info(
                     "Server connection probe failed",
                     metadata: [
-                        "url": .string(connection.url.absoluteString),
+                        "url": .string(connection.url.scheme == "mutti" ? "Mutti (paired device)" : connection.url.absoluteString),
                         "error": .string(error.localizedDescription),
                     ]
                 )

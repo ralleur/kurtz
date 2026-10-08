@@ -60,6 +60,7 @@ extension ServerState {
     /// Deletes the model that this state represents and
     /// all settings from `StoredValues`.
     func delete() throws {
+        for connection in serverConnections { MuttiConnection.shared.forget(connection.url) }
         let users = StoredValues[.User.users]
             .filter { $0.serverID == id }
 
@@ -83,7 +84,7 @@ extension ServerState {
     }
 
     var effectiveServerURL: URL {
-        activeServerConnection?.url ?? currentURL
+        MuttiConnection.shared.url(for: activeServerConnection?.url ?? currentURL)
     }
 
     func ensureServerConnections() -> [ServerConnection] {

@@ -123,6 +123,15 @@ jobs:
     runs-on: macos-26
     steps:
       - uses: actions/checkout@v7
+      - name: Install pinned Go toolchain
+        uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16
+        with:
+          go-version: '1.27.1'
+          cache: false
+      - name: Fetch and compile pinned Mutti transport
+        run: |
+          python3 Tools/MuttiConnect/fetch-source.py "$RUNNER_TEMP/mutti-source"
+          MUTTI_CONNECT_SOURCE="$RUNNER_TEMP/mutti-source/mutti/connect" bash Tools/MuttiConnect/build.sh catalyst "$(uname -m)"
       - name: Prepare pinned Mac dependencies
         run: Tools/kurtz/prepare-mac-packages.sh
       - name: Compile Mac Catalyst without distribution signing
@@ -131,3 +140,5 @@ jobs:
           -configuration Debug -destination 'platform=macOS,variant=Mac Catalyst'
           -derivedDataPath build/dd-mac-ci -skipMacroValidation -skipPackagePluginValidation
           CODE_SIGNING_ALLOWED=NO build
+      - name: Verify native Mutti bridge is linked
+        run: python3 Tools/MuttiConnect/verify-binary.py build/dd-mac-ci/Build/Products/Debug-maccatalyst/kurtz.app

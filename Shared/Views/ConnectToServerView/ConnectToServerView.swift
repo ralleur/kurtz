@@ -30,6 +30,8 @@ struct ConnectToServerView: View {
     @StateObject
     private var viewModel = ConnectToServerViewModel()
 
+    @State private var showsMuttiPairing = false
+
     private let timer = Timer.publish(every: 12, on: .main, in: .common).autoconnect()
 
     private func onEvent(_ event: ConnectToServerViewModel._Event) {
@@ -46,6 +48,10 @@ struct ConnectToServerView: View {
 
     @ViewBuilder
     private var connectSection: some View {
+        Section {
+            Button("Mit Mutti koppeln", systemImage: "qrcode") { showsMuttiPairing = true }
+        }
+
         Section(L10n.connectToServer) {
             TextField(L10n.url, text: $url)
                 .disableAutocorrection(true)
@@ -173,6 +179,9 @@ struct ConnectToServerView: View {
                     duplicateServer = nil
                     router.dismiss()
                 }
+            }
+            .sheet(isPresented: $showsMuttiPairing) {
+                MuttiPairingView { url in viewModel.connect(url: url.absoluteString) }
             }
             .errorMessage($viewModel.error)
     }
