@@ -2,7 +2,10 @@
 
 Current development source: 0.9.7 beta. One iOS application supports iPhone and iPad; tvOS
 provides the Jellyfin experience. These are development targets, not approved
-App Store listings. Do not upload until the release plan's gates are satisfied.
+App Store listings. External testing and App Store submission require the release
+plan's gates. The separately authorized first internal TestFlight qualification
+uses the restricted process in [testflight.md](testflight.md); it does not mark
+those gates complete.
 
 ## Product and review notes
 

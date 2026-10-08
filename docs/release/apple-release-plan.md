@@ -16,7 +16,10 @@ App Store releases.
 - [x] Prepare archive tooling, review notes and an explicit release checklist.
 - [x] Update repository and project site with platform-specific availability.
 
-## Release gates
+The next qualification step is the [internal TestFlight beta](testflight.md).
+Its restricted upload is separate from external testing and Store submission.
+
+## External release gates
 
 1. Audit the actual linked decoder artifacts for App Store distribution. The
    current native mpv artifact is GPL-enabled; Mac distribution evidence does

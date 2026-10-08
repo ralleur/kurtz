@@ -1,0 +1,143 @@
+{
+  "version": "0.9.6",
+  "build": "75",
+  "source_commit": "5baceb53f9baf6802ff44be1402edd21d41dc26d",
+  "archive_overrides": {
+    "CURRENT_PROJECT_VERSION": "75"
+  },
+  "xcode": "Xcode 27.0\nBuild version 27A266a",
+  "scope": "Apple processed both builds; iOS/iPadOS in internal testing, tvOS awaiting export declaration",
+  "exports": [
+    {
+      "platform": "ios",
+      "bundle_id": "com.ralleur.vela",
+      "version": "0.9.6",
+      "build": "75",
+      "internal_only": true,
+      "action": "export",
+      "xcode_exit_code": 0,
+      "apple_processing_verified": false,
+      "note": "A successful upload still requires App Store Connect processing and tester availability checks.",
+      "ipa": "kurtz.ipa",
+      "ipa_sha256": "f7babf952daf4e14b9e24be7bf4a55afada322c56d72f27945af3fce59e58369",
+      "distribution_profile_verified": true
+    },
+    {
+      "platform": "tvos",
+      "bundle_id": "com.ralleur.vela",
+      "version": "0.9.6",
+      "build": "75",
+      "internal_only": true,
+      "architecture_adjustments": [
+        {
+          "framework": "Libmpv.framework",
+          "removed_architectures": [
+            "arm64e"
+          ],
+          "original_sha256": "4f5315f73ec63234f8e7d6164aebd62ca84ae512fdbbbef5b49d77231ca6ea81",
+          "prepared_sha256": "11ccbc7d804d3c4d00517789f259dbdff606c8848501c32c42a57472cf1d4deb"
+        }
+      ],
+      "action": "export",
+      "xcode_exit_code": 0,
+      "apple_processing_verified": false,
+      "note": "A successful upload still requires App Store Connect processing and tester availability checks.",
+      "ipa": "kurtz.ipa",
+      "ipa_sha256": "d0a61ef52dfbb0a919bb97ebf44dd52bc33dd3bf363e897f088c61eec0a70a32",
+      "distribution_profile_verified": true
+    }
+  ],
+  "pending": [
+    "Account-holder confirmation of the tvOS encryption declaration and test territories, then internal group assignment"
+  ],
+  "external_release_gates": "Decoder licensing, native dependency privacy and device qualification remain open.",
+  "app_store_connect": {
+    "app_id": "6819176198",
+    "name": "kurtz",
+    "platforms": [
+      "IOS",
+      "TV_OS"
+    ],
+    "beta_group_id": "7f5325a8-bad2-4a71-ad88-37ba73db65c0",
+    "beta_group_name": "kurtz Internal",
+    "internal_testers": 1,
+    "automatic_distribution": false
+  },
+  "superseded_exports": [
+    {
+      "platform": "tvos",
+      "bundle_id": "com.ralleur.vela",
+      "version": "0.9.6",
+      "build": "75",
+      "internal_only": true,
+      "action": "export",
+      "xcode_exit_code": 0,
+      "apple_processing_verified": false,
+      "note": "A successful upload still requires App Store Connect processing and tester availability checks.",
+      "ipa": "kurtz.ipa",
+      "ipa_sha256": "eee20ff8326e7f29cd604c6d5d2365a87b662d5dbbfaeb05a6b43316bde6720d",
+      "distribution_profile_verified": true,
+      "reason": "Apple upload rejected the extra arm64e slice in tvOS Libmpv.framework."
+    }
+  ],
+  "uploads": [
+    {
+      "platform": "ios",
+      "bundle_id": "com.ralleur.vela",
+      "version": "0.9.6",
+      "build": "75",
+      "internal_only": true,
+      "action": "upload",
+      "xcode_exit_code": 0,
+      "apple_processing_verified": false,
+      "note": "A successful upload still requires App Store Connect processing and tester availability checks."
+    },
+    {
+      "platform": "tvos",
+      "bundle_id": "com.ralleur.vela",
+      "version": "0.9.6",
+      "build": "75",
+      "internal_only": true,
+      "architecture_adjustments": [],
+      "action": "upload",
+      "xcode_exit_code": 0,
+      "apple_processing_verified": false,
+      "note": "A successful upload still requires App Store Connect processing and tester availability checks."
+    }
+  ],
+  "upload_warnings": [
+    "Libmpv vendor framework has no matching dSYM; native-library crash symbolication is limited.",
+    "Apple informational notice 90471: tvOS Top Shelf Image Wide 2x is missing; complete before external release."
+  ],
+  "apple_builds": [
+    {
+      "platform": "TV_OS",
+      "build_id": "dc0d961b-dc59-491b-951b-daae63b59f30",
+      "version": "0.9.6",
+      "build": "75",
+      "processing_state": "VALID",
+      "audience": "INTERNAL_ONLY",
+      "internal_build_state": "MISSING_EXPORT_COMPLIANCE",
+      "uses_non_exempt_encryption": null
+    },
+    {
+      "platform": "IOS",
+      "build_id": "ee0c594e-5c19-47ec-8d93-0ad90cd8e596",
+      "version": "0.9.6",
+      "build": "75",
+      "processing_state": "VALID",
+      "audience": "INTERNAL_ONLY",
+      "internal_build_state": "IN_BETA_TESTING",
+      "uses_non_exempt_encryption": false
+    }
+  ],
+  "verification": [
+    "Original tvOS framework hash unchanged after thinning the archive copy",
+    "App and exported Libmpv both arm64; signature and provisioning validation passed",
+    "Missing local signing certificate prevents architecture mutation",
+    "Already arm64-only iOS archive passes unchanged",
+    "Apple processingState VALID and audience INTERNAL_ONLY for both platforms",
+    "iOS build assigned to kurtz Internal; one existing account-holder tester; IN_BETA_TESTING",
+    "Platform-specific test notes saved in App Store Connect"
+  ]
+}
