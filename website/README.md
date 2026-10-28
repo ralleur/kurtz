@@ -36,3 +36,13 @@ Mac captures must stay labeled as Mac; never imply they show the mobile app.
 ## Desktop motifs (2026-10-04)
 
 Hero, comparison and Open panel now use new kurtz 0.9.7 (9) captures on an explicitly staged desktop, with subdued pug wallpaper and Finder/Notes context. Three responsive WebP sizes retain the full composition. The existing r3 DMG download is unchanged.
+
+## Canonical website migration
+
+The historical project site now forwards its three HTML pages to the matching
+`kurtz.app` destinations. The player homepage maps to `/player/`, preserving
+query strings and section anchors when JavaScript is enabled. Immediate HTML
+refresh and canonical links provide a static-host fallback. Existing product
+content, media credits and application downloads remain in the source. The
+independent website is maintained in `ralleur/kurtz-website`. No application
+release is part of this website-only change.
